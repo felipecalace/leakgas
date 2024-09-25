@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeakCalc</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      *{
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body style="background-color: #092B43; color: white;">
+    <h1> <span style="color: #306A92;"> <img src="./fogo_gif.gif" style="width: 18px;"/>  Leak</span>Calc</h1>
+    <hr>
+    Consumo do queimador(Kg/h): <input type="number" id="input_queimador">
+    <br><br>
+    Tempo de Uso(m): <input type="number" id="input_minutos">
+    <br><br>
+    Capacidade do Botijão(Kg): <input type="number" id="input_capacidade">
+    <br><br>
+    Preço do botijão(R$): <input type="number" id="input_preco">
+    <br><br>
+    Qual o preço dos seus equipamentos? <input type="number" id="input_equipamentos">
+    <br><br>
+    Quantos funcionários você possuí? <input type="number" id="input_funcionarios">
+    <br><br>
+    Qual a média salarial dos funcionários? <input type="number" id="input_media_salarial">
+    <br><br>
+    <hr>
+    <button onclick="calcular()">Calcular Gastos e Multa</button>
+    <div id="div_resultado"></div>
+  </body>
+</html>
+<script>
+  function calcular(){
+    // 'Resetar' o conteúdo da div caso a gente queira fazer cálculos em sequência
+    div_resultado.innerHTML = ''
+
+    // Recebendo os valores dos inputs para cálculo de vazamento
+    var consumo_queimador = Number(input_queimador.value)
+    var tempo_uso = Number(input_minutos.value)
+    var capacidade_botijao = Number(input_capacidade.value)
+    var preco_botijao = Number(input_preco.value)
+
+    // Recebendo os valores dos inputs para cálculo de multas e prejuízos
+    var equipamentos = Number(input_equipamentos.value)
+    var qtd_funcionarios = Number(input_funcionarios.value)
+    var media_salarial = Number(input_media_salarial.value)
+
+    // Fazendo as contas para calcular prejuízos e multas em caso de acidentes
+    var salario_total = qtd_funcionarios * media_salarial
+    var multa = (salario_total * 2) / 3
+    var gastos_totais = multa + salario_total + preco_botijao
+    var patrimonial = equipamentos + gastos_totais
+
+
+    // (((T/60) x Kg/h)/B) x PB -> fórmula para calcular o gasto por dia
+    // Contas relacionadas ao vazamento
+    var gasto_dia = (((tempo_uso/60) * consumo_queimador) / capacidade_botijao) * preco_botijao
+    var gasto_mes = gasto_dia * 30
+    var gasto_ano = gasto_mes * 12
+
+    // Considerando que o gás esteja vazando e que o vazamento cause um aumento de 25%
+    var consumo_queimador_25 = consumo_queimador + (consumo_queimador * 0.25)
+    var gasto_dia_25 = (((tempo_uso/60) * consumo_queimador_25) / capacidade_botijao) * preco_botijao
+    var gasto_mes_25 = gasto_dia_25 * 30
+    var gasto_ano_25 = gasto_mes_25 * 12
+
+    // Considerando que o gás esteja vazando e que o vazamento cause um aumento de 50%
+    var consumo_queimador_50 = consumo_queimador + (consumo_queimador * 0.50)
+    var gasto_dia_50 = (((tempo_uso/60) * consumo_queimador_50) / capacidade_botijao) * preco_botijao
+    var gasto_mes_50 = gasto_dia_50 * 30
+    var gasto_ano_50 = gasto_mes_50 * 12
+                        
+    // Considerando que o gás esteja vazando e que o vazamento cause um aumento de 100%
+    var consumo_queimador_100 = consumo_queimador * 2
+    var gasto_dia_100 = (((tempo_uso/60) * consumo_queimador_100) / capacidade_botijao) * preco_botijao
+    var gasto_mes_100 = gasto_dia_100 * 30
+    var gasto_ano_100 = gasto_mes_100 * 12
+
+    div_resultado.style.display =  'block'
+    // Exibindo o resultado dos gastos adicionais esperados
+    div_resultado.innerHTML += `
+                              <h3> Gastos adicionais relacionados à vazamento: </h3>
+                              <br>Com um consumo de queimador de ${consumo_queimador}Kg/h, utilizando-o por ${tempo_uso} minutos,
+                              usando um botijão de ${capacidade_botijao}kg e pagando em média R$${preco_botijao}
+                              <br>A estimativa de economia, considerando apenas um queimador e um botijão de ${capacidade_botijao}:
+                              <br>É de R$${(gasto_ano_25) - (gasto_ano)} com a redução de 25% do vazamento por ano
+                              <br>É de R$${(gasto_ano_50)  - (gasto_ano)} com a redução de 50% do vazamento por ano
+                              <br>É de R$${(gasto_ano_100) - (gasto_ano)} com a redução de 100% do vazamento por ano <br>`
+
+    // Exibindo o resultado de multas e prejuízos em caso de acidente
+    div_resultado.innerHTML += `<hr>
+                               <h3> Gastos com multas e prejuízo de equipamentos em caso de acidente: </h3>
+                               <br> Caso ocorra um acidente, a estimativa de gastos relacionados à
+                               prejuízo e multas do seu estabelecimento gira em torno de: R$${patrimonial}.`
+
+    div_resultado.innerHTML += `<hr><br>
+                                Com a LeakGas, caso haja vazamento avisariamos você em menos de 5 minutos, podendo evitar todos esses gastos adicionais.`
+                            
+  }
+</script>
