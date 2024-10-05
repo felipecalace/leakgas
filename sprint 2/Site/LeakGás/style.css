@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+}
+html{
+    background-color: black;
+    font-family: "Saira", sans-serif;
+    
+}
+
+header{
+    width: 100%;
+    height: 6vw;
+    position: fixed;
+    
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+.cabecalho{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 15vw;
+    height: 100%;
+
+}
+.icon-header{
+    width: 6vw;
+    cursor: pointer;
+}
+
+.box_nav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+}
+nav{
+    width: 63vw ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    
+}
+a{
+  font-style: normal;
+  color: white;
+  text-decoration: none; 
+  font-size: 1.5vw;
+  font-weight:400;
+  text-align: center;
+}
+a:hover{
+  font-weight: bold;
+}
+.home {
+  background-image: url('./assets/espaco-home.png');
+  background-size: cover; 
+    background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 105vh;
+  background-color: white; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_embarque{
+  display: flex;
+  justify-content: center;
+  align-items: column;
+  flex-wrap: wrap;
+  color: white;
+  height: 20vw;
+  width: 55vw;
+  text-align: center;
+}
+h2{
+  font-size: 3vw;
+  font-family: poppins;
+}
+.home_embarque a{
+  background-color: #e2e2e24b;
+  border-radius: 0.5vw;
+  width: 24vw;
+  height: 5.3vw;
+  text-align: center;
+  padding-top: 1vw;
+  font-size: 1.8vw;
+  font-weight: normal;
+  font-family: poppins;
+  margin-top: 2vw;
+}
+.sobre_home{
+  width: 100%;
+  height: 50vw;
+  background-color: white;
+}
+
+.container_sobre_home{
+  width: 100%;
+  height: 58vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 9vw;
+  color:#092B43
+  
+}
+.container_sobre_home img{
+  height: 32vw;
+  border-radius: 0.4vw;
+}
+.box_sobre_home{
+  padding-top: 1.3vw;
+  width: 40vw;
+  margin-left: 6vw;
+}
+.box_sobre_home h3{
+  font-size: 2.4vw;
+  font-weight: 600;
+}
+.box_sobre_home p{
+  margin-top: 1.2vw;
+  font-size: 1.7vw;
+}
+.box_sobre_home span{
+  font-weight: bold;
+}
+.box_sobre_home a{
+  background-color: #092B43;
+  display: flex;
+  width: 20vw;
+  height: 5vw;
+justify-content: center;
+align-items: center;
+font-weight: 600;
+border-radius: 0.4vw;
+  margin-top: 1vw;
+}
+.container_servicos_home{
+background-color: #F0EFEF;
+width: 100%;
+height: 40vw;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #092B43;
+}
+.box_servicos_home{
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw ;
+}
+
+
+.box_servicos_home h3{
+  font-size: 3vw;
+}
+.box_servicos_home p{
+  font-size: 1.5vw;
+}
+.box_servicos_home a{
+  font-size: 3vw;
+  text-decoration: underline;
+  color:#092B43;
+  font-weight: bold;
+}
+.box_servicos_home img{
+width: 3vw;
+}
+.box_servicos_imagens{
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+}
+.div_imagem1{
+  background-image: url('./assets/simulador.webp');
+  background-size: cover;
+  width: 22vw;
+  border-radius: 0.4vw;
+  height: 34vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2.3vw;
+  font-weight: 600;
+  padding-bottom: 2vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.div_imagem2{
+  background-image: url('./assets/sensores.webp');
+  background-size: cover;
+  width: 22vw;
+  border-radius: 0.4vw;
+  height: 34vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2.3vw;
+  font-weight: 600;
+  padding-bottom: 2vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.div_imagem3{
+  background-image: url('./assets/dashboard.webp');
+  background-size: cover;
+  width: 22vw;
+  border-radius: 0.4vw;
+  height: 34vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2.3vw;
+  font-weight: 600;
+  padding-bottom: 2vw;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  
+}
+.hoverImage:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.box_servicos_home img{
+  cursor: pointer;
+}
+.container_info{
+  background-image: url('./assets/mais_info.png');
+  background-size: cover;
+width: 100%;
+height: 32vw;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+
+color: white;
+}
+.box_info{
+width: 45vw;
+margin-right: 3vw;
+}
+.box_info input{
+width: 30vw;
+border: none;
+height: 4.5vw;
+margin-right: 1.8vw;
+border-radius: 0.6vw;
+}
+::placeholder{
+  padding-left: 2vw;
+}
+.box_info button{
+  width: 16.5vw;
+  border: none;
+  height: 4.5vw;
+  font-size: 1.4vw;
+  font-weight: 600;
+  color: white;
+  background-color: #092B43;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  }
+  .box_info div{
+    display: flex;
+  }
+  .box_info h3{
+    font-size: 2.4vw;
+    width: 20vw;
+    margin-bottom: 1.4vw
+  }
+  .box_info p{
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+  }
+  footer{
+    width: 100%;
+    height: 35vw;
+    background-color:#092B43;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .box_footer_cabecalho{
+    width: 80vw;
+    height: 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5vw;
+  }
+  footer hr{
+    width: 10vw;
+    color: white;
+  }
+  .img_footer1{
+width: 5vw;
+height: 5vw;
+border-radius: 50%;
+background-color: #ffffff49;
+background-image: url(./assets/insta_icon.png);
+background-repeat: no-repeat;
+background-size: 2.8vw;
+background-position: center;
+cursor: pointer;
+  }
+  .img_footer2{
+    width: 5vw;
+height: 5vw;
+border-radius: 50%;
+background-color: #ffffff49;
+background-image: url(./assets/face_icon.png);
+background-repeat: no-repeat;
+background-size: 2.8vw;
+background-position: center;
+cursor: pointer;
+  }
+  .img_footer3{
+    width: 5vw;
+height: 5vw;
+border-radius: 50%;
+background-color: #ffffff49;
+background-image: url(./assets/twitter_icon.png);
+background-repeat: no-repeat;
+background-size: 2.8vw;
+background-position: center;
+cursor: pointer;
+  }
+  .box_footer_cabecalho img{
+    width: 13vw;
+    height: 6.5vw;
+  }
+  .box_footer_redes{
+    display: flex;
+    width: 20vw;
+    justify-content: space-around;
+  }
+  .div_linha{
+    width: 80vw;
+    border: 0.1vw solid white;
+    position: absolute;
+    margin-top: 10.5vw;
+  }
+  .box_footer_rodape{
+width: 80vw;
+margin-top: 5vw;
+display: flex;
+justify-content: space-around;
+align-items: center;
+font-weight: 600;
+color: white;
+font-size: 1.1vw;
+  }
+  .box_footer_termos p{
+   padding-bottom: 0.9vw;
+   cursor: pointer
+  }
+  .box_footer_rodape a{
+width: 17vw;
+height: 4vw;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 0.4vw;
+color: #092B43;
+background-color: white;
+font-weight: 600;
+font-size: 1.4vw
+  }
+  .footer_title{
+    font-weight: 700;
+  }
+  .footer_final{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    height: 100%;
+    color: white;
+    font-weight:lighter;
+  }
+  
