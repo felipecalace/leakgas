@@ -27,7 +27,7 @@ create table dadosSensores(
     fkSensores int,
     vazamento int not null,
     dataHora datetime default current_timestamp,
-        constraint fkDadoSensor foreign key(fkSensores) references sensores(idSensor),
+        constraint fkDadoSensor foreign key(fkSensores) references sensores(idSensor)
 );
 create table propaganda(
 idEmail int primary key auto_increment,
