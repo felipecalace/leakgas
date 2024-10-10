@@ -23,11 +23,11 @@ create table sensores(
     constraint fkSensorEmpresa foreign key(fkEmpresa) references cadastro(idEmpresa)
 );
 create table dadosSensores(
-    fkPkSensores int,
+    idDado int primary key auto_increment,
+    fkSensores int,
     vazamento int not null,
     dataHora datetime default current_timestamp,
-        constraint fkDadoSensor foreign key(fkPkSensores) references sensores(idSensor),
-        primary key (fkPkSensores)
+        constraint fkDadoSensor foreign key(fkSensores) references sensores(idSensor),
 );
 create table propaganda(
 idEmail int primary key auto_increment,
