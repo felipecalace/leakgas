@@ -24,8 +24,10 @@
             <nav>
                 <a href="./home.html">INÍCIO</a>
                 <a href="">SOBRE</a>
-                <a href="">SIMULADOR</a>
+                <a href="./simulador.html">SIMULADOR</a>
                 <a href="./contato.html">CONTATO</a>
+                <a href="" id="anchorDashboard" style="display: none;">DASHBOARD</a>
+                <a href="./login.html">LOGIN</a>
                 <img class="icon-header" src="./assets/lupa-icon.png" alt="">
             </nav>
         </div>
@@ -104,3 +106,9 @@
     <p class="footer_final">© 2024 LeakGás - Todos os direitos reservados.</p>
 </footer>
 </html>
+<script>
+        if (window.localStorage.getItem("logado") === "true"){
+        anchorDashboard.href="./dashboard.html";
+        anchorDashboard.style.display="block";
+    }
+</script>

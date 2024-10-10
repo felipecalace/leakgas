@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeakGas</title>
+  <link rel="stylesheet" href="style_login.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+        <a href="./home.html" class="back-arrow">
+            <img src="./assets/seta-icon.png" alt="Back" style="height: 6vw;">
+          </a>
+          
+      <h1>Acessar</h1>
+      <a href="#" class="forgot-password">Esqueceu sua senha? Clique aqui</a>
+    </header>
+    
+    <div class="login-box">
+      <form>
+        <div class="input-box">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" placeholder="Usuário">
+        </div>
+        <div class="input-box">
+          <label for="password">Senha</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Senha">
+            <i class="eye-icon" id="togglePassword">&#128065;</i> <!-- Ícone de olho para ver a senha -->
+            <button class="login-btn" onclick="logar()">&#10132;</button> <!-- Botão de login -->
+          </div>
+        </div>
+      </form>
+
+      <p class="alternative-login">Ou acesse com</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon google">G+</a>
+        <a href="#" class="social-icon facebook">f</a>
+        <a href="#" class="social-icon apple"></a>
+      </div>
+    </div>
+    
+    <footer class="footer-logo">
+        <img src="./assets/2.png" alt="Logo" class="logo-img">
+      </footer>
+      
+  </div>
+  
