@@ -816,3 +816,212 @@ border-radius: 0.4vw;
   width: 100vw;
   height: 100%;
 }
+.header_servicos{
+    position: relative;
+  background-image: url('./assets/servicos.png');
+  background-size:cover; 
+  background-position: center;
+  width: 100%;
+  height: 43vw;
+  border-radius: 0 0 0 15vw;
+  overflow: hidden;
+  }
+  .header_servicos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com opacidade de 50% */
+    border-radius: 0 0 0 15vw; /* Aplica o mesmo border-radius da imagem */
+    z-index: 1; /* Fica acima do fundo */
+  }
+  .header_servicos h2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5vw;
+    font-family: "Saira", sans-serif;
+    position: absolute;
+    z-index: 2
+  }
+
+  /*ESTILIZAÇÃO DA ABA SERVIÇOS*/
+
+  .container_servicos{
+    width: 100%;
+    height: 45vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #092B43;
+  }
+  .box_servicos{
+    width: 80vw;
+    height: 38vw;
+    border: 2px solid #D9D9D9;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3.5vw;
+  }
+ 
+  .box_itens{
+    width: 35vw;
+    height: 10vw;
+    display: flex;
+    margin-right: 1.5vw;
+    color: #092B43;
+    margin-top: 2vw;
+  }
+  .box_itens p{
+    font-size:1.5vw;
+    font-weight: 500;
+  }
+  .box_itens img{
+    width: 5vw;
+    height: 4vw;
+    margin-right: 1vw;
+    margin-top: 0.8vw;
+  }
+  .box_itens h2{
+    font-size: 1.8vw;
+    font-weight: 700;
+  }
+  .linha_servicos{
+    display: flex;
+    margin-right: 1vw;
+  }
+  .titulo_servicos{
+    display: flex;
+    align-items: center;
+ 
+  }
+  .titulo_servicos img{
+    margin-top: 0.3vw;
+    margin-right: 0.5vw;
+    height: 0.2vw;
+  }
+  .titulo_servicos p{
+    font-size: 1.5vw;
+    font-weight: 600;
+  }
+  .box_servicos h1{
+    font-size: 3.5vw;
+  }
+  .box_servicos a{
+    background-color: #0080BA;
+    margin-top: 1vw;
+    width: 14vw;
+    height: 3.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5vw;
+    font-weight: 600;
+  }
+  .container_chef{
+    background-image: url('./assets/retangulo_servicos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 23vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2vw;
+    font-family: "Saira", sans-serif;
+    color: white;
+    flex-direction: column;
+  }
+  .container_chef h2{
+    width: 42vw;
+    text-align: center;
+  }
+  .container_chef p{
+    margin-top: 1vw;
+    text-align: center;
+    font-size: 1.3vw;
+font-weight: 400;
+    width: 42vw;  
+  }
+  .container_chef img{
+    width: 50vw;
+    position: absolute;
+    margin-bottom: 12.5vw;
+    margin-left: 46vw;
+  }
+  .container_simulador{
+    margin-top: 3vw;
+width: 100%;
+height: 60vw;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+  .container_simulador h1{
+    font-size: 3.5vw;
+    margin-top: -5vw;
+    margin-bottom: 2vw;
+    color: #002E52;
+  }
+  .box_simulador{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .caixa_calculadora{
+    display: flex;
+  }
+  .box_inserir{
+    background-color: #002E52;
+    border-radius: 0.5vw;
+    height: 55vw;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .box_inserir p{
+    font-size: 1.3vw;
+    color: white;
+  }
+  .box_resultado{
+    width: 40vw;
+  }
+.input_calc{
+  height: 3.2vw;
+  border-radius: 0.5vw;
+  border: none;
+  
+  margin-bottom: 1.5vw;
+  
+}
+.button_calc{
+  height: 5.4vw;
+  background-color: #0080BA;
+  border: none;
+  font-weight: 700;
+  font-size: 2vw;
+  color: white;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+.box_resultado{
+  margin-left: 2vw;
+  color: #002E52;
+  font-size: 1.5vw;
+}
+.box_resultado span{
+  font-weight: bold;
+}
+  

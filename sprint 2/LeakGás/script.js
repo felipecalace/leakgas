@@ -53,18 +53,123 @@
         // Exibindo o resultado dos gastos adicionais esperados
         div_resultado.innerHTML += `
                                   <h3> Gastos adicionais relacionados à vazamento: </h3>
-                                  <br>Com um consumo de queimador de ${consumo_queimador}Kg/h, utilizando-o por ${tempo_uso} minutos,
-                                  usando um botijão de ${capacidade_botijao}kg e pagando em média R$${preco_botijao}
-                                  <br>A estimativa de economia, considerando apenas um queimador e um botijão de ${capacidade_botijao}:
-                                  <br>É de R$${(gasto_ano_25) - (gasto_ano)} com a redução de 25% do vazamento por ano`
+                                  <br>Com um consumo de queimador de <span>${consumo_queimador}</span> Kg/h, utilizando-o por <span>${tempo_uso}</span>  minutos,
+                                  usando um botijão de <span>${capacidade_botijao}</span> kg e pagando em média <span>R$${preco_botijao}</span> 
+                                  <br>A estimativa de economia, considerando apenas um queimador e um botijão de <span>${capacidade_botijao}</span> :
+                                  <br>É de <span>R$${(gasto_ano_25) - (gasto_ano)}</span> com a redução de 25% do vazamento por ano`
                                   
         // Exibindo o resultado de multas e prejuízos em caso de acidente
-        div_resultado.innerHTML += `<hr>
+        div_resultado.innerHTML += `
                                    <h3> Gastos com multas e prejuízo de equipamentos em caso de acidente: </h3>
                                    <br> Caso ocorra um acidente, a estimativa de gastos relacionados à
-                                   prejuízo e multas do seu estabelecimento gira em torno de: R$${patrimonial}.`
+                                   prejuízo e multas do seu estabelecimento poderá chegar em torno de: <span>R$${patrimonial}</span> .`
     
-        div_resultado.innerHTML += `<hr><br>
-                                    Com a LeakGas, caso haja vazamento avisariamos você em menos de 5 minutos, podendo evitar todos esses gastos adicionais.`
+        div_resultado.innerHTML += `<br>
+                                    Com a LeakGas, caso haja vazamento avisariamos você <span>em menos de 5 minutos</span>, podendo evitar todos esses gastos adicionais.`
                                 
       }
+
+      const linha = document.getElementById('chart_linha');
+
+new Chart(linha, {
+    type: 'line',
+    data: {
+      labels: ['06:00','07:00','08:00', '09:00', '10:00', '11:00', '12:00'],
+      datasets: [{
+        
+        label: 'Presença de Gás',
+        data: [0, 0, 0, 0, 10, 15, 15],
+        borderColor: '#E5446D',
+        backgroundColor: 'red',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+
+
+ // PARA NAVEGAR ENTRE A DASHBOARD
+
+  function cozinhaB(){
+    todas_dash.style.display = 'none';
+    dash_cozinhas.style.display = 'flex';
+    cozinha_selecionada.innerHTML = ` B`
+    inicio_vazamento.innerHTML = `10:00`
+    termino_vazamento.innerHTML = `ATIVO`
+    
+    dashboardB.style.display = 'flex';
+    dashboard_safe.style.display = 'none';
+  }
+
+  function cozinhaA(){
+    todas_dash.style.display = 'none';
+    dash_cozinhas.style.display = 'flex';
+    dashboardB.style.display = 'none';
+    dashboard_safe.style.display = 'flex';
+    
+    cozinha_selecionada.innerHTML = ` A`
+    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
+    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+  }
+  function cozinhaC(){
+    todas_dash.style.display = 'none';
+    dash_cozinhas.style.display = 'flex';
+    dashboardB.style.display = 'none';
+    dashboard_safe.style.display = 'flex';
+    
+    cozinha_selecionada.innerHTML = ` C`
+    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
+    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+  }
+  function cozinhaD(){
+    todas_dash.style.display = 'none';
+    dash_cozinhas.style.display = 'flex';
+    dashboardB.style.display = 'none';
+    dashboard_safe.style.display = 'flex';
+    
+    cozinha_selecionada.innerHTML = ` D`
+    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
+    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+  }
+  function cozinhaE(){
+    todas_dash.style.display = 'none';
+    dash_cozinhas.style.display = 'flex';
+    dashboardB.style.display = 'none';
+    dashboard_safe.style.display = 'flex';
+    
+    cozinha_selecionada.innerHTML = ` E`
+    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
+    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+  }
+
+  const linha_safe = document.getElementById('chart_linha_safe');
+
+new Chart(linha_safe, {
+    type: 'line',
+    data: {
+      labels: ['06:00','07:00','08:00', '09:00', '10:00', '11:00', '12:00'],
+      datasets: [{
+        
+        label: 'Presença de Gás',
+        data: [0, 0, 0, 0, 0, 0, 0],
+        borderColor: 'green',
+        backgroundColor: 'green',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
