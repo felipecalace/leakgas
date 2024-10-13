@@ -47,22 +47,29 @@
         var gasto_dia_25 = (((tempo_uso/60) * consumo_queimador_25) / capacidade_botijao) * preco_botijao;
         var gasto_mes_25 = gasto_dia_25 * 30;
         var gasto_ano_25 = gasto_mes_25 * 12;
+
+
         
     
         div_resultado.style.display =  'block'
         // Exibindo o resultado dos gastos adicionais esperados
         div_resultado.innerHTML += `
                                   <h3> Gastos adicionais relacionados à vazamento: </h3>
-                                  <br>Com um consumo de queimador de <span>${consumo_queimador}</span> Kg/h, utilizando-o por <span>${tempo_uso}</span>  minutos,
-                                  usando um botijão de <span>${capacidade_botijao}</span> kg e pagando em média <span>R$${preco_botijao}</span> 
+                                  <br>Com um consumo de queimador de <span>${consumo_queimador} Kg/h</span> , utilizando-o por <span>${tempo_uso}</span>  minutos,
+                                  usando um botijão de <span>${capacidade_botijao}  kg</span> e pagando em média <span>R$${preco_botijao}</span> 
                                   <br>A estimativa de economia, considerando apenas um queimador e um botijão de <span>${capacidade_botijao}</span> :
-                                  <br>É de <span>R$${(gasto_ano_25) - (gasto_ano)}</span> com a redução de 25% do vazamento por ano`
+                                <br>É de <span>R$${(gasto_ano_25) - (gasto_ano)}</span> com a redução de 25% do vazamento por ano`
                                   
         // Exibindo o resultado de multas e prejuízos em caso de acidente
         div_resultado.innerHTML += `
-                                   <h3> Gastos com multas e prejuízo de equipamentos em caso de acidente: </h3>
+        <br><br>
+                                   <h3> Gastos com multas em caso de acidente: </h3>
                                    <br> Caso ocorra um acidente, a estimativa de gastos relacionados à
-                                   prejuízo e multas do seu estabelecimento poderá chegar em torno de: <span>R$${patrimonial}</span> .`
+                                  multas do seu estabelecimento poderá chegar em torno de: <span>R$${patrimonial} <br><br>
+                                  Isso sem contar com o prejuízo em relação à infraestrutura e investimentos relacionados à equipamentos! <br>
+                                  
+                                  
+                                  </span>`
     
         div_resultado.innerHTML += `<br>
                                     Com a LeakGas, caso haja vazamento avisariamos você <span>em menos de 5 minutos</span>, podendo evitar todos esses gastos adicionais.`
