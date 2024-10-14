@@ -6,6 +6,7 @@
   font-optical-sizing: auto;
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 } 
+
 html{
   background-color: white;
   font-family: "Saira", sans-serif;
@@ -25,12 +26,14 @@ background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   align-items: center;
   z-index: 2
 }
+
 .logo{
   width: 15vw;
   height: 100%;
   margin-left: 2vw;
   cursor: pointer;    
 }
+
 .icon-header{
   width: 6vw;
   cursor: pointer;
@@ -49,8 +52,8 @@ nav{
   justify-content: space-between;
   align-items: center;
   color: white;
-  
 }
+
 a{
 font-style: normal;
 color: white;
@@ -85,11 +88,13 @@ height: 19vw;
 width: 80vw;
 text-align: center;
 }
+
 h2{
 font-size: 2vw;
 font-weight: 600;
 font-family: "Poppins", sans-serif;
 }
+
 .home_embarque a{
 background-color: #e2e2e2a8;
 border-radius: 0.5vw;
@@ -166,7 +171,6 @@ margin-left: 3vw;
 margin-right: 3vw;
 
 }
-
 
 .box_servicos_home h3{
 font-size: 3vw;
@@ -1028,16 +1032,16 @@ font-weight: bold;
 /* Página Sobre */
 
 .container_sobre {
-  display: flex; /* Utiliza flexbox para disposição lado a lado */
-  align-items: center; /* Alinha verticalmente ao centro */
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
   margin: 20px;
 }
 
 /* Estilo da imagem */
 .img_sobre {
-  width: 53%; /* Ajusta a largura da imagem */
-  max-width: 40vw; /* Largura máxima */
+  width: 53%;
+  max-width: 40vw;
   height: 10%;
   border-radius: 2vw;
   margin: 0vw 3vw 0vw 5vw;
@@ -1059,9 +1063,9 @@ font-weight: bold;
 
 /* Estilos para a seção de origem do nome */
 .origem {
-  margin: 100px auto; /* Centraliza horizontalmente */
-  max-width: 820px; /* Largura máxima */
-  display: flex; /* Ativa o flexbox */
+  margin: 100px auto;
+  max-width: 820px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1122,13 +1126,13 @@ font-weight: bold;
 /* Estilos para os cartões */
 .card {
   flex: 1 1 200px;
-  max-width: 25%; /* Largura máxima dos cartões */
+  max-width: 25%; 
   background-color: #ffffff;
-  border-radius: 4vw; /* Cantos arredondados */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  border-radius: 4vw;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
   margin: 25px;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição ao passar o mouse */
 }
 
@@ -1140,10 +1144,9 @@ font-weight: bold;
 
 /* Estilos específicos para a seção de missão, visão e valores */
 .missao-visao-valores {
-  display: flex; /* Usa flexbox para layout */
-  justify-content: center; /* Centraliza os cartões na seção */
-  flex-wrap: wrap; /* Permite que os cartões quebrem linha se necessário */
-  margin: 5vw 0; /* Espaçamento acima e abaixo da seção */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card img {
@@ -1168,6 +1171,85 @@ font-weight: bold;
 .card p {
   font-size: 1.2em;
   justify-content: center;
-  line-height: 1.8; /* Espaçamento entre linhas */
+  line-height: 1.8;
   color: #333;
+}
+
+/* Estilizando a seção da equipe */
+.team-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Fundo claro para destacar a seção */
+    font-family: 'Poppins', sans-serif; /* Aplicando a fonte Poppins */
+}
+
+.team-section h2 {
+    color: #002E52; /* Cor do título em tom azul escuro */
+    margin: 0.5vw 0vw 2vw 0vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container para os perfis da equipe */
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo de cada membro da equipe */
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border 0.3s ease; /* Adicionando transição da borda */
+}
+
+/* Adiciona borda azul ao passar o mouse no card */
+.team-member:hover {
+    transform: translateY(-10px); /* Efeito de hover para destacar */
+    border: 3px solid #0080BA; /* Borda azul ao passar o mouse */
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Para imagens circulares */
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    color: #0080BA; /* Cor do nome */
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #888; /* Cor do título da profissão */
+    margin-bottom: 20px;
+}
+
+/* Estilizando os ícones sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #002E52; /* Cor dos ícones sociais */
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #333; /* Cor ao passar o mouse nos ícones */
 }
