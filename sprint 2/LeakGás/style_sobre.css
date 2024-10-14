@@ -1,3 +1,23 @@
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilo do "trilho" da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: transparent; /* Fundo do trilho transparente */
+}
+
+/* Estilo do "polegar" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #092B43; /* Cor do polegar */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Efeito ao passar o mouse sobre o polegar */
+::-webkit-scrollbar-thumb:hover {
+  background: #0b4b68; /* Cor do polegar ao passar o mouse */
+}
 * {
   margin: 0;
   padding: 0;
@@ -1179,6 +1199,7 @@ font-weight: bold;
 .team-section {
     text-align: center;
     padding: 50px 0;
+    margin-bottom: 5.5vw;
     background-color: #f9f9f9; /* Fundo claro para destacar a seção */
     font-family: 'Poppins', sans-serif; /* Aplicando a fonte Poppins */
 }
