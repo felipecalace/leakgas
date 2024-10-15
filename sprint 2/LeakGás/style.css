@@ -681,12 +681,13 @@ background-color: #eeeeee;
   flex-direction: column;
   }
   .box_sessao:hover{
-    width: 26vw;
-    height: 14vw;
+    width: 25.5vw;
+    height: 13.5vw;
   }
   .imagem_sessao{
     width: 23vw;
     height: 9vw;
+    border-radius: 0.5vw;
   }
   .title_sec{
     margin-left: 1vw;
@@ -791,7 +792,7 @@ cursor: pointer;
 .imagem_cozinha_safe{
   width: 80%;
   height: 7vw;
-  background-image: url(./assets/cozinha_safe.jpg);
+  background-image: url(./assets/safe.png);
   background-size: cover;
   background-position: center;
   border-radius: 0.5vw;
@@ -800,7 +801,7 @@ cursor: pointer;
 .imagem_cozinha_danger{
   width: 80%;
   height: 7vw;
-  background-image: url(./assets/cozinha_danger.jpg);
+  background-image: url(./assets/danger.png);
   background-size: cover;
   background-position: center;
   margin-top: 1vw; 
