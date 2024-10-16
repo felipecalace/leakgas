@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Define a viewport para garantir que o site seja responsivo em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inclui a folha de estilos do Font Awesome para adicionar ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Inclui o arquivo de estilos CSS externo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Define o título da página -->
+    <title>Modern Login Page</title>
+</head>
+<body>
+
+
+
+    <a href="index.html">
+        <img src="img/logo.png" alt="Home" class="home-button">
+    </a>
+    
+
+<div class="container" id="container">
+
+
+
+<!-- Container do formulário de login -->
+<div class="form-container sign-in">
+    <form>
+        <!-- Título do formulário -->
+        <h1>Entrar</h1>
+        <!-- Div para ícones de redes sociais -->
+        <div class="social-icons">
+            <!-- Ícone do Google+ -->
+            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <!-- Ícone do Facebook -->
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <!-- Ícone do LinkedIn -->
+            <a href="#" class="icon"><i class="fa-brands fa-apple"></i></a>
+        </div>
+        <!-- Texto informativo -->
+        <span>ou use seu email e senha</span>
+        <!-- Campo de entrada para e-mail -->
+        <input type="email" placeholder="email">
+        <!-- Campo de entrada para senha -->
+        <input type="password" placeholder="Senha">
+        <!-- Link para recuperar senha (atualmente vazio) -->
+        <a href="#">Esqueceu sua senha?</a>
+        <!-- Botão de login -->
+        <button>Entrar</button>
+    </form>
+</div>
+
+
+    <!-- Container do formulário de criação de conta -->
+<div class="form-container sign-up">
+    <form>
+            <!-- Título do formulário -->
+            <h1>Criar conta</h1>
+            <!-- Texto informativo -->
+            <span>ou use seu e-mail para cadastro</span>
+            <!-- Campo de entrada para o nome da empresa -->
+            <input type="text" placeholder="Nome da Empresa*">
+            <!-- Campo de entrada para e-mail -->
+            <input type="email" placeholder="E-mail*">
+            <!-- Campo de entrada para o nome do responsável -->
+            <input type="text" placeholder="Nome do responsável*">
+            <!-- Campo de entrada para telefone -->
+            <input type="text" placeholder="Telefone*">
+            <!-- Campo de entrada para CNPJ -->
+            <input type="text" placeholder="CNPJ*">
+            <!-- Campo de entrada para senha -->
+            <input type="password" placeholder="Senha*">
+            <!-- Botão de cadastro -->
+
+            <!-- Checkbox e texto de concordância -->
+    <div class="terms-container">
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">
+            Concorda com a <a href="#">Política de privacidade</a> da LeakGas.
+        </label>
+    </div>
+
+            <button class="continue-button" id="continue">Continuar</button>
+    </form>
+</div>
+
+
+
+    <!-- Container do formulário de endereço -->
+<div class="form-container sign-adress">
+    <form>
+        <h1>Informações de Endereço</h1>
+        <span>Preencha o endereço da sua empresa</span>
+        <input type="text" placeholder="Endereço*" required>
+        <input type="text" placeholder="Cidade*" required>
+        <input type="text" placeholder="Estado*" required>
+        <input type="text" placeholder="CEP*" required>
+        <button type="submit" id="finalRegister">Finalizar Cadastro</button>
+    </form>
+</div>
+
+   
+
+
+
+
+
+
+
+
+    <!-- Container da animação de alternância entre login e cadastro -->
+    <div class="toggle-container">
+        <div class="toggle">
+            <!-- Painel de alternância para o login -->
+            <div class="toggle-panel toggle-left">
+                <h1>Já é cliente?</h1>
+                <p>Faça login e entre na sua conta</p>
+                <!-- Botão oculto para alternar para o formulário de login -->
+                <button class="hidden" id="Login">Entrar na sua conta</button>
+            </div>
+            <!-- Painel de alternância para o cadastro -->
+            <div class="toggle-panel toggle-right">
+                <h1>Ainda não é cliente?</h1>
+                <p>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
+                <!-- Botão oculto para alternar para o formulário de cadastro -->
+                <button class="hidden" id="register">Cadastre-se</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Inclui o arquivo de script JS externo -->
+    <script src="script.js"></script>
+</body>
+</html>
