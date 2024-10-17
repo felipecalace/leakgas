@@ -54,8 +54,8 @@
 
 
     <!-- Container do formulário de criação de conta -->
-<div class="form-container sign-up">
-    <form>
+<div id="form_cadastro"  class="form-container sign-up">
+    <form  >
             <!-- Título do formulário -->
             <h1>Criar conta</h1>
             <!-- Texto informativo -->
@@ -82,15 +82,16 @@
         </label>
     </div>
 
-            <button class="continue-button" id="continue">Continuar</button>
+            <!-- <button class="continue-button"  id="continue">Continuar</button> -->
+            <button class="continue-button"   id="continue-btn"  onclick="continuar()">Continuar</button>
     </form>
 </div>
 
 
 
     <!-- Container do formulário de endereço -->
-<div class="form-container sign-adress">
-    <form>
+<div id="form_endereco" style="display: none;" class="form-container sign-adress">
+    <form >
         <h1>Informações de Endereço</h1>
         <span>Preencha o endereço da sua empresa</span>
         <input type="text" placeholder="Endereço*" required>
@@ -120,6 +121,8 @@
                 <!-- Botão oculto para alternar para o formulário de login -->
                 <button class="hidden" id="Login">Entrar na sua conta</button>
             </div>
+
+
             <!-- Painel de alternância para o cadastro -->
             <div class="toggle-panel toggle-right">
                 <h1>Ainda não é cliente?</h1>

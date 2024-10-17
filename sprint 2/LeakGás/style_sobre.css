@@ -24,6 +24,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Saira", sans-serif;
+  transition: all 0.5s ease; /* Para animações suaves em elementos */
   font-optical-sizing: auto;
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 } 
@@ -88,6 +89,7 @@
 
   a:hover {
     font-weight: bold;
+    transition: all 0.5s ease; /* Para animações suaves em elementos */
   }
 
   .home {
@@ -1202,13 +1204,35 @@
   }
   
   .img_sobre {
-    width: 100%; /* Largura da imagem */
+    height: 22vw;
     width: 40vw; /* Limite máximo para evitar zoom excessivo */
     border-radius: 2vw; /* Bordas arredondadas */
-    margin: 7vw 2vw;
+    margin: 4.5vw 2vw;
     justify-content: center;
+    border: 1px solid #D9D9D9;
   }
-  
+  .sombra_img_sobre{
+    width: 40vw; /* Largura da imagem */
+    height: 22vw; /* Limite máximo para evitar zoom excessivo */
+    border-radius: 2vw;
+    position: absolute;
+    z-index: -2;
+    top: 51vw;
+    margin: 7vw 2vw;
+    margin-left: 1vw;
+    background-color:#002E52;
+  }
+  .sombra_img_sobre2{
+    width: 40vw; /* Largura da imagem */
+    height: 22vw; /* Limite máximo para evitar zoom excessivo */
+    border-radius: 2vw;
+    position: absolute;
+    z-index: -2;
+    right: 4vw;
+    margin: 6.2vw 2vw;
+    margin-left: 1vw;
+    background-color:#002E52;
+  }
   .texto {
     width: 45vw; /* Largura do texto */
     padding: 2vw;
@@ -1220,6 +1244,7 @@
     line-height: 1.5;
     color: #092B43;
     text-align: justify;
+    padding-top: 1vw;
   }
 
   /* Estilos para a seção de origem do nome */

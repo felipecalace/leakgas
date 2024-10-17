@@ -295,3 +295,18 @@ button {
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+.form-container.sign-adress {
+    display: none; /* Começa invisível */
+    flex-direction: column; /* Adiciona flexbox para organizar o conteúdo */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#form_endereco {
+    display: none; /* Mantém o formulário de endereço oculto inicialmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Para garantir que ocupe o espaço necessário */
+}
