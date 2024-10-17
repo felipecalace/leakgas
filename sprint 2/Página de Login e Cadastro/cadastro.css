@@ -1,0 +1,142 @@
+/* Define um box-sizing global */
+* {
+    box-sizing: border-box;
+}
+
+/* Estiliza o corpo da página */
+body {
+    background: linear-gradient(to right, #092B43, #145e92, #092B43 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 0px;
+    transition: opacity 0.3s ease-out; 
+    opacity: 0; /* Inicialmente a opacidade é zero para aplicar a transição */
+}
+
+/* Classe para aplicar efeito de fade-in */
+.fade-in {
+    opacity: 1; 
+}
+
+/* Estiliza o botão home (imagem da logo) */
+.home-button {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    max-width: 110px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Contêiner principal do formulário */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+    max-width: 100%;
+    min-height: 670px;
+}
+
+/* Estiliza o cartão que envolve o formulário */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 27px;
+}
+
+/* Estiliza a área de passos do formulário */
+.steps {
+    margin-bottom: 20px;
+}
+
+/* Estiliza a lista de passos */
+.steps ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+/* Estiliza cada item de passo */
+.steps ul li {
+    width: 33%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Estilo do passo ativo */
+.steps ul li.active {
+    color: #092B43;
+    border-bottom: 2px solid #092B43;
+}
+
+/* Define o formulário como invisível até ser ativado */
+.form-step {
+    display: none;
+}
+
+/* Mostra o formulário quando a classe 'active' é aplicada */
+.form-step.active {
+    display: block;
+}
+
+/* Estiliza os inputs do formulário */
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5%;
+}
+
+/* Estiliza os grupos de inputs */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.input-group input {
+    width: 48%;
+}
+
+/* Ajusta layout para telas menores */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+    .input-group input {
+        width: 100%;
+    }
+}
+
+/* Botões de navegação e envio */
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estiliza os botões */
+button {
+    border-radius: 20px;
+    border: 1px solid #092B43;
+    background-color: #092B43;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

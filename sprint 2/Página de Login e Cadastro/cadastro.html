@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Form</title>
+    <!-- Inclui uma folha de estilo de ícones Font Awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+    <!-- Conecta o arquivo CSS local para estilização da página -->
+    <link rel="stylesheet" href="./cadastro.css">
+</head>
+<body>
+
+    <!-- Botão que retorna para a página inicial (index.html), representado por uma logo -->
+    <a href="index.html">
+        <img src="img/logoBranco.png" alt="Home" class="home-button">
+    </a>
+
+    <!-- Contêiner principal do formulário -->
+    <div class="container">
+        <div class="card">
+            <!-- Seção de navegação entre etapas do formulário -->
+            <div class="steps">
+                <ul>
+                    <li class="active">Corporativo</li> <!-- Primeira etapa ativa -->
+                    <li>Endereço</li>
+                    <li>Pessoal</li>
+                </ul>
+            </div>
+            <!-- Formulário multi-etapas -->
+            <form id="multiStepForm">
+                <!-- Primeira etapa: Informações da empresa -->
+                <div class="form-step active">
+                    <h2>Informações da Empresa</h2>
+                    <div class="input-group">
+                        <input type="text" id="nomeSocial" placeholder="Nome Social da empresa" required>
+                        <input type="text" id="nomeFantasia" placeholder="Nome Fantasia da empresa" required>
+                    </div>
+                    <input type="text" id="cnpj" placeholder="CNPJ" required>
+                    <input type="text" id="emailCorp" placeholder="Email corporativo" required>
+                    <input type="text" id="telCorp" placeholder="Telefone corporativo" required>
+                    <div class="btns">
+                        <!-- Botão que avança para a próxima etapa -->
+                        <button type="button" class="btn next-btn">Próximo</button>
+                    </div>
+                </div>
+
+                <!-- Segunda etapa: Informações do endereço -->
+                <div class="form-step">
+                    <h2>Informações do Endereço da Matriz</h2>
+                    <div class="input-group">
+                        <input type="text" id="endereco" placeholder="Endereço completo" required>
+                        <input type="text" id="complemento" placeholder="Complemento" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="cep" placeholder="CEP" required>
+                        <input type="text" id="cidade" placeholder="Cidade" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="estado" placeholder="Estado" required>
+                        <input type="text" id="pais" placeholder="País" required>
+                    </div>
+                    <div class="btns">
+                        <!-- Botão que retorna para a etapa anterior -->
+                        <button type="button" class="btn prev-btn">Voltar</button>
+                        <!-- Botão que avança para a próxima etapa -->
+                        <button type="button" class="btn next-btn">Próximo</button>
+                    </div>
+                </div>
+
+                <!-- Terceira etapa: Informações do responsável -->
+                <div class="form-step">
+                    <h2>Informações do Responsável</h2>
+                    <div class="input-group">
+                        <input type="text" id="email" placeholder="Nome" required>
+                        <input type="text" id="phone" placeholder="Sobrenome" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" placeholder="Telefone" required>
+                        <input type="email" id="phone" placeholder="Email de Login" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Senha" required>
+                        <input type="password" id="confirmPassword" placeholder="Confirme senha" required>
+                    </div>
+                    <div class="btns">
+                        <!-- Botão que retorna para a etapa anterior -->
+                        <button type="button" class="btn prev-btn">Voltar</button>
+                        <!-- Botão que submete o formulário -->
+                        <button type="submit" class="btn submit-btn">Finalizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Inclui o arquivo JavaScript para funcionalidade do formulário -->
+    <script src="cadastro.js"></script>
+</body>
+</html>
