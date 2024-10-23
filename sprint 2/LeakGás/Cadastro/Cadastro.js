@@ -41,3 +41,66 @@ function Login() {
     }
 
 }
+function validarFormulario() {
+    // Seleciona todos os inputs do formulário
+    var inputs = document.querySelectorAll('#multiStepForm input');
+    var mensagem = "";
+    var valido = true;
+
+    inputs.forEach(function(input) {
+        // Verifica se o campo está vazio
+        if (input.value.trim() === "") {
+            mensagem += `O campo "${input.placeholder}" é obrigatório.<br>`;
+            valido = false;
+        }
+
+        // Valida o CNPJ 
+        if (input.id === 'cnpj' && !validarCNPJ(input.value)) {
+            mensagem += `CNPJ inválido. Deve conter 14 dígitos.<br>`;
+            valido = false;
+        }
+
+        // Valida o formato de email
+        if (input.id === 'emailCorp' || input.id === 'email') {
+            if (!validarEmail(input.value)) {
+                mensagem += `O email "${input.value}" é inválido. Deve conter "@" e um domínio.<br>`;
+                valido = false;
+            }
+        }
+
+        // Valida o telefone
+        if (input.id === 'telCorp' || input.id === 'phone') {
+            if (input.value.length < 10) {
+                mensagem += `O telefone deve ter pelo menos 10 dígitos.<br>`;
+                valido = false;
+            }
+        }
+    });
+
+    // Exibe a mensagem de erro ou sucesso
+    if (!valido) {
+        console.log(mensagem);
+        alert(mensagem);
+    } else {
+        console.log("Formulário válido!");
+    }
+
+    return valido;
+}
+
+// Função para validar o formato do CNPJ
+function validarCNPJ(cnpj) {
+    // Verifica se o CNPJ contém exatamente 14 dígitos numéricos
+    return cnpj.length === 14 && !isNaN(cnpj);
+}
+
+// Função para validar o formato de email
+function validarEmail(email) {
+    // Verifica se o email contém um "@" e um ponto após isso
+    var partes = email.split("@");
+    if (partes.length === 2) {
+        var dominio = partes[1];
+        return dominio.includes(".") && dominio.indexOf(".") > 0; // Deve ter um ponto no domínio
+    }
+    return false;
+}
