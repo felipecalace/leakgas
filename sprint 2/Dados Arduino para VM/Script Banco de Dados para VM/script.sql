@@ -1,93 +1,102 @@
-create database leakgas;
+-- Cria o banco de dados chamado 'leakgas'
+CREATE DATABASE leakgas;
 
-use leakgas;
+-- Utiliza o banco de dados recém-criado
+USE leakgas;
 
-create table cadastro(
-    idRepresentante int primary key auto_increment,
-    nome varchar(50),
-    sobrenome varchar(50),
-    telefone char(12),
-    emailLogin varchar(50),
-    senha varchar(20)
-);
-create table empresaMatriz(
-    idEmpresa int auto_increment,
-    nomeFantasia varchar(50) not null,
-    nomeSocial varchar(50) not null,
-    CNPJ char(14) not null,
-    emailCorporativo varchar(50),
-    telefoneCorporativo char(12),
-    unidadesEmpresa int,
-    enderecoCompleto varchar(255),
-    cep char(8),
-    complemento varchar(45),
-    cidade varchar(45),
-    estado varchar(45),
-    pais varchar(25),
-    fkRepresentante int,
-    constraint fkCadastroEmpresa foreign key(fkRepresentante) references cadastro(idRepresentante),
-    primary key(idEmpresa, fkRepresentante)
+-- Cria uma tabela para representantes
+CREATE TABLE cadastro (
+    idRepresentante INT PRIMARY KEY AUTO_INCREMENT,  
+    nome VARCHAR(50),                                
+    sobrenome VARCHAR(50),                           
+    telefone CHAR(12),                              
+    emailLogin VARCHAR(50),                         
+    senha VARCHAR(20)                               
 );
 
-create table sensores(
-    idSensor int auto_increment,
-    estadoAtual varchar(10) not null,
-    localizacaoSensor varchar(50),
-    UnidadeEmpresa varchar(50),
-    fkEmpresa int,
-    constraint chkEstado check(estadoAtual in('Ativo','Inativo','Manutenção')),
-    constraint fkSensorEmpresa foreign key(fkEmpresa) references empresaMatriz(idEmpresa),
-    primary key(idSensor, fkEmpresa)
+-- Cria uma tabela para a empresa matriz
+CREATE TABLE empresaMatriz (
+    idEmpresa INT AUTO_INCREMENT,                   
+    nomeFantasia VARCHAR(50) NOT NULL,              
+    nomeSocial VARCHAR(50) NOT NULL,                
+    CNPJ CHAR(14) NOT NULL,                         
+    emailCorporativo VARCHAR(50),                   
+    telefoneCorporativo CHAR(12),                                         
+    enderecoCompleto VARCHAR(255),                
+    cep CHAR(8),                                  
+    complemento VARCHAR(45),                      
+    cidade VARCHAR(45),                           
+    estado VARCHAR(45),                           
+    pais VARCHAR(25),                             
+    fkRepresentante INT,                          
+    CONSTRAINT fkCadastroEmpresa FOREIGN KEY (fkRepresentante) REFERENCES cadastro(idRepresentante), 
+    PRIMARY KEY (idEmpresa, fkRepresentante)       
 );
 
-create table dadosSensores(
-    idDado int primary key auto_increment,
-    fkSensores int,
-    vazamento int not null,
-    dataHora datetime default current_timestamp,
-        constraint fkDadoSensor foreign key(fkSensores) references sensores(idSensor)
+-- Cria uma tabela para sensores
+CREATE TABLE sensores (
+    idSensor INT AUTO_INCREMENT,                  
+    estadoAtual VARCHAR(10) NOT NULL,             
+    localizacaoSensor VARCHAR(50),                
+    UnidadeEmpresa VARCHAR(50),                   
+    fkEmpresa INT,                                
+    CONSTRAINT chkEstado CHECK (estadoAtual IN ('Ativo', 'Inativo', 'Manutenção')), 
+    CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresaMatriz(idEmpresa),  
+    PRIMARY KEY (idSensor, fkEmpresa)               
 );
 
-create table propaganda(
-idEmail int primary key auto_increment,
-emailPropaganda varchar(50)
+-- Cria uma tabela para dados dos sensores
+CREATE TABLE dadosSensores (
+    idDado INT AUTO_INCREMENT,                       
+    fkSensores INT,                                  
+    vazamento INT NOT NULL,                          
+    dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,     
+    CONSTRAINT fkDadoSensor FOREIGN KEY (fkSensores) REFERENCES sensores(idSensor),  
+    PRIMARY KEY (idDado, fkSensores)                
 );
 
-insert into cadastro values(
-    default,
-    'João',
-    'Silva',
-    '123456780001',
-    'contato@mcdonalds.com.br',
-    'AmoMuitoTudoIsso'
+-- Cria uma tabela para propaganda via email
+CREATE TABLE propaganda (
+    idEmail INT PRIMARY KEY AUTO_INCREMENT,          
+    emailPropaganda VARCHAR(50)                      
 );
 
-insert into empresaMatriz values(
-    default,
+-- Insere um representante na tabela cadastro
+INSERT INTO cadastro VALUES (
+    DEFAULT,                                         
+    'João',                                         
+    'Silva',                                        
+    '123456780001',                                 
+    'contato@mcdonalds.com.br',                     
+    'AmoMuitoTudoIsso'                             
+);
+
+-- Insere uma empresa na tabela empresaMatriz
+INSERT INTO empresaMatriz VALUES (
+    DEFAULT,
     'Arcos Dorados',
-    'McDonalds Brasil Ltda',
-    '12345678000195',
-    'contato@mcdonalds.com.br',
-    '123456780001',
-    100,
-    'Avenida Paulista, 100',
-    '01310100',
-    'Sala 100',
-    'São Paulo',
-    'São Paulo',
-    'Brasil',
-    1  
-);
+    'McDonalds Brasil Ltda', 
+    '12345678000195', 
+    'contato@mcdonalds.com.br', 
+    '123456780001',  
+    'Rua dos Arcos, 123', 
+    '12345678', 
+    'Sala 123', 
+    'São Paulo', 
+    'SP', 
+    'Brasil', 
+    1
+    );
 
-insert into sensores values(
-    default,
-    'Ativo',
-    'Cozinha',
-    'Avenida Paulista',
-    1  
-);
+-- Insere um sensor na tabela sensores
+INSERT INTO sensores VALUES (
+    DEFAULT,
+    'Ativo', 
+    'Entrada Principal', 
+    'Unidade São Paulo', 
+    1
+    );
 
-insert into propaganda values(
-    default,
-    'contato@mcdonalds.com.br'
-);
+-- Insere um email de propaganda na tabela propaganda
+    INSERT INTO propaganda (emailPropaganda) 
+    VALUES ('contato@mcdonalds.com.br');
