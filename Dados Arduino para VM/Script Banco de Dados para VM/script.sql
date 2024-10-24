@@ -36,7 +36,7 @@ CREATE TABLE empresa (
 -- Cria uma tabela para o endereço da empresa
 
 CREATE TABLE endereco (
-    idEndereco INT
+    idEndereco INT,
     numero VARCHAR(6),           
     cep CHAR(8),                                  
     complemento VARCHAR(45),                      
@@ -55,7 +55,7 @@ CREATE TABLE sensores (
     localizacaoSensor VARCHAR(50),                            
     fkEmpresa INT,                                
     CONSTRAINT chkEstado CHECK (estadoAtual IN ('Ativo', 'Inativo', 'Manutenção')), 
-    CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresaMatriz(idEmpresa),  
+    CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),  
     PRIMARY KEY (idSensor, fkEmpresa)               
 );
 
@@ -165,18 +165,21 @@ INSERT INTO sensores VALUES (
 -- Insere um email de propaganda na tabela propaganda
 
 INSERT INTO faleConosco VALUES (
+    DEFAULT,
     'Ricardo Silva', 
     'Olá, gostaria de saber mais sobre os produtos da LeakGas.', 
     'ricardo.silva@email.com', 
     'FaleConosco'
     ),
     (
+    DEFAULT,
     'Ana Lima', 
     'Gostaria de saber mais sobre as oportunidades de trabalho na LeakGas São Paulo.', 
     'ana.lima@email.com', 
     'FaleConosco'
     ),
     (
+    DEFAULT,
     NULL, 
     NULL,
     'luiz.fernandes@email.com', 
