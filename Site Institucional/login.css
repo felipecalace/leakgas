@@ -15,7 +15,7 @@ body {
     flex-direction: column; /* Alinha os itens na coluna */
     font-family: 'Montserrat', sans-serif; /* Define a fonte */
     height: 100vh; /* Altura total da viewport */
-    margin: -20px 0 0px; /* Margens negativas para remover espaço */
+    margin: 0px 0 0px; /* Margens para remover espaço */
     transition: opacity 0.3s ease-out; /* Efeito de transição para a opacidade */
 }
 
