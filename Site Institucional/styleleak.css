@@ -1,0 +1,227 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins';
+}
+
+
+.header{
+    height: 80px;
+    border-bottom: 2px solid  #003052;
+    ;
+}
+
+.container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.header .container {
+    
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header a{
+    text-decoration: none;
+    color: #003052;
+}
+
+.navbar{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    color: #003052;
+}
+
+.navbar a {
+    text-decoration: none; /* Remove qualquer sublinhado padrão */
+    padding: 10px 20px;
+    position: relative; /* Para controlar a posição do sublinhado */
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.navbar a::after {
+    content: ''; /* Elemento vazio para o sublinhado */
+    position: absolute; /* Permite que o sublinhado seja posicionado em relação ao link */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Altura do sublinhado */
+    background-color: #003052; /* Cor do sublinhado */
+    transform: scaleX(0); /* Inicialmente, o sublinhado não aparece */
+    transition: transform 0.3s ease; /* Suaviza a transição */
+    transform-origin: left; /* Faz o sublinhado aparecer da esquerda para a direita */
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1); /* Expande o sublinhado ao passar o mouse */
+}
+
+.navbar a:hover {
+    color: #1c1c9b; /* muda a cor do texto ao passar o mouse */
+}
+
+.titulo{
+    color:#003052;
+    font-weight: 500;
+
+}
+
+.banner{
+    height: 500px;
+}
+
+.banner .container{
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner .container p {
+    font-size: 36px;
+    width: 25%;
+}
+
+
+.banner .container span {
+    font-weight: bold;
+}
+
+
+.footer {
+    background-color: #003052;
+    height: 150px;
+    color: white;
+    display: flex;
+    font-size: 15px;
+}
+
+
+.footer .container {
+    justify-content: center;
+    text-align: center;   
+    display: flex; 
+}
+
+.footer .container .logo{
+    width: 100px;
+    display: flex;
+    height: auto;
+    margin-left: auto;
+}
+
+.version {
+    font-size: 12px;
+}
+
+
+.login{
+    height: 500px;
+   background-color: #f0f0f0;
+}
+
+.login .container{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+}
+
+.card{
+    
+    width: 40%;
+    max-width: 600px;
+    background-color: #003052;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f0f0f0;
+    padding: 20px 0;
+}
+
+.card h2{
+    margin: 0;
+    font-size: 30px;
+}
+
+.formulario{
+    display: flex;
+    height: 90%;
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.formulario span{
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.formulario input{
+    border: 2px solid #131313;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+    height: 25px;
+    outline-style: none;
+}
+
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+}
+
+.botao{
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #003052;
+    background-color: #f0f0f0;
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    margin-top: 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; /* Transições suaves */
+}
+
+
+.botao:hover{
+    color: #f0f0f0;
+    cursor: pointer;
+    background-color: #052a42;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Mais espaço para telas menores */
+    }
+    .footer {
+        flex-direction: column;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.banner {
+    height: 400px; /* Tamanho reduzido */
+    background-color: #1c1c9b; /* Cor de fundo definida */
+}
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Ajusta o tamanho do banner para telas pequenas */
+    }
+}
