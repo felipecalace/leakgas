@@ -45,7 +45,7 @@ CREATE TABLE endereco (
     fkEmpresa INT,
     CONSTRAINT fkEnderecoEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
     PRIMARY KEY(idEndereco, fkEmpresa)
-)
+);
 
 -- Cria uma tabela para sensores
 
