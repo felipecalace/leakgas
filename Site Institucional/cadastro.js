@@ -12,14 +12,10 @@ let currentStep = 0;
 // Para cada botão "Próximo", adiciona um evento de clique
 nextBtns.forEach((button) => {
     button.addEventListener('click', () => {
-        // Verifica se a etapa atual não é a última
         if (currentStep < steps.length - 1) {
-            // Remove a classe 'active' da etapa atual
             steps[currentStep].classList.remove('active');
             formSteps[currentStep].classList.remove('active');
-            // Incrementa a etapa atual
             currentStep++;
-            // Adiciona a classe 'active' à próxima etapa
             steps[currentStep].classList.add('active');
             formSteps[currentStep].classList.add('active');
         }
@@ -29,17 +25,27 @@ nextBtns.forEach((button) => {
 // Para cada botão "Voltar", adiciona um evento de clique
 prevBtns.forEach((button) => {
     button.addEventListener('click', () => {
-        // Verifica se a etapa atual não é a primeira
         if (currentStep > 0) {
-            // Remove a classe 'active' da etapa atual
             steps[currentStep].classList.remove('active');
             formSteps[currentStep].classList.remove('active');
-            // Decrementa a etapa atual
             currentStep--;
-            // Adiciona a classe 'active' à etapa anterior
             steps[currentStep].classList.add('active');
             formSteps[currentStep].classList.add('active');
         }
+    });
+});
+
+// Adiciona evento de clique nos itens da lista (li) para navegação direta
+steps.forEach((step, index) => {
+    step.addEventListener('click', () => {
+        // Remove a classe 'active' da etapa atual
+        steps[currentStep].classList.remove('active');
+        formSteps[currentStep].classList.remove('active');
+        // Atualiza a etapa atual para a que foi clicada
+        currentStep = index;
+        // Adiciona a classe 'active' à nova etapa
+        steps[currentStep].classList.add('active');
+        formSteps[currentStep].classList.add('active');
     });
 });
 

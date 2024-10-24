@@ -6,13 +6,13 @@
   <!-- Importação de ícones do FontAwesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
   <!-- Link para o arquivo de estilo CSS -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
     <!-- Link para a página inicial com um logo como botão -->
-    <a href="index.html">
-        <img src="img/logo.png" alt="Home" class="home-button">
+    <a href="./home.html">
+        <img src="./assets/logoAzul.png" alt="Home" class="home-button">
     </a>
 
 <!-- Estrutura principal de cadastro/login -->
@@ -26,7 +26,7 @@
             <input type="email" placeholder="e-mail" />
             <br>
             <!-- Botão que chama a função para continuar para a próxima página -->
-            <button type="button" class="btn next-btn" onclick="goToNextPage()">Continue</button>
+            <button style="cursor: pointer;" type="button" class="btn next-btn" onclick="goToNextPage()">Continuar</button>
         </form>
     </div>
 
@@ -44,7 +44,7 @@
             <input type="email" placeholder="e-mail" />
             <input type="password" placeholder="senha" />
             <a href="#">Esqueceu sua senha?</a>
-            <button>Entrar</button>
+            <button style="cursor: pointer;">Entrar</button>
         </form>
     </div>
 
@@ -55,19 +55,19 @@
                 <h1>Já é um cliente LeakGas?</h1>
                 <p>Clique abaixo e realize o login para entrar em sua conta</p>
                 <!-- Botão que ativa a transição para a tela de login -->
-                <button class="ghost" id="signIn">Entrar</button>
+                <button style="cursor: pointer;" class="ghost" id="signIn">Entrar</button>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>Ainda não é cliente?</h1>
                 <p>Registre sua empresa para se tornar um cliente LeakGas</p>
                 <!-- Botão que ativa a transição para a tela de cadastro -->
-                <button class="ghost" id="signUp">Cadastre-se</button>
+                <button style="cursor: pointer;" class="ghost" id="signUp">Cadastre-se</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Link para o arquivo de script JavaScript -->
-<script  src="./index.js"></script>
+<script  src="login.js"></script>
 </body>
 </html>
