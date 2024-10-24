@@ -1,10 +1,13 @@
 -- Cria o banco de dados chamado 'leakgas'
+
 CREATE DATABASE leakgas;
 
 -- Utiliza o banco de dados recém-criado
+
 USE leakgas;
 
 -- Cria uma tabela para representantes
+
 CREATE TABLE cadastro (
     idRepresentante INT PRIMARY KEY AUTO_INCREMENT,  
     nome VARCHAR(50),                                
@@ -15,25 +18,37 @@ CREATE TABLE cadastro (
 );
 
 -- Cria uma tabela para a empresa matriz
-CREATE TABLE empresaMatriz (
+
+CREATE TABLE empresa (
     idEmpresa INT AUTO_INCREMENT,                   
     nomeFantasia VARCHAR(50) NOT NULL,              
     nomeSocial VARCHAR(50) NOT NULL,                
     CNPJ CHAR(14) NOT NULL,                         
     emailCorporativo VARCHAR(50),                   
     telefoneCorporativo CHAR(12),                                         
-    enderecoCompleto VARCHAR(255),                
-    cep CHAR(8),                                  
-    complemento VARCHAR(45),                      
-    cidade VARCHAR(45),                           
-    estado VARCHAR(45),                           
-    pais VARCHAR(25),                             
-    fkRepresentante INT,                          
+    fkRepresentante INT,
+    fkMatriz INT,
+    CONSTRAINT fkMatrizEmpresa FOREIGN KEY (fkMatriz) REFERENCES empresa(idEmpresa),                           
     CONSTRAINT fkCadastroEmpresa FOREIGN KEY (fkRepresentante) REFERENCES cadastro(idRepresentante), 
     PRIMARY KEY (idEmpresa, fkRepresentante)       
 );
 
+-- Cria uma tabela para o endereço da empresa
+
+CREATE TABLE endereco (
+    idEndereco INT
+    numero VARCHAR(6),           
+    cep CHAR(8),                                  
+    complemento VARCHAR(45),                      
+    cidade VARCHAR(45),                           
+    estado VARCHAR(45),                           
+    fkEmpresa INT,
+    CONSTRAINT fkEnderecoEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
+    PRIMARY KEY(idEndereco, fkEmpresa)
+)
+
 -- Cria uma tabela para sensores
+
 CREATE TABLE sensores (
     idSensor INT AUTO_INCREMENT,                  
     estadoAtual VARCHAR(10) NOT NULL,             
@@ -46,6 +61,7 @@ CREATE TABLE sensores (
 );
 
 -- Cria uma tabela para dados dos sensores
+
 CREATE TABLE dadosSensores (
     idDado INT AUTO_INCREMENT,                       
     fkSensores INT,                                  
@@ -55,48 +71,118 @@ CREATE TABLE dadosSensores (
     PRIMARY KEY (idDado, fkSensores)                
 );
 
--- Cria uma tabela para propaganda via email
-CREATE TABLE propaganda (
-    idEmail INT PRIMARY KEY AUTO_INCREMENT,          
-    emailPropaganda VARCHAR(50)                      
+-- Cria uma tabela para contato via email
+
+CREATE TABLE faleConosco (
+    idEmail INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(25),
+    mensagem VARCHAR(500),          
+    emailContato VARCHAR(50) NOT NULL,
+    tipo VARCHAR(20) NOT NULL,
+    CONSTRAINT chkTipo CHECK(tipo in('FaleConosco','Publicidade'))
 );
 
 -- Insere um representante na tabela cadastro
+
 INSERT INTO cadastro VALUES (
-    DEFAULT,                                         
-    'João',                                         
-    'Silva',                                        
-    '123456780001',                                 
-    'contato@mcdonalds.com.br',                     
-    'AmoMuitoTudoIsso'                             
-);
+    DEFAULT,
+    'Ricardo ', 
+    'Silva', 
+    '11987654321', 
+    'ricardo.silva@gmail.com', 
+    'senha123'
+    ),
+    (
+    DEFAULT,
+    'Ana', 
+    'Lima', 
+    '11987654322', 
+    'ana.lima@gmail.com', 
+    'senha123'
+    ),
+    (
+    DEFAULT,
+    'Luiz', 
+    'Fernandes', 
+    '11987654323', 
+    'luiz.fernandes@gmail.com', 
+    'senha123'
+    );
 
 -- Insere uma empresa na tabela empresaMatriz
-INSERT INTO empresaMatriz VALUES (
+
+INSERT INTO empresa VALUES (
     DEFAULT,
-    'Arcos Dorados',
-    'McDonalds Brasil Ltda', 
-    '12345678000195', 
-    'contato@mcdonalds.com.br', 
-    '123456780001',  
-    'Rua dos Arcos, 123', 
-    '12345678', 
-    'Sala 123', 
-    'São Paulo', 
-    'SP', 
-    'Brasil', 
-    1
+    'Bakelita', 
+    'Bakelita Ltda', 
+    '12345678901234', 
+    'contato@bakelita.com', 
+    '11987654321', 
+    1, 
+    NULL
+    ),
+    (
+    DEFAULT,
+    'Frigorífico São Paulo', 
+    'Frigorífico São Paulo Ltda', 
+    '98765432109876', 
+    'contato@frigorificosp.com', 
+    '11987654322', 
+    2, 
+    NULL
+    ),
+    (
+    DEFAULT,
+    'Cozinha Industrial Paulista', 
+    'Cozinha Industrial Paulista Ltda', 
+    '76543210987654', 
+    'contato@cozinhapaulista.com', 
+    '11987654323', 
+    3, 
+    NULL
     );
 
 -- Insere um sensor na tabela sensores
+
 INSERT INTO sensores VALUES (
     DEFAULT,
     'Ativo', 
-    'Entrada Principal', 
-    'Unidade São Paulo', 
+    'Cozinha', 
+    'Unidade Paulista', 
     1
+    ),
+    (
+    DEFAULT,
+    'Inativo', 
+    'Próximo aos botijões', 
+    'Unidade Ana Rosa', 
+    2
+    ),
+    (
+    DEFAULT,
+    'Manutenção', 
+    'Cozinha 2', 
+    'Unidade Patio Paulista', 
+    3
     );
 
 -- Insere um email de propaganda na tabela propaganda
-    INSERT INTO propaganda (emailPropaganda) 
-    VALUES ('contato@mcdonalds.com.br');
+
+INSERT INTO faleConosco VALUES (
+    'Ricardo Silva', 
+    'Olá, gostaria de saber mais sobre os produtos da Bakelita.', 
+    'ricardo.silva@email.com', 
+    'FaleConosco'
+    ),
+    (
+    'Ana Lima', 
+    'Gostaria de saber mais sobre as oportunidades de trabalho no Frigorífico São Paulo.', 
+    'ana.lima@email.com', 
+    'FaleConosco'
+    ),
+    (
+    NULL, 
+    NULL,
+    'luiz.fernandes@email.com', 
+    'Publicidade'
+    );
