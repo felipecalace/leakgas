@@ -51,7 +51,7 @@ const serial = async (
         console.log(data);
         const valores = data.split(';');
         const sensorMQ2 = parseInt(valores[0]);
-
+       
         // armazena os valores dos sensores nos arrays correspondentes
         valoresSensorMQ2.push(sensorMQ2);
 

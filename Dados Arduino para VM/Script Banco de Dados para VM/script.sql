@@ -64,7 +64,7 @@ CREATE TABLE sensores (
 CREATE TABLE dadosSensores (
     idDado INT AUTO_INCREMENT,                       
     fkSensores INT,                                  
-    vazamento FLOAT(3,2) NOT NULL,                          
+    vazamento FLOAT(5,2) NOT NULL,                          
     dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,     
     CONSTRAINT fkDadoSensor FOREIGN KEY (fkSensores) REFERENCES sensores(idSensor),  
     PRIMARY KEY (idDado, fkSensores)                
