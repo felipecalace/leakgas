@@ -52,8 +52,7 @@ CREATE TABLE endereco (
 CREATE TABLE sensores (
     idSensor INT AUTO_INCREMENT,                  
     estadoAtual VARCHAR(10) NOT NULL,             
-    localizacaoSensor VARCHAR(50),                
-    UnidadeEmpresa VARCHAR(50),                   
+    localizacaoSensor VARCHAR(50),                            
     fkEmpresa INT,                                
     CONSTRAINT chkEstado CHECK (estadoAtual IN ('Ativo', 'Inativo', 'Manutenção')), 
     CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresaMatriz(idEmpresa),  
@@ -65,7 +64,7 @@ CREATE TABLE sensores (
 CREATE TABLE dadosSensores (
     idDado INT AUTO_INCREMENT,                       
     fkSensores INT,                                  
-    vazamento INT NOT NULL,                          
+    vazamento FLOAT(3,2) NOT NULL,                          
     dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,     
     CONSTRAINT fkDadoSensor FOREIGN KEY (fkSensores) REFERENCES sensores(idSensor),  
     PRIMARY KEY (idDado, fkSensores)                
@@ -148,21 +147,18 @@ INSERT INTO sensores VALUES (
     DEFAULT,
     'Ativo', 
     'Cozinha', 
-    'Unidade Paulista', 
     1
     ),
     (
     DEFAULT,
     'Inativo', 
     'Próximo aos botijões', 
-    'Unidade Ana Rosa', 
     2
     ),
     (
     DEFAULT,
     'Manutenção', 
     'Cozinha 2', 
-    'Unidade Patio Paulista', 
     3
     );
 
@@ -170,13 +166,13 @@ INSERT INTO sensores VALUES (
 
 INSERT INTO faleConosco VALUES (
     'Ricardo Silva', 
-    'Olá, gostaria de saber mais sobre os produtos da Bakelita.', 
+    'Olá, gostaria de saber mais sobre os produtos da LeakGas.', 
     'ricardo.silva@email.com', 
     'FaleConosco'
     ),
     (
     'Ana Lima', 
-    'Gostaria de saber mais sobre as oportunidades de trabalho no Frigorífico São Paulo.', 
+    'Gostaria de saber mais sobre as oportunidades de trabalho na LeakGas São Paulo.', 
     'ana.lima@email.com', 
     'FaleConosco'
     ),
