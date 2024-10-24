@@ -1122,3 +1122,34 @@ align-items: center;
   height: 60vh;
   z-index: -2;
 }
+.box_usuario{
+  display: flex;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  justify-content: space-around;
+  align-items: center;
+  width: 20vw;
+  
+}
+.box_usuario a{
+  width: 9vw;
+  height: 3vw;
+  border-radius: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: "Poppins", sans-serif;
+}
+.cadastrar{
+  border: 0.14vw solid #002E52;
+  background-color: #eeeeee2c;
+  font-size: 1vw;
+}
+.cadastrar:hover{
+  background-color: #002E52;
+}
+.logar{
+  background-color: #0080BA;
+  font-size: 1.3vw;
+}
