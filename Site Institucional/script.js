@@ -33,7 +33,7 @@
         var salario_total = qtd_funcionarios * media_salarial;
         var multa = (salario_total * 2) / 3;
         var gastos_totais = multa + multaM2 + salario_total + preco_botijao;
-        var patrimonial =  gastos_totais;
+        var patrimonial = gastos_totais.toFixed(2);
     
     
         // (((T/60) x Kg/h)/B) x PB -> fórmula para calcular o gasto por dia
