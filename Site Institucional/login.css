@@ -98,8 +98,9 @@ button.ghost {
 }
 
 /* Estiliza o formulário */
-form {
+.formulario {
     background-color: #FFFFFF; /* Cor de fundo do formulário */
+    justify-self: center;
     display: flex; /* Usa Flexbox para layout */
     align-items: center; /* Alinha itens ao centro verticalmente */
     justify-content: center; /* Centraliza itens horizontalmente */
@@ -134,6 +135,9 @@ input {
 
 /* Estiliza o contêiner do formulário */
 .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute; /* Posiciona de forma absoluta */
     top: 0; /* Alinha ao topo */
     height: 100%; /* Altura total */
@@ -154,6 +158,9 @@ input {
 
 /* Estiliza o contêiner de registro */
 .sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 0; /* Alinha à esquerda */
     width: 50%; /* Largura de 50% */
     opacity: 0; /* Opacidade inicial */
@@ -272,4 +279,15 @@ input {
     margin: 0 5px; /* Margens laterais */
     height: 40px; /* Altura dos ícones */
     width: 40px; /* Largura dos ícones */
-}
+    }
+    .teste{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }

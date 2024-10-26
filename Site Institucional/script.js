@@ -1,14 +1,4 @@
-    function logar(){
-        var usuario = "admin";
-        var senha = "urubu100";
 
-        var novaAnchor = ``;
-        if (usuario == username.value && senha == password.value){
-            window.open("home.html");
-            window.localStorage.setItem("logado", "true");
-        }
-    }
-    
     function calcular(){
         // 'Resetar' o conteúdo da div caso a gente queira fazer cálculos em sequência
         div_resultado.innerHTML = ''
@@ -180,3 +170,77 @@ new Chart(linha_safe, {
       }
     }
   });
+
+
+  // lógica para o login
+
+  var logado = false;
+  
+
+
+
+  function logar(){
+
+    var email_login = ipt_email_login.value 
+    var senha_login = ipt_senha_login.value
+
+    if(email_login == 'admin@admin' && senha_login == 'admin'){
+      
+      alert(logado)
+      localStorage.setItem("logado", "true"); // Armazena o valor "true" no localStorage
+      window.location.href = 'dashboard.html'
+
+      p_mensagem_login.innerHTML = ''
+    }else{
+      p_mensagem_login.innerHTML = `&times; Usuário ou senha incorretos, tente novamente!<br><br>`
+    }
+  }
+// Função que verifica algo quando a página é carregada
+function verificarLogin() {
+  
+  if (localStorage.getItem("logado") !== "true") {
+    box_loginCadastro.style.display = 'none';
+  } 
+
+
+  if (localStorage.getItem("logado") !== "true") {
+    alert("Você precisa estar logado para acessar essa página.");
+    window.location.href = 'login.html'; // Redireciona para a página de login, se não estiver logado
+}
+}
+
+
+
+
+// Adiciona um listener para o evento 'DOMContentLoaded'
+document.addEventListener('DOMContentLoaded', verificarLogin);
+
+
+
+/*LÓGICA DO GUEST*/
+// Obtendo elementos do DOM
+const modal = document.getElementById('modal');
+const guestCircle = document.getElementById('guestCircle');
+const spanClose = document.getElementsByClassName('close')[0];
+
+// Quando o mouse entra no círculo do guest, o modal é aberto
+guestCircle.addEventListener('mouseover', function() {
+    modal.style.display = 'block';
+});
+
+// Quando o mouse sai do círculo do guest, o modal é fechado
+guestCircle.addEventListener('mouseout', function() {
+    modal.style.display = 'none';
+});
+
+// Também fecha o modal ao clicar no "X"
+spanClose.onclick = function() {
+    modal.style.display = 'none';
+};
+
+// Quando o usuário clica fora do modal, ele também é fechado
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
