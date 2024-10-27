@@ -665,7 +665,7 @@ background-color: #eeeeee;
     width: 100%;
   }
   .box_kpi img{
-    width: 3.5vw;
+    width: 4vw;
 
     margin-right: 2vw;
   }
@@ -719,8 +719,45 @@ background-color: #eeeeee;
   flex-direction: column;
   
   }
-  .container_monitorados{
+.container_barras{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box_barras{
+  background-color: white;
   display: flex;
+  padding-right: 5vw;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80vw;
+  border-radius: 0.5vw;
+  height: 22vw;
+  margin-top: 1vw;
+}
+.grafico_barras{
+  background-color: red;
+  
+  width: 100vw;
+}
+
+.texto_ano{
+  width: 100%;
+  height: 20vw;
+  padding: 1vw;
+}
+.texto_ano span{
+  font-weight: bold;
+}
+.texto_ano h3{
+  font-size: 1.4vw;
+}
+.texto_ano p{
+  margin-top: 1vw;
+  font-size: 1.5vw;
+}
+  .container_monitorados{
   flex-direction: column;
   justify-content: space-between;
   display: flex; /*ESTÁ FAZENDO A CAIXA SUMIR, PRECISA FAZER UMA LÓGICA COM ONCLICK!!!*/
@@ -800,6 +837,15 @@ cursor: pointer;
   width: 80%;
   height: 7vw;
   background-image: url(./assets/safe.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5vw;
+  margin-top: 1vw;
+}
+.imagem_cozinha_warning{
+  width: 80%;
+  height: 7vw;
+  background-image: url(./assets/warning.png);
   background-size: cover;
   background-position: center;
   border-radius: 0.5vw;
@@ -896,7 +942,34 @@ border-radius: 0.4vw;
     position: absolute;
     z-index: 2
   }
+.status_mensagem{
+  width: 10vw;
+  font-size: 1.4vw;
+  font-weight: bold;
+ background-color: rgb(145, 145, 28);
+  color: white;
+  padding-left: 0.2vw;
+  border-radius: 0.4vw;
+  position: absolute;
+  margin-bottom: 10vw;
+  margin-top: -9.5vw;
+  right: 7.5vw;
+}
+  .leak_azul{
+    width: 5vw;
+    height: 5vw;
 
+  }
+  .leak_amarelo{
+    width: 5vw;
+    height: 5vw;
+
+  }
+  .leak_vermelho{
+    width: 5vw;
+    height: 5vw;
+
+  }
   /*ESTILIZAÇÃO DA ABA SERVIÇOS*/
 
   .container_servicos{
