@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Login - LeakGas</title>
-    <script src="script.js" type="text/javascript" defer></script>
-    <!-- Importação de ícones do FontAwesome -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
-    <!-- Link para o arquivo de estilo CSS -->
-    <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8">
+  <title>Login - LeakGas</title>
+  <!-- Importação de ícones do FontAwesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'> 
+  <!-- Link para o arquivo de estilo CSS -->
+  <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
-
 
     <!-- Link para a página inicial com um logo como botão -->
     <a href="./home.html">
@@ -20,63 +16,60 @@
     </a>
 
     <!-- Estrutura principal de cadastro/login -->
-    <div class="container" id="container">
-        <!-- Formulário para criação de conta -->
-        <div class="form-container sign-up-container">
-            <div class="formulario">
-              
-                <h1>Criar conta</h1>
-                <span>Insira os dados de sua empresa</span>
-                <input type="text" placeholder="nome da empresa" />
-                <input type="email" placeholder="e-mail" />
-                <br>
-                <!-- Botão que chama a função para continuar para a próxima página -->
-                <button style="cursor: pointer;" type="button" class="btn next-btn"
-                    onclick="goToNextPage()">Continuar</button>
-                    
-            </div>
-        </div>
-
-        <!-- Formulário de login -->
-        <div class="form-container sign-in-container">
-            <div>
-                <h1>Entrar</h1>
-                <!-- Contêiner para login via redes sociais -->
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-brands fa-apple"></i></a>
+    <section class="section_login">
+        <div class="container" id="container">
+            <!-- Formulário para criação de conta -->
+            <div class="form-container sign-up-container">
+                <div class="formulario">
+                    <h1>Criar conta</h1>
+                    <span>Insira os dados de sua empresa</span>
+                    <input type="text" placeholder="nome da empresa" />
+                    <input type="email" placeholder="e-mail" />
+                    <br>
+                    <!-- Botão que chama a função para continuar para a próxima página -->
+                    <button style="cursor: pointer;" type="button" class="btn next-btn" onclick="goToNextPage()">Continuar</button>
                 </div>
-                <b style="color: red; font-size: 1vw;" id="p_mensagem_login"></b>
-                <span>ou use seu email e senha para login</span>
-                <input type="email" placeholder="E-mail" id="ipt_email_login" />
-                <input type="password" placeholder="Senha" id="ipt_senha_login" />
-                <a href="#">Esqueceu sua senha?</a>
-                <button onclick="logar()" style="cursor: pointer;">Entrar</button>
             </div>
-        </div>
 
-        <!-- Estrutura do painel de transição entre login e cadastro -->
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Já é um cliente LeakGas?</h1>
-                    <p>Clique abaixo e realize o login para entrar em sua conta</p>
-                    <!-- Botão que ativa a transição para a tela de login -->
-                    <button style="cursor: pointer;" class="ghost" id="signIn">Entrar</button>
+            <!-- Formulário de login -->
+            <div class="form-container sign-in-container">
+                <div class="formulario">
+                    <h1>Entrar</h1>
+                    <!-- Contêiner para login via redes sociais -->
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-brands fa-apple"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    </div>
+                    <span>ou use seu email e senha para login</span>
+                    <input type="email" placeholder="e-mail" />
+                    <input type="password" placeholder="senha" />
+                    <a href="#">Esqueceu sua senha?</a>
+                    <button style="cursor: pointer;">Entrar</button>
                 </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Ainda não é cliente?</h1>
-                    <p>Registre sua empresa para se tornar um cliente LeakGas</p>
-                    <!-- Botão que ativa a transição para a tela de cadastro -->
-                    <button style="cursor: pointer;" class="ghost" id="signUp">Cadastre-se</button>
+            </div>
+
+            <!-- Estrutura do painel de transição entre login e cadastro -->
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Já é um cliente LeakGas?</h1>
+                        <p>Clique abaixo e realize o login para entrar em sua conta</p>
+                        <!-- Botão que ativa a transição para a tela de login -->
+                        <button style="cursor: pointer;" class="ghost" id="signIn">Entrar</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Ainda não é cliente?</h1>
+                        <p>Registre sua empresa para se tornar um cliente LeakGas</p>
+                        <!-- Botão que ativa a transição para a tela de cadastro -->
+                        <button style="cursor: pointer;" class="ghost" id="signUp">Cadastre-se</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Link para o arquivo de script JavaScript -->
-    <script src="login.js"></script>
+        <!-- Link para o arquivo de script JavaScript -->
+        <script src="login.js"></script>
+    </section>
 </body>
-
 </html>
