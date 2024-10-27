@@ -114,7 +114,7 @@ button.ghost {
 input {
     background-color: #eee; /* Cor de fundo */
     border: none; /* Remove borda */
-    padding: 12px 15px; /* Padding interno */
+    padding: 12px 10px; /* Padding interno */
     margin: 8px 0; /* Margens verticais */
     width: 100%; /* Largura total */
     border-radius: 5%; /* Bordas arredondadas */
