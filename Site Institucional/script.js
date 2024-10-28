@@ -55,7 +55,7 @@
         // Exibindo o resultado de multas e prejuízos em caso de acidente
         div_resultado.innerHTML += `
         <br><br>
-                                   <h3> Gastos com multas em caso de acidente: </h3>
+                                   <h3> Gastos com multas e em caso de acidentes: </h3>
                                     Em caso de fiscalização em seu estabelecimento e for constatado que não há nenhum tipo de monitoramento de prevenção de incêndios, as <span>multas</span> aplicadas podem atingir o valor estimado de <span>R$${patrimonial}.</span><br> Além disso, caso o estabelecimento não se regularizar em uma nova inspeção, o valor da multa poderá dobrar, chegando à <span>R$${multa_dobrada}!</span><br> Na terceira inspeção, há ainda o risco de <span>suspensão temporária das atividades da sua empresa</span> até que as exigências de segurança sejam cumpridas, gerando um prejuízo diário .<br>
                                   O prejuízo em relação à infraestrutura e investimentos relacionados à equipamentos será de <span>100% de todo dinheiro investido! </span><br>
                                   
@@ -122,6 +122,7 @@ new Chart(linha, {
     dash_cozinhas.style.display = 'flex';
     cozinha_selecionada.innerHTML = ` B`
     inicio_vazamento.innerHTML = `10:00`
+    dashboard_a.style.display = 'none';
     inicio_vazamento.style.color = 'red'
 
     termino_vazamento.innerHTML = `<img class='leak_vermelho' src="./assets/leak_vermelho.png">`
@@ -133,40 +134,46 @@ new Chart(linha, {
     dashboard_warning.style.display = 'none';
   }
 
+
+// ADICIONAR A DASHBOARD DINÂNMINCA (calace)
+
   function cozinhaA(){
     todas_dash.style.display = 'none';
     dash_cozinhas.style.display = 'flex';
     dashboardB.style.display = 'none';
-    dashboard_safe.style.display = 'flex';
+    dashboard_safe.style.display = 'none';
+    dashboard_a.style.display = 'flex';
     dashboard_warning.style.display = 'none';
 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` A`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+    inicio_vazamento.innerHTML = `Sem vazamentos ativos`
+    termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
     termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     
-    status_mensagem.style.backgroundColor = '#002f5288'
+    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
    status_mensagem.style.fontSize = `1.3vw`
    status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    
   }
+
   function cozinhaC(){
     todas_dash.style.display = 'none';
     dash_cozinhas.style.display = 'flex';
     dashboardB.style.display = 'none';
+    dashboard_a.style.display = 'none';
     dashboard_safe.style.display = 'flex';
     dashboard_warning.style.display = 'none';
 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` C`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+    inicio_vazamento.innerHTML = `Sem vazamentos ativos`
+    termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
     termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     
-    status_mensagem.style.backgroundColor = '#002f5288'
+    stativosus_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
    status_mensagem.style.fontSize = `1.3vw`
    status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
   }
@@ -174,6 +181,7 @@ new Chart(linha, {
 
     todas_dash.style.display = 'none';
     dash_cozinhas.style.display = 'flex';
+    dashboard_a.style.display = 'none';
     dashboardB.style.display = 'none';
     dashboard_safe.style.display = 'none';
     dashboard_warning.style.display = 'flex';
@@ -191,17 +199,18 @@ new Chart(linha, {
     todas_dash.style.display = 'none';
     dash_cozinhas.style.display = 'flex';
     dashboardB.style.display = 'none';
+    dashboard_a.style.display = 'none';
     dashboard_safe.style.display = 'flex';
     dashboard_warning.style.display = 'none';
 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` E`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+    inicio_vazamento.innerHTML = `Sem vazamentos ativos`
+    termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
     termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     
-    status_mensagem.style.backgroundColor = '#002f5288'
+    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
    status_mensagem.style.fontSize = `1.3vw`
    status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
   }
@@ -250,6 +259,54 @@ new Chart(linha, {
         }
       }
     });
+
+    // grafico pra deixar dinamico (calace)
+
+    const linha_a = document.getElementById('chart_linha_a');
+
+  new Chart(linha_a, {
+      type: 'line',
+      data: {
+        labels: ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00'],
+        datasets: [
+          {
+            label: 'Presença de Gás',
+            data: [0, 0, 0, 0, 0, 0, 0],
+            borderColor: 'green',
+            backgroundColor: 'green',
+            borderWidth: 1
+          },
+          {
+            label: 'Limite de Segurança (2%)',
+            data: [2, 2, 2, 2, 2, 2, 2],
+            borderColor: 'blue',
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            borderWidth: 1,
+            borderDash: [5, 5],
+            pointRadius: 0
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 3,
+            title: {
+              display: true,
+              text: 'Quantidade de Gás'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Horário'
+            }
+          }
+        }
+      }
+    });
+    
     
 const linha_warning = document.getElementById('chart_linha_warning');
 
