@@ -142,8 +142,8 @@ new Chart(linha, {
 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` A`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+    inicio_vazamento.innerHTML = `Sem vazamentos ativos`
+    termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
     termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     
@@ -161,8 +161,8 @@ new Chart(linha, {
 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` C`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+    inicio_vazamento.innerHTML = `Sem vazamentos ativos`
+    termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
     termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     
@@ -196,8 +196,8 @@ new Chart(linha, {
 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` E`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
+    inicio_vazamento.innerHTML = `Sem vazamentos ativos`
+    termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
     termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     
