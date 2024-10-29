@@ -1273,6 +1273,12 @@ align-items: center;
   padding: 2vw;
 }
 
+
+.conteudo .texto p {
+  width: 45vw; /* Largura do texto */
+  padding: 2vw;
+}
+
 .texto p {
   margin: 0;
   padding: 1vw;
@@ -1284,14 +1290,14 @@ align-items: center;
 
 /* Estilos para a seção de origem do nome */
 .origem {
-  margin: 100px auto;
-  max-width: 820px;
+  margin: 5vw auto;
+  max-width: 42.5vw; /* 820px convertido para vw */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 20px;
+  font-size: 1vw; /* 20px convertido para vw */
   color: #333;
 }
 
@@ -1359,8 +1365,8 @@ align-items: center;
 
 /* Efeito hover nos cartões */
 .card:hover {
-  transform: translateY(-3px); /* Leve movimento para cima ao passar o mouse */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos específicos para a seção de missão, visão e valores */
@@ -1383,26 +1389,38 @@ align-items: center;
 
 /* Estilos para os elementos dentro dos cartões */
 .card h3 {
-  font-size: 1.7em;
+  font-size: 1.7vw;
   justify-content: center;
-  margin-bottom: 10px;
-  color: #0E4368
+  margin-bottom: 0.5vw;
+  color: #0E4368;
 }
 
 .card p {
-  font-size: 1.2em;
+  font-size: 1.0vw;
   justify-content: center;
-  line-height: 1.8;
+  line-height: 1.8vw;
   color: #333;
+}
+
+.card .valor-item {
+  font-size: 1.0vw;
+  justify-content: center;
+  line-height: 1.8vw;
+  color: #333;
+}
+
+.card .valor-item:hover {
+  color: #f0f0f0;
+  background-color: #092B43; /* Cor de fundo ao passar o mouse */
 }
 
 /* Estilizando a seção da equipe */
 .team-section {
   text-align: center;
-  padding: 50px 0;
+  padding: 2.5vw 0;
   margin-bottom: 5.5vw;
-  background-color: #f9f9f9; /* Fundo claro para destacar a seção */
-  font-family: 'Poppins', sans-serif; /* Aplicando a fonte Poppins */
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
 }
 
 .team-section h2 {
@@ -1420,62 +1438,68 @@ align-items: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1vw; /* Gap convertido para vw */
 }
 
 /* Estilo de cada membro da equipe */
 .team-member {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  padding: 20px;
+  border-radius: 0.5vw;
+  box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.1);
+  width: 15vw;
+  padding: 1vw;
   text-align: center;
-  transition: transform 0.3s ease, border 0.3s ease; /* Adicionando transição da borda */
+  transition: transform 0.3s ease, border 0.3s ease;
 }
 
 /* Adiciona borda azul ao passar o mouse no card */
 .team-member:hover {
-  transform: translateY(-10px); /* Efeito de hover para destacar */
-  border: 3px solid #0080BA; /* Borda azul ao passar o mouse */
+  transform: translateY(-0.5vw); /* Efeito de hover para destacar */
+  border: 0.15vw solid #0080BA; /* Borda azul ao passar o mouse */
 }
 
 .team-member img {
-  width: 120px;
-  height: 120px;
+  width: 10vw;
+  height: 10vw;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 0.75vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease; /* Adicionando transição para hover */
+}
+
+.team-member:hover img {
+  transform: scale(1.1); /* Aumenta levemente o tamanho da imagem no hover */
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
+  transform: translateY(-0.2vw); /* Efeito de hover para destacar */
 }
 
 .team-member h3 {
-  font-size: 20px;
-  color: #0080BA; /* Cor do nome */
-  margin-bottom: 5px;
+  font-size: 1vw;
+  color: #0080BA;
+  margin-bottom: 0.25vw;
 }
 
 .team-member p {
-  font-size: 16px;
+  font-size: 0.8vw;
   color: #888;
-  margin-bottom: 20px;
+  margin-bottom: 1vw;
 }
 
 /* Estilizando os ícones sociais */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 0.5vw;
 }
 
 .social-icons a {
   color: #002E52;
-  font-size: 20px;
+  font-size: 1.5vw;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
   color: #333; /* Cor ao passar o mouse nos ícones */
 }
-
 
 .sobre_home {
   width: 100%;
