@@ -8,7 +8,7 @@
 
 /* Estiliza o corpo da página */
 body {
-    background: linear-gradient(to right, #092B43, #145e92, #092B43 );
+    background: #ccc;
     display: flex; /* Usa Flexbox para layout */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
@@ -382,7 +382,7 @@ select {
 .input-group {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    width: 100%;
 }
 
 .input-group input {
@@ -420,4 +420,13 @@ button {
     padding: 12px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+.box_verificacao{
+    position: absolute;
+    margin-top: 3.9vw;
+    width: 28.5vw;
+   
+}
+.box_verificacao span{
+    font-size: 1.2vw;
 }

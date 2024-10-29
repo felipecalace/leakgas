@@ -80,15 +80,23 @@ new Chart(linha, {
           label: 'Presença de Gás',
           data: [0, 0, 0, 0, 10, 15, 15],
           borderColor: '#E5446D',
-          backgroundColor: 'red',
+          backgroundColor: 'orange',
           borderWidth: 1
         },
         {
-          label: 'Limite de Segurança (2%)',
+          label: 'Nível Crítico(2%)',
           data: [2, 2, 2, 2, 2, 2, 2],
+          borderColor: 'red',
+          backgroundColor: 'rgba(0, 0, 255, 0.1)',
+          borderWidth: 3,
+          borderDash: [5, 5],
+          pointRadius: 0
+        }, {
+          label: 'Limite de Segurança (0.1%)',
+          data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
           borderColor: 'blue',
           backgroundColor: 'rgba(0, 0, 255, 0.1)',
-          borderWidth: 1,
+          borderWidth: 3,
           borderDash: [5, 5],
           pointRadius: 0
         }
@@ -240,9 +248,17 @@ new Chart(linha, {
           {
             label: 'Limite de Segurança (2%)',
             data: [2, 2, 2, 2, 2, 2, 2],
+            borderColor: 'red',
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            borderWidth: 3,
+            borderDash: [5, 5],
+            pointRadius: 0
+          }, {
+            label: 'Limite de Segurança (0.1%)',
+            data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
             borderColor: 'blue',
             backgroundColor: 'rgba(0, 0, 255, 0.1)',
-            borderWidth: 1,
+            borderWidth: 3,
             borderDash: [5, 5],
             pointRadius: 0
           }
@@ -287,9 +303,17 @@ new Chart(linha, {
           {
             label: 'Limite de Segurança (2%)',
             data: [2, 2, 2, 2, 2, 2, 2],
+            borderColor: 'red',
+            backgroundColor: 'rgba(0, 0, 255, 0.1)',
+            borderWidth: 3,
+            borderDash: [5, 5],
+            pointRadius: 0
+          },{
+            label: 'Limite de Segurança (0.1%)',
+            data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
             borderColor: 'blue',
             backgroundColor: 'rgba(0, 0, 255, 0.1)',
-            borderWidth: 1,
+            borderWidth: 3,
             borderDash: [5, 5],
             pointRadius: 0
           }
@@ -331,11 +355,20 @@ new Chart(linha_warning, {
           borderWidth: 1
         },
         {
-          label: 'Limite de Segurança (2%)',
+          label: 'Nível Crítico (2%)',
           data: [2, 2, 2, 2, 2, 2, 2],
+          borderColor: 'red',
+          backgroundColor: 'rgba(0, 0, 255, 0.1)',
+          borderWidth: 3,
+          borderDash: [5, 5],
+          pointRadius: 0
+        },
+        {
+          label: 'Limite de Segurança (0.1%)',
+          data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
           borderColor: 'blue',
           backgroundColor: 'rgba(0, 0, 255, 0.1)',
-          borderWidth: 1,
+          borderWidth: 3,
           borderDash: [5, 5],
           pointRadius: 0
         }

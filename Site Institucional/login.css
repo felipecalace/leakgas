@@ -109,6 +109,13 @@ button.ghost {
     height: 100%; /* Altura total do formulário */
     text-align: center; /* Centraliza o texto */
 }
+.formulario p{
+    font-size: 1.2vw;
+    width: 9vw;
+    font-weight: 500;
+    margin-bottom: -0.2vw;
+}
+
 
 /* Estiliza os campos de entrada */
 input {

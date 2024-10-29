@@ -6,45 +6,46 @@
   <!-- Importação de ícones do FontAwesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
   <!-- Link para o arquivo de estilo CSS -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styleLoginCadastro.css">
 </head>
 <body>
 <div id="divLogin" style="display: block;">
         <!-- Link para a página inicial com um logo como botão -->
-        <a href="index.html">
-            <img src="img/logoBranco.png" alt="Home" class="home-button">
+        <a href="home.html">
+            <img src="assets/logoAzul.png" alt="Home" class="home-button">
         </a>
 
     <!-- Estrutura principal de cadastro/login -->
     <div class="container" id="container">
         <!-- Formulário para criação de conta -->
         <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Criar conta</h1>
-                <span>Insira os dados de sua empresa</span>
-                <input type="text" placeholder="nome da empresa" />
-                <input type="email" placeholder="e-mail" />
+            <form>
+                <h1>Ainda não é cliente?</h1>
+                <span>Cadastre-se agora e  faça parte da inovação!</span>
+                
                 <br>
                 <!-- Botão que chama a função para continuar para a próxima página -->
-                <button type="button" class="btn next-btn1" onclick="goToNextPage()">Continue</button>
+                <button style="cursor: pointer;" type="button" class="btn next-btn1" onclick="goToNextPage()">Continuar</button>
             </form>
         </div>
 
         <!-- Formulário de login -->
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form>
                 <h1>Entrar</h1>
                 <!-- Contêiner para login via redes sociais -->
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fa-brands fa-apple"></i></a>
+                    <a href="#" class="social"><i class="fab fa-brands fa-apple"></i></a>
                 </div>
                 <span>Ou use seu email e senha para Login</span>
-                <input type="email" placeholder="e-mail" />
-                <input type="password" placeholder="senha" />
+                <input type="email" placeholder="e-mail" id="email"/>
+                <input type="password" placeholder="senha" id="senha"/>
+                <div id="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
                 <a href="#">Esqueceu sua senha?</a>
-                <button>Entrar</button>
+                
+                <button onclick="validateLogin()" style="cursor: pointer;">Entrar</button>
             </form>
         </div>
 
@@ -55,13 +56,13 @@
                     <h1>Já é um cliente LeakGas?</h1>
                     <p>Clique abaixo e realize o login para entrar em sua conta</p>
                     <!-- Botão que ativa a transição para a tela de login -->
-                    <button class="ghost" id="signIn">Entrar</button>
+                    <button style="cursor: pointer;" class="ghost" id="signIn">Entrar</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Ainda não é cliente?</h1>
                     <p>Registre sua empresa para se tornar um cliente LeakGas</p>
                     <!-- Botão que ativa a transição para a tela de cadastro -->
-                    <button class="ghost" id="signUp">Cadastre-se</button>
+                    <button style="cursor: pointer;" class="ghost" id="signUp">Cadastre-se</button>
                 </div>
             </div>
         </div>
@@ -69,8 +70,8 @@
 </div>
 <div id="divCadastro" style="display: none;">
     <!-- Botão que retorna para a página inicial (index.html), representado por uma logo -->
-    <a href="index.html">
-        <img src="img/logoBranco.png" alt="Home" class="home-button">
+    <a href="home.html">
+        <img src="assets/logoAzul.png" alt="Home" class="home-button">
     </a>
 
     <!-- Contêiner principal do formulário -->
@@ -105,7 +106,7 @@
                     <span id="spanTelefone" style="color: red;"></span>
                     <div class="btns">
                         <!-- Botão que avança para a próxima etapa -->
-                        <button type="button" class="btn next-btn" onclick="cadastroEmpresa()">Próximo</button>
+                       <button type="button" class="btn next-btn" onclick="cadastroEmpresa()">Próximo</button>
                     </div>
                 </div>
 
@@ -183,8 +184,8 @@
                         <span id="spanEmailLoginPessoal" style="color: red;"></span>
                     </div>
                     <div class="input-group">
-                        <div id="divVerificacao" style="flex-direction: column;">
                             <input type="text" id="senhaPessoal" oninput="senhaLive()" placeholder="Senha*" required><br>
+                            <div class="box_verificacao" id="divVerificacao" style="flex-direction: column;">
                             <span id="spanSenhaPessoal" style="color: red;"></span><br  >
                             <span id="verificaCaracter">* A senha possui 8 caracteres</span><br>
                             <span id="verificaCaracterEspecial">* A senha possui caracteres especiais</span><br>
@@ -194,7 +195,7 @@
                         <input type="password" id="confirmaSenhaPessoal" placeholder="Confirme senha*" required>
                         <span id="spanConfirmaSenhaPessoal" style="color: red;"></span>
                     </div>
-                    <div class="btns">
+                    <div style="margin-top: 7vw;" class="btns">
                         <!-- Botão que retorna para a etapa anterior -->
                         <button type="button" class="btn prev-btn">Voltar</button>
                         <!-- Botão que submete o formulário -->
@@ -207,4 +208,4 @@
 </div>
 </body>
 </html>
-<script  src="./index.js"></script>
+<script  src="./scriptLoginCadastro.js"></script>
