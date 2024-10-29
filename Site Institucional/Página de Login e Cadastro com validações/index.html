@@ -183,8 +183,14 @@
                         <span id="spanEmailLoginPessoal" style="color: red;"></span>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="senhaPessoal" placeholder="Senha*" required>
-                        <span id="spanSenhaPessoal" style="color: red;"></span>
+                        <div id="divVerificacao" style="flex-direction: column;">
+                            <input type="text" id="senhaPessoal" oninput="senhaLive()" placeholder="Senha*" required><br>
+                            <span id="spanSenhaPessoal" style="color: red;"></span><br  >
+                            <span id="verificaCaracter">* A senha possui 8 caracteres</span><br>
+                            <span id="verificaCaracterEspecial">* A senha possui caracteres especiais</span><br>
+                            <span id="verificaMaiusculo">* A senha possui uma letra maiuscula</span><br>
+                            <span id="verificaMinuscula">* A senha possui uma letra minuscula</span>
+                        </div>
                         <input type="password" id="confirmaSenhaPessoal" placeholder="Confirme senha*" required>
                         <span id="spanConfirmaSenhaPessoal" style="color: red;"></span>
                     </div>

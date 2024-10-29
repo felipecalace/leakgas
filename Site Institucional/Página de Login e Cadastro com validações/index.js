@@ -205,3 +205,47 @@ function Finalizar() {
     }
 
 }
+function senhaLive(){
+  var pessoalSenha = senhaPessoal.value;
+  var tamanho_senha= pessoalSenha.length;
+  var especiais = ["!", "@", "#", "$", "%", "^", "&", "*", "(" , ")", "_", "+", "[", "]", "{","}","|",";",":","'",".","<",">","?","/"]
+  var indiceespecial;
+      if (tamanho_senha >= 8) {
+          verificaCaracter.style.color = "#008000";
+      } else {
+          verificaCaracter.style.color = "#ff0000";
+      }
+
+      for(var i = 0;i < 25; i++){
+        if (pessoalSenha.indexOf(especiais[i]) != -1){
+          verificaCaracterEspecial.style.color = "#008000";
+          break
+        }else {
+          verificaCaracterEspecial.style.color = "#ff0000";
+        }
+      }
+      if (indiceespecial) {
+          
+      } else {
+        
+      }
+  var senhaMaiuscula, senhaMinuscula;
+  senhaMaiuscula = pessoalSenha.toUpperCase();
+  senhaMinuscula = pessoalSenha.toLowerCase();
+
+  if(senhaMaiuscula != pessoalSenha){
+    verificaMinuscula.style.color = "#008000";
+  } else{
+    verificaMinuscula.style.color = "#ff0000";
+  }
+  if(senhaMinuscula != pessoalSenha){
+    verificaMaiusculo.style.color = "#008000";
+  } else{
+    verificaMaiusculo.style.color = "#ff0000";
+  }
+  if(tamanho_senha >= 8 && indice_especiais >= 0 && senhaMaiuscula != pessoalSenha && senhaMinuscula != pessoalSenha){
+    return true;
+  } else{
+    return false;
+  }
+}
