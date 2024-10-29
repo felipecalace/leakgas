@@ -40,6 +40,7 @@
 
         var multa_dobrada = patrimonial * 2
 
+        var economia = (gasto_ano_25) - (gasto_ano)
 
         
     
@@ -50,12 +51,12 @@
                                   Com um consumo de queimador de <span>${consumo_queimador} Kg/h</span> , utilizando-o por <span>${tempo_uso}</span>  minutos,
                                   usando um botijão de <span>${capacidade_botijao}  kg</span> e pagando em média <span>R$${preco_botijao}</span> 
                                   
-                                <br>A sua economia será de <span>R$${(gasto_ano_25) - (gasto_ano)}</span> com a <span>redução de 25% do vazamento por ano</span>`
+                                <br>A sua economia será de <span>R$${economia.toFixed(2)}</span> com a <span>redução de 25% do vazamento por ano</span>`
                                   
         // Exibindo o resultado de multas e prejuízos em caso de acidente
         div_resultado.innerHTML += `
         <br><br>
-                                   <h3> Gastos com multas e em caso de acidentes: </h3>
+                                   <h3> Gastos com multas e gastos em caso de acidentes: </h3>
                                     Em caso de fiscalização em seu estabelecimento e for constatado que não há nenhum tipo de monitoramento de prevenção de incêndios, as <span>multas</span> aplicadas podem atingir o valor estimado de <span>R$${patrimonial}.</span><br> Além disso, caso o estabelecimento não se regularizar em uma nova inspeção, o valor da multa poderá dobrar, chegando à <span>R$${multa_dobrada}!</span><br> Na terceira inspeção, há ainda o risco de <span>suspensão temporária das atividades da sua empresa</span> até que as exigências de segurança sejam cumpridas, gerando um prejuízo diário .<br>
                                   O prejuízo em relação à infraestrutura e investimentos relacionados à equipamentos será de <span>100% de todo dinheiro investido! </span><br>
                                   
@@ -63,7 +64,7 @@
                                   </span>`
     
         div_resultado.innerHTML += `<br>
-                                    Com a LeakGas, em caso de vazamento avisaremos à você <span>em até 5 minutos</span>, evitando prejuízos e dores de cabeça!`
+                                    Com a LeakGas, em caso de vazamento avisaremos à você <span>em menos de 5 minutos</span>, evitando prejuízos e dores de cabeça!`
                                 
       }
 
@@ -144,17 +145,24 @@ new Chart(linha, {
     dashboard_safe.style.display = 'none';
     dashboard_a.style.display = 'flex';
     dashboard_warning.style.display = 'none';
-
+ 
     inicio_vazamento.style.color = 'green'
     cozinha_selecionada.innerHTML = ` A`
     inicio_vazamento.innerHTML = `Sem vazamentos ativos`
     termino_vazamento.innerHTML = `Sem vazamentos ativos`
     
-    termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
-    
+   termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
     status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
    status_mensagem.style.fontSize = `1.3vw`
    status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
+
+  //  if( se o vazamento for == 0 ){
+  //   termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
+  //  }else if(se o vazamento for < 2){
+  //   termino_vazamento.innerHTML = `<img class='leak_amarelo' src="./assets/leak_amarelo.png">`
+  //  }else{
+  //   termino_vazamento.innerHTML = `<img class='leak_vermelho' src="./assets/leak_vermelho.png">`
+  //  }
    
   }
 
