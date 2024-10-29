@@ -1,96 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="text/javascript" defer></script>
+    <title>DashBoard </title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" ></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
-    <title>LeakGas - Dashboard</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container_dashboard">
-    <div class="nav_dash">
-      <div class="box_icons">
-        <a href="./dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav" src="assets/back_icon.png" alt=""></a>
-        <a href="./home.html"><img class="icons_nav" src="assets/icon_home.png" alt=""></a>
-        <a href=""><img class="icons_nav" src="assets/lupa_icon.png" alt=""></a>
-        <a href=""><img class="icons_nav" src="assets/configurar_icon.png" alt=""></a>
-      </div>
-    </div>
-
-    <div class="main_content">
-      <div class="header_dash">
-        <div class="box_usuario_header_dash">
-          <img class="imagem_guest" src="./assets/guest_icon.png">
-          <div class="box_texto_usuario">
-            <h2>XPTO</h2>
-            <p>Bem vindo, Guest da Silva</p>
-          </div>
-        </div> 
-        <div class="box_trespontos">
-          <img  class="trespontos" src="./assets/pontos_icon.png" alt="">
-        </div>
-      </div>
-
-
-      <div class="container_sessoes">
-        <div id="todas_dash" class="container_monitorados">
-        <div class="header_sessoes">
-        <div class="box_kpi"> <h4>Cozinhas Monitoradas:</h4> <p>5</p></div>
-         <div class="box_kpi"><h4>Último Vazamento:</h4> <span>ATIVO</span></div> 
-         <div class="box_kpi"><h4>Vazamentos Ativos:</h4> <div class="imagem_danger_header"><span>1</span> <img src="./assets/danger_icon.png" alt=""> </div></div>
-        </div>
-    <div class="linha">
-        <div class="box_sessao" onclick="cozinhaA()"><img class="imagem_sessao" src="./assets/safe.png" alt=""> <div class="title_sec"><h4>Cozinha A</h4></div></div>
-        <div class="box_sessao" onclick="cozinhaB()"><img class="imagem_sessao" src="./assets/danger.png" alt=""> <div class="title_sec"><h4>Cozinha B</h4></div></div> 
-        <div class="box_sessao" onclick="cozinhaC()"><img class="imagem_sessao" src="./assets/safe.png" alt=""> <div class="title_sec"><h4>Cozinha C</h4></div></div>
-    </div>
-    <div class="linha">
-
-        <div class="box_more"><img class="imagem_mais" src="./assets/more.png" alt=""> </div>
-    </div>
-    </div>
-
-<div id="dash_cozinhas" class="container_cozinhas">
-
-    <div class="box_cozinhas">
-        <div class="cozinhas" onclick="cozinhaA()"><div class="imagem_cozinha_safe"></div><p>Cozinha A</p></div>
-        <div class="cozinhas" onclick="cozinhaB()"><div class="imagem_cozinha_danger"></div><p>Cozinha B</p></div>
-        <div class="cozinhas" onclick="cozinhaC()"><div class="imagem_cozinha_safe "></div><p>Cozinha C</p></div>
-    </div> 
-    <div class="box_dashboards">
-        <div class="box_kpi_dash">
-    <div class="kpi_dash"><h4>Cozinha Selelecionada:</h4> <div style="display: flex;"><p style="margin-right: 1vw;">Cozinha <b id="cozinha_selecionada"> </b></p></div></div> 
-    <div class="kpi_dash"><h4>Inicio do vazamento:</h4> <p id="inicio_vazamento"></p></div> 
-    <div class="kpi_dash"><h4>Término do vazamento:</h4> <p id="termino_vazamento"></p></div>
+    <div class="header">
+    <img src="./assets/logo.png">
+    <h1>QUANTIDADE DE GÁS NO AMBIENTE:</h1>
 </div>
-    <div id="dashboardB" class="dashboard">
-        <canvas class="grafico" id="chart_linha"></canvas>
-    </div>
-
-    <!-- dashboard que está recebendo os dados do arduino, cozinha A -->
-    <div class="dashboard_safe" style="height: 100vw; width: auto;">
-      <canvas id="sensorAnalogico"></canvas>
-    </div>
-    </div>
-
-</div>
-
+<img class="logo_back" src="./assets/logo_back.png" alt="">
+    <div class="box_dash">
+        <div class="dashboard">
+            <canvas id="sensorAnalogico"></canvas>
+        </div>
 
     </div>
-    </div>
-  </div>
-</body>
-</html>
-<script>
-var sensorAnalogico = new Chart(document.getElementById('sensorAnalogico').getContext('2d'), {
+
+    <script>
+        var sensorAnalogico = new Chart(document.getElementById('sensorAnalogico').getContext('2d'), {
             type: 'line',
             data: {
                 datasets: [{
@@ -151,57 +86,7 @@ var sensorAnalogico = new Chart(document.getElementById('sensorAnalogico').getCo
             obterDados(sensorAnalogico, 'analogico')
         }, 1000);
 
-        function cozinhaB(){
-    todas_dash.style.display = 'none';
-    dash_cozinhas.style.display = 'flex';
-    cozinha_selecionada.innerHTML = ` B`
-    inicio_vazamento.innerHTML = `10:00`
-    termino_vazamento.innerHTML = `ATIVO`
-    
-    dashboardB.style.display = 'flex';
-    dashboard_safe.style.display = 'none';
-  }
+    </script>
+</body>
 
-  function cozinhaA(){
-    todas_dash.style.display = 'none';
-    dash_cozinhas.style.display = 'flex';
-    dashboardB.style.display = 'none';
-    dashboard_safe.style.display = 'flex';
-    
-    cozinha_selecionada.innerHTML = ` A`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
-  }
-  function cozinhaC(){
-    todas_dash.style.display = 'none';
-    dash_cozinhas.style.display = 'flex';
-    dashboardB.style.display = 'none';
-    dashboard_safe.style.display = 'flex';
-    
-    cozinha_selecionada.innerHTML = ` C`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
-  }
-  function cozinhaD(){
-    todas_dash.style.display = 'none';
-    dash_cozinhas.style.display = 'flex';
-    dashboardB.style.display = 'none';
-    dashboard_safe.style.display = 'flex';
-    
-    cozinha_selecionada.innerHTML = ` D`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
-  }
-  function cozinhaE(){
-    todas_dash.style.display = 'none';
-    dash_cozinhas.style.display = 'flex';
-    dashboardB.style.display = 'none';
-    dashboard_safe.style.display = 'flex';
-    
-    cozinha_selecionada.innerHTML = ` E`
-    inicio_vazamento.innerHTML = `Sem vazamentos recentes`
-    termino_vazamento.innerHTML = `Sem vazamentos recentes`
-  }
-
-
-</script>
+</html>
