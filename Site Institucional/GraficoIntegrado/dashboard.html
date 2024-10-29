@@ -19,8 +19,8 @@
   <div class="container_dashboard">
     <div class="nav_dash">
       <div class="box_icons">
-        <a href="./dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav" src="assets/back_icon.png" alt=""></a>
-        <a href="./homeLogado.html"><img class="icons_nav" src="assets/icon_home.png" alt=""></a>
+        <a href="../dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav" src="assets/back_icon.png" alt=""></a>
+        <a href="../home.html"><img class="icons_nav" src="assets/icon_home.png" alt=""></a>
         <a onclick="barras()" style="cursor: pointer;"><img class="icons_nav" src="assets/barra_icon.png" alt=""></a>
         <a href=""><img class="icons_nav" src="assets/configurar_icon.png" alt=""></a>
       </div>
@@ -189,7 +189,20 @@
                 .catch(error => console.error('Erro ao obter dados:', error));
         }
 
+        function desenhozinho(){
+          if(document.getElementById('sensorAnalogico') == 0){
+            console.log("zerado");
+          }else if(document.getElementById('sensorAnalogico') <= 2){
+            console.log("marelo");
+          }else{
+            console.log("vermelo")
+          }
+        }
+
         setInterval(() => {
             obterDados(sensorAnalogico, 'analogico')
+        },
+        () =>{
+            desenhozinho()
         }, 1000);
 </script>
