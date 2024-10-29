@@ -102,21 +102,23 @@ a:hover{
 .home_embarque{
   display: flex;
   justify-content: center;
-  align-items: column;
-  flex-wrap: wrap;
+  align-items: center;
+  
+  flex-direction: column;
   color: white;
   height: 19vw;
   width: 80vw;
-  margin-top: 10vw;
+  margin-top: 5vw;
   text-align: center;
 }
 h2{
-  font-size: 2vw;
+  font-size: 2.5vw;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
 .home_embarque a{
   background-color: #e2e2e2a8;
+  color: white;
   /* background-color: #092b43cf; */
   border-radius: 0.5vw;
   width: 24vw;
@@ -126,10 +128,17 @@ h2{
   font-size: 1.8vw;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  margin-top: 0vw;
+  margin-top: 2vw;
+}
+.home_embarque span{
+  font-weight: 700; 
+  padding-left: 0.2vw;
+  padding-right: 0.2vw;
+  font-family: "Poppins", sans-serif;
 }
 .home_embarque a:hover{
   background-color: #002f52b9;
+  color: white;
   font-weight: 900;
   transition: all 0.5s ease; /* Para animações suaves em elementos */
  
@@ -499,7 +508,7 @@ font-size: 1.4vw
     text-align: center;
     font-size: 2vw;
     font-weight: 400;
-    text-decoration: underline;
+    font-weight: 600;
   color:#092B43;
   margin-top: 2vw;
   position: absolute;
@@ -663,7 +672,7 @@ background-color: #eeeeee;
     width: 100%;
   }
   .box_kpi img{
-    width: 3.5vw;
+    width: 4vw;
 
     margin-right: 2vw;
   }
@@ -717,8 +726,45 @@ background-color: #eeeeee;
   flex-direction: column;
   
   }
-  .container_monitorados{
+.container_barras{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box_barras{
+  background-color: white;
   display: flex;
+  padding-right: 5vw;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80vw;
+  border-radius: 0.5vw;
+  height: 22vw;
+  margin-top: 1vw;
+}
+.grafico_barras{
+  background-color: red;
+  
+  width: 100vw;
+}
+
+.texto_ano{
+  width: 100%;
+  height: 20vw;
+  padding: 1vw;
+}
+.texto_ano span{
+  font-weight: bold;
+}
+.texto_ano h3{
+  font-size: 1.4vw;
+}
+.texto_ano p{
+  margin-top: 1vw;
+  font-size: 1.5vw;
+}
+  .container_monitorados{
   flex-direction: column;
   justify-content: space-between;
   display: flex; /*ESTÁ FAZENDO A CAIXA SUMIR, PRECISA FAZER UMA LÓGICA COM ONCLICK!!!*/
@@ -798,6 +844,15 @@ cursor: pointer;
   width: 80%;
   height: 7vw;
   background-image: url(./assets/safe.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5vw;
+  margin-top: 1vw;
+}
+.imagem_cozinha_warning{
+  width: 80%;
+  height: 7vw;
+  background-image: url(./assets/warning.png);
   background-size: cover;
   background-position: center;
   border-radius: 0.5vw;
@@ -894,7 +949,34 @@ border-radius: 0.4vw;
     position: absolute;
     z-index: 2
   }
+.status_mensagem{
+  width: 10vw;
+  font-size: 1.4vw;
+  font-weight: bold;
+ background-color: rgb(145, 145, 28);
+  color: white;
+  padding-left: 0.2vw;
+  border-radius: 0.4vw;
+  position: absolute;
+  margin-bottom: 10vw;
+  margin-top: -9.5vw;
+  right: 7.5vw;
+}
+  .leak_azul{
+    width: 5vw;
+    height: 5vw;
 
+  }
+  .leak_amarelo{
+    width: 5vw;
+    height: 5vw;
+
+  }
+  .leak_vermelho{
+    width: 5vw;
+    height: 5vw;
+
+  }
   /*ESTILIZAÇÃO DA ABA SERVIÇOS*/
 
   .container_servicos{
@@ -928,10 +1010,17 @@ border-radius: 0.4vw;
     font-size:1.5vw;
     font-weight: 500;
   }
-  .box_itens img{
+ 
+  .img_servicos{
     width: 5vw;
     height: 4vw;
     margin-right: 1vw;
+    margin-top: 0.8vw;
+  }
+  .imgTreinamento{
+    width: 8vw;
+    height: 9vh;
+    margin-right: 0.1vw;
     margin-top: 0.8vw;
   }
   .box_itens h2{
@@ -1040,16 +1129,22 @@ align-items: center;
     font-size: 1.3vw;
     color: white;
   }
+
   .box_resultado{
     width: 40vw;
   }
+
 .input_calc{
   height: 3.2vw;
   border-radius: 0.5vw;
   border: none;
-  
+  padding-left: 1vw;
+  font-size: 1.5vw;
   margin-bottom: 1.5vw;
-  
+}
+
+.input_calc::placeholder{
+  padding-left: 2vw;
 }
 .button_calc{
   height: 5.4vw;
@@ -1122,16 +1217,358 @@ align-items: center;
   height: 60vh;
   z-index: -2;
 }
-.box_usuario{
+
+
+/*ESTILIZAÇÃO DO SOBRE*/
+
+.container_sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_sobre h2 {
+  font-size: 3vw;
+  color: #002E52;
+  text-align: center;
+  margin: 3vw 0 1vw 0;
+}
+
+.conteudo {
+  display: flex; /* Flex para alinhar a imagem e o texto lado a lado */
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center; 
+  margin: auto;
+}
+
+.img_sobre {
+  height: 22vw;
+  width: 40vw; /* Limite máximo para evitar zoom excessivo */
+  border-radius: 2vw; /* Bordas arredondadas */
+  margin: 4.5vw 2vw;
+  justify-content: center;
+  border: 1px solid #D9D9D9;
+}
+.sombra_img_sobre{
+  width: 40vw; /* Largura da imagem */
+  height: 22vw; /* Limite máximo para evitar zoom excessivo */
+  border-radius: 2vw;
+  position: absolute;
+  z-index: -2;
+  top: 51vw;
+  margin: 7vw 2vw;
+  margin-left: 1vw;
+  background-color:#002E52;
+}
+.sombra_img_sobre2{
+  width: 40vw; /* Largura da imagem */
+  height: 22vw; /* Limite máximo para evitar zoom excessivo */
+  border-radius: 2vw;
+  position: absolute;
+  z-index: -2;
+  right: 4vw;
+  margin: 6.2vw 2vw;
+  margin-left: 1vw;
+  background-color:#002E52;
+}
+.texto {
+  width: 45vw; /* Largura do texto */
+  padding: 2vw;
+}
+
+
+.conteudo .texto p {
+  width: 45vw; /* Largura do texto */
+  padding: 2vw;
+}
+
+.texto p {
+  margin: 0;
+  padding: 1vw;
+  line-height: 1.5;
+  color: #092B43;
+  text-align: justify;
+  padding-top: 1vw;
+}
+
+/* Estilos para a seção de origem do nome */
+.origem {
+  margin: 5vw auto;
+  max-width: 42.5vw; /* 820px convertido para vw */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1vw; /* 20px convertido para vw */
+  color: #333;
+}
+
+.origem h2 {
+  color: #092B43;
+}
+
+.origem b {
+  color: #08568e;
+}
+
+/* Estilos para os parágrafos */
+.texto p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+/* Estilos para os cards de texto */
+.text-card {
+  background-color: #ffffff;
+  border-radius: 2vw;
+  padding: 5vw;
+  margin: 5vw;
+}
+
+/* Estilos para os parágrafos dentro do card */
+.text-card p {
+  margin-bottom: 7vw;
+  line-height: 0.9vw;
+  color: #333;
+}
+
+.valor-item {
+  font-size: 1.1em;
+  margin: 8px 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.valor-item:hover {
+  color: #f0f0f0;
+  background-color: #092B43; /* Cor de fundo ao passar o mouse */
+}
+
+.card i {
+  font-size: 30px;
+  color: #092B43;
+  margin-bottom: 10px;
+}
+
+/* Estilos para os cartões */
+.card {
+  flex: 1 1 200px;
+  max-width: 25%;
+  background-color: #ffffff;
+  border-radius: 4vw;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição ao passar o mouse */
+}
+
+/* Efeito hover nos cartões */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos específicos para a seção de missão, visão e valores */
+.missao-visao-valores {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card img {
+  width: 18%;
+  justify-content: center;
+  margin-bottom: 1vw;
+}
+
+.card i img {
+  width: 11%;
+  justify-content: center;
+}
+
+/* Estilos para os elementos dentro dos cartões */
+.card h3 {
+  font-size: 1.7vw;
+  justify-content: center;
+  margin-bottom: 0.5vw;
+  color: #0E4368;
+}
+
+.card p {
+  font-size: 1.0vw;
+  justify-content: center;
+  line-height: 1.8vw;
+  color: #333;
+}
+
+.card .valor-item {
+  font-size: 1.0vw;
+  justify-content: center;
+  line-height: 1.8vw;
+  color: #333;
+}
+
+.card .valor-item:hover {
+  color: #f0f0f0;
+  background-color: #092B43; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilizando a seção da equipe */
+.team-section {
+  text-align: center;
+  padding: 2.5vw 0;
+  margin-bottom: 5.5vw;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.team-section h2 {
+  color: #002E52;
+  margin: 0.5vw 0vw 2vw 0vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Container para os perfis da equipe */
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1vw; /* Gap convertido para vw */
+}
+
+/* Estilo de cada membro da equipe */
+.team-member {
+  background-color: #fff;
+  border-radius: 0.5vw;
+  box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.1);
+  width: 15vw;
+  padding: 1vw;
+  text-align: center;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+/* Adiciona borda azul ao passar o mouse no card */
+.team-member:hover {
+  transform: translateY(-0.5vw); /* Efeito de hover para destacar */
+  border: 0.15vw solid #0080BA; /* Borda azul ao passar o mouse */
+}
+
+.team-member img {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  margin-bottom: 0.75vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease; /* Adicionando transição para hover */
+}
+
+.team-member:hover img {
+  transform: scale(1.1); /* Aumenta levemente o tamanho da imagem no hover */
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
+  transform: translateY(-0.2vw); /* Efeito de hover para destacar */
+}
+
+.team-member h3 {
+  font-size: 1vw;
+  color: #0080BA;
+  margin-bottom: 0.25vw;
+}
+
+.team-member p {
+  font-size: 0.8vw;
+  color: #888;
+  margin-bottom: 1vw;
+}
+
+/* Estilizando os ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5vw;
+}
+
+.social-icons a {
+  color: #002E52;
+  font-size: 1.5vw;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #333; /* Cor ao passar o mouse nos ícones */
+}
+
+.sobre_home {
+  width: 100%;
+  height: 50vw;
+  background-color: white;
+}
+
+.container_sobre_home {
+  width: 100%;
+  height: 58vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 9vw;
+  color: #092B43
+}
+
+.container_sobre_home img {
+  height: 32vw;
+  border-radius: 0.4vw;
+}
+
+.box_sobre_home {
+  padding-top: 1.3vw;
+  width: 40vw;
+  margin-left: 6vw;
+}
+
+.box_sobre_home h3 {
+  font-size: 2.4vw;
+  font-weight: 600;
+}
+
+.box_sobre_home p {
+  margin-top: 1.2vw;
+  font-size: 1.7vw;
+}
+
+.box_sobre_home span {
+  font-weight: bold;
+}
+
+.box_sobre_home a {
+  background-color: #092B43;
+  display: flex;
+  width: 20vw;
+  height: 5vw;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 0.4vw;
+  margin-top: 1vw;
+}
+
+
+/*BOX LOGIN E CADASTRO*/
+.box_login_cadastro{
   display: flex;
   margin-left: 1vw;
   margin-right: 1vw;
   justify-content: space-around;
   align-items: center;
   width: 20vw;
-  
 }
-.box_usuario a{
+.box_login_cadastro a{
   width: 9vw;
   height: 3vw;
   border-radius: 0.5vw;
@@ -1152,4 +1589,55 @@ align-items: center;
 .logar{
   background-color: #0080BA;
   font-size: 1.3vw;
+}
+
+/*ESTILIZAÇÃO DO GUEST*/
+
+.guest-circle {
+  width: 5vw;
+  height: 5vw;
+  overflow: hidden;
+  cursor: pointer;
+  margin-right: 1vw;
+  margin-top: 0.5vw;
+cursor: pointer;
+  display: flex;
+}
+
+.guest-img {
+  width: 4vw;
+  height: 4vw;
+  
+  border: 2px solid #002E52;
+  border-radius: 50%;
+}
+
+/* Estilo do Modal */
+.modal {
+  display: none; /* Oculta inicialmente */
+  background-color: #002f528e;
+  border: 2px solid #888;
+  position: absolute;
+  margin-top: 4.9vw;
+  transform: translateY(-10px); /* Levemente fora da posição */
+  right: 1vw;
+  width: 10vw;
+  font-size: 1.5vw;
+  border-radius: 0.5vw;
+  height: 10vw;
+  color: white;
+  padding: 1vw;
+}
+
+.modal p:hover{
+  font-weight: 800;
+}
+
+/* Exibe o modal ao passar o mouse */
+.guest-circle:hover .modal {
+  transition: opacity 0.3s ease-in-out; /* Define transição suave */
+  display: block;
+  opacity: 1; /* Exibe o modal com efeito de fade */
+  pointer-events: auto; /* Permite interação quando visível */
+  transform: translateY(0); /* Move para a posição original */
 }
