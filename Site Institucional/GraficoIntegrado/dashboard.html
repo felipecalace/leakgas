@@ -133,7 +133,7 @@
                 },
                 {
                     label: 'Limite de Segurança (2%)',
-                    data: [2, 2, 2, 2, 2, 2, 2],
+                    data: [2, 2, 2, 2, 2],
                     borderColor: 'blue',
                     backgroundColor: 'rgba(0, 0, 255, 0.1)',
                     borderWidth: 1,
@@ -188,21 +188,7 @@
                 })
                 .catch(error => console.error('Erro ao obter dados:', error));
         }
-
-        function desenhozinho(){
-          if(document.getElementById('sensorAnalogico') == 0){
-            console.log("zerado");
-          }else if(document.getElementById('sensorAnalogico') <= 2){
-            console.log("marelo");
-          }else{
-            console.log("vermelo")
-          }
-        }
-
         setInterval(() => {
-            obterDados(sensorAnalogico, 'analogico')
-        },
-        () =>{
-            desenhozinho()
+            obterDados(sensorAnalogico, 'analogico');
         }, 1000);
 </script>
