@@ -47,21 +47,20 @@
         div_resultado.style.display =  'block'
         // Exibindo o resultado dos gastos adicionais esperados
         div_resultado.innerHTML += `
-                                  <h3> Gastos adicionais relacionados à vazamento: </h3>
-                                  Com um consumo de queimador de <span>${consumo_queimador} Kg/h</span> , utilizando-o por <span>${tempo_uso}</span>  minutos,
-                                  usando um botijão de <span>${capacidade_botijao}  kg</span> e pagando em média <span>R$${preco_botijao}</span> 
+                                  <h3> Com um consumo de <span> ${consumo_queimador} </span> e um tempo de uso de <span> ${tempo_uso} </span>, 
+                                  um botijão de <span> ${capacidade_botijao} </span> tem um custo médio de <span> ${preco_botijao} </span>, 
+                                  com uma redução de <span> 25% no vazamento</span>, a economia estimada por ano é de R$<span> ${economia.toFixed(2)} </span>.`
                                   
-                                <br>A sua economia será de <span>R$${economia.toFixed(2)}</span> com a <span>redução de 25% do vazamento por ano</span>`
+                               
                                   
         // Exibindo o resultado de multas e prejuízos em caso de acidente
         div_resultado.innerHTML += `
         <br><br>
                                    <h3> Gastos com multas e gastos em caso de acidentes: </h3>
-                                    Em caso de fiscalização em seu estabelecimento e for constatado que não há nenhum tipo de monitoramento de prevenção de incêndios, as <span>multas</span> aplicadas podem atingir o valor estimado de <span>R$${patrimonial}.</span><br> Além disso, caso o estabelecimento não se regularizar em uma nova inspeção, o valor da multa poderá dobrar, chegando à <span>R$${multa_dobrada}!</span><br> Na terceira inspeção, há ainda o risco de <span>suspensão temporária das atividades da sua empresa</span> até que as exigências de segurança sejam cumpridas, gerando um prejuízo diário .<br>
-                                  O prejuízo em relação à infraestrutura e investimentos relacionados à equipamentos será de <span>100% de todo dinheiro investido! </span><br>
-                                  
-                                  
-                                  </span>`
+                                    <p>Se o estabelecimento não tiver monitoramento de prevenção de incêndios, as multas podem chegar a <span> ${patrimonial}</span>.
+                                   Em caso de reincidência, a multa pode dobrar, totalizando <span>${multa_dobrada} </span>. 
+                                   Na terceira inspeção, há risco de <span> suspensão </span> temporária das atividades a
+                                   té que as exigências sejam atendidas, gerando prejuízo diário e <span> perda total do patrimonio </span>.`
     
         div_resultado.innerHTML += `<br>
                                     Com a LeakGas, em caso de vazamento avisaremos à você <span>em menos de 5 minutos</span>, evitando prejuízos e dores de cabeça!`
