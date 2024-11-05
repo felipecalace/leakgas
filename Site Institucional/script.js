@@ -64,7 +64,7 @@ function calcular(){
                             
   // Exibindo o resultado de multas e prejuízos em caso de acidente
   div_resultado.innerHTML += `
-  <br><br>
+  <br>
                              <h3> Gastos com multas e gastos em caso de acidentes: </h3>
                               <p>Se o estabelecimento não tiver monitoramento de prevenção de incêndios, as multas podem chegar a <span> ${patrimonial}</span>.
                              Em caso de reincidência, a multa pode dobrar, totalizando <span>${multa_dobrada} </span>. 
