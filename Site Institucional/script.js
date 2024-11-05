@@ -54,7 +54,7 @@ function calcular(){
   // Exibindo o resultado dos gastos adicionais esperados
   div_resultado.innerHTML += `
                             <p> A <span> Associação Nacional de Proteção contra Incêndios (NFPA) </span> é uma organização global 
-                            sem fins lucrativos, estabelecida em 1896, dedicada a <span> eliminar mortes , 
+                            estabelecida em 1896, dedicada a <span> eliminar mortes, 
                             ferimentos, propriedades e perdas econômicas devido a 
                             incêndios e, riscos elétricos </span>. Com o seu comércio fora 
                             das normas você estará sujeitos a <span> multas. </span>
@@ -68,11 +68,12 @@ function calcular(){
                              <h3> Gastos com multas e gastos em caso de acidentes: </h3>
                               <p>Se o estabelecimento não tiver monitoramento de prevenção de incêndios, as multas podem chegar a <span> ${patrimonial}</span>.
                              Em caso de reincidência, a multa pode dobrar, totalizando <span>${multa_dobrada} </span>. 
-                             Na terceira inspeção, há risco de <span> suspensão </span> temporária das atividades a
-                             té que as exigências sejam atendidas, gerando prejuízo diário e <span> perda total do patrimonio </span>.`
+                             Na terceira inspeção, há risco de <span> suspensão </span> temporária das atividades 
+                             até que as exigências sejam atendidas, gerando prejuízo diário e <span> perda total do patrimonio </span>.`
+
 
   div_resultado.innerHTML += `<br>
-                              Com a LeakGas, em caso de vazamento avisaremos à você <span>em menos de 5 minutos</span>, evitando prejuízos e dores de cabeça!`
+                              Com a LeakGas, em caso de vazamento avisaremos à você <span>imediatamente</span>, evitando prejuízos e dores de cabeça!`
                           
 }
 
