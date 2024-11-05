@@ -1103,6 +1103,7 @@ align-items: center;
     margin-top: -5vw;
     margin-bottom: 2vw;
     color: #002E52;
+    
   }
   .box_simulador{
     width: 80vw;
@@ -1124,6 +1125,7 @@ align-items: center;
     padding-top: 1vw;
     padding-left: 3vw;
     padding-right: 3vw;
+    
   }
   .box_inserir p{
     font-size: 1.3vw;
@@ -1132,6 +1134,7 @@ align-items: center;
 
   .box_resultado{
     width: 40vw;
+    line-height: 6vh;
   }
 
 .input_calc{
