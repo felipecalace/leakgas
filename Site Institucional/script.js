@@ -120,34 +120,9 @@ new Chart(linha, {
     }
   }
 });
-<<<<<<< HEAD
-=======
 
 
 
-// PARA NAVEGAR ENTRE A DASHBOARD
-
-function cozinhaB() {
-  todas_dash.style.display = 'none';
-  dash_cozinhas.style.display = 'flex';
-  cozinha_selecionada.innerHTML = ` B`
-  inicio_vazamento.innerHTML = `10:00`
-  dashboard_a.style.display = 'none';
-  inicio_vazamento.style.color = 'red'
-
-  termino_vazamento.innerHTML = `<img class='leak_vermelho' src="./assets/leak_vermelho.png">`
-  status_mensagem.innerHTML = `Vazamento crítico ativo, risco de explosões!`
-  status_mensagem.style.backgroundColor = 'rgba(150, 24, 24, 0.63)'
-
-  dashboardB.style.display = 'flex';
-  dashboard_safe.style.display = 'none';
-  dashboard_warning.style.display = 'none';
-}
->>>>>>> 5e6895e6ee1e0b71c847dd2e7ade66c970f633c6
-
-
-
-<<<<<<< HEAD
 // PARA NAVEGAR ENTRE A DASHBOARD
 
 function cozinhaB() {
@@ -322,8 +297,6 @@ function selecionarCozinhaE() {
 }
 
 
-=======
->>>>>>> 5e6895e6ee1e0b71c847dd2e7ade66c970f633c6
 function cozinhaA() {
   todas_dash.style.display = 'none';
   dash_cozinhas.style.display = 'flex';
@@ -408,7 +381,6 @@ function cozinhaE() {
   status_mensagem.style.fontSize = `1.3vw`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
 }
-<<<<<<< HEAD
 
 //   const linha_safe = document.getElementById('chart_linha_safe');
 
@@ -572,171 +544,6 @@ function cozinhaE() {
 //       }
 //     }
 //   });
-=======
-
-const linha_safe = document.getElementById('chart_linha_safe');
-
-new Chart(linha_safe, {
-  type: 'line',
-  data: {
-    labels: ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00'],
-    datasets: [
-      {
-        label: 'Presença de Gás',
-        data: [0, 0, 0, 0, 0, 0, 0],
-        borderColor: 'green',
-        backgroundColor: 'green',
-        borderWidth: 1
-      },
-      {
-        label: 'Limite de Segurança (2%)',
-        data: [2, 2, 2, 2, 2, 2, 2],
-        borderColor: 'red',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }, {
-        label: 'Limite de Segurança (0.1%)',
-        data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-        borderColor: 'blue',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 3,
-        title: {
-          display: true,
-          text: 'Quantidade de Gás'
-        }
-      },
-      x: {
-        title: {
-          display: true,
-          text: 'Horário'
-        }
-      }
-    }
-  }
-});
-
-// grafico pra deixar dinamico (calace)
-
-const linha_a = document.getElementById('chart_linha_a');
-
-new Chart(linha_a, {
-  type: 'line',
-  data: {
-    labels: ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00'],
-    datasets: [
-      {
-        label: 'Presença de Gás',
-        data: [0, 0, 0, 0, 0, 0, 0],
-        borderColor: 'green',
-        backgroundColor: 'green',
-        borderWidth: 1
-      },
-      {
-        label: 'Limite de Segurança (2%)',
-        data: [2, 2, 2, 2, 2, 2, 2],
-        borderColor: 'red',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }, {
-        label: 'Limite de Segurança (0.1%)',
-        data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-        borderColor: 'blue',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 3,
-        title: {
-          display: true,
-          text: 'Quantidade de Gás'
-        }
-      },
-      x: {
-        title: {
-          display: true,
-          text: 'Horário'
-        }
-      }
-    }
-  }
-});
-
-
-const linha_warning = document.getElementById('chart_linha_warning');
-
-new Chart(linha_warning, {
-  type: 'line',
-  data: {
-    labels: ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00'],
-    datasets: [
-      {
-        label: 'Presença de Gás',
-        data: [0, 0.5, 1, 1.2, 1, 2, 2],
-        borderColor: 'yellow',
-        backgroundColor: 'yellow',
-        borderWidth: 1
-      },
-      {
-        label: 'Nível Crítico (2%)',
-        data: [2, 2, 2, 2, 2, 2, 2],
-        borderColor: 'red',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      },
-      {
-        label: 'Limite de Segurança (0.1%)',
-        data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-        borderColor: 'blue',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 3,
-        title: {
-          display: true,
-          text: 'Quantidade de Gás'
-        }
-      },
-      x: {
-        title: {
-          display: true,
-          text: 'Horário'
-        }
-      }
-    }
-  }
-});
->>>>>>> 5e6895e6ee1e0b71c847dd2e7ade66c970f633c6
 
 function barras() {
   todas_dash.style.display = 'none';
@@ -837,7 +644,6 @@ new Chart(linha_ano, {
         }
       }
     }
-<<<<<<< HEAD
   }
 });
 
@@ -2048,83 +1854,3 @@ new Chart(linha_dois_e, {
     }
   }
 });
-=======
-  }
-});
-
-
-
-
-
-// lógica para o login
-
-var logado = false;
-
-
-
-
-function logar() {
-
-  var email_login = ipt_email_login.value
-  var senha_login = ipt_senha_login.value
-
-  if (email_login == 'admin@admin' && senha_login == 'admin') {
-    localStorage.setItem("logado", "true"); // Armazena o valor "true" no localStorage
-    window.location.href = 'dashboard.html'
-
-    p_mensagem_login.innerHTML = ''
-  } else {
-    p_mensagem_login.innerHTML = `&times; Usuário ou senha incorretos, tente novamente!<br><br>`
-  }
-}
-// Função que verifica algo quando a página é carregada
-function verificarLogin() {
-
-  if (localStorage.getItem("logado") !== "true") {
-    box_loginCadastro.style.display = 'none';
-  }
-
-
-  if (localStorage.getItem("logado") !== "true") {
-    alert("Você precisa estar logado para acessar essa página.");
-    window.location.href = 'login.html'; // Redireciona para a página de login, se não estiver logado
-  }
-}
-
-
-
-
-// Adiciona um listener para o evento 'DOMContentLoaded'
-document.addEventListener('DOMContentLoaded', verificarLogin);
-
-
-
-/*LÓGICA DO GUEST*/
-// Obtendo elementos do DOM
-const modal = document.getElementById('modal');
-const guestCircle = document.getElementById('guestCircle');
-const spanClose = document.getElementsByClassName('close')[0];
-
-// Quando o mouse entra no círculo do guest, o modal é aberto
-guestCircle.addEventListener('mouseover', function () {
-  modal.style.display = 'block';
-});
-
-// Quando o mouse sai do círculo do guest, o modal é fechado
-guestCircle.addEventListener('mouseout', function () {
-  modal.style.display = 'none';
-});
-
-// Também fecha o modal ao clicar no "X"
-spanClose.onclick = function () {
-  modal.style.display = 'none';
-};
-
-// Quando o usuário clica fora do modal, ele também é fechado
-window.onclick = function (event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-}
-
->>>>>>> 5e6895e6ee1e0b71c847dd2e7ade66c970f633c6
