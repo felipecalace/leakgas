@@ -10,7 +10,7 @@ function calcular(){
 
   // Recebendo os valores dos inputs para cálculo de multas e prejuízos
   var m2 = Number(inp_m2.value);
-  var multaM2 = (5 * 1,1 * m2 * 35.36)
+  var multaM2 = (5 * 1.1 * m2 * 35.36)
 
   // multa por metro²: 5 (Infração Grave) * 1,1 (Carga de Incêndio Fator de Risco Grave)* 
   // àrea da edificação (m2) * R$35,36 (UFESP 2024) = R$ Valor da Multa
@@ -69,7 +69,6 @@ function calcular(){
                               Com a LeakGas, em caso de vazamento avisaremos à você <span>imediatamente</span>, evitando prejuízos e dores de cabeça!`
                           
 }
-
 
 const linha = document.getElementById('chart_linha');
 

@@ -1,5 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
-var cozinhasModel = require("../models/cozinhaModel");
+var cozinhaModel = require("../models/cozinhaModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -13,21 +13,29 @@ function autenticar(req, res) {
         return res.status(400).send("Sua senha está indefinida!");
     }
 
-    // Autenticação
+    // Autenticação do usuário
     usuarioModel.autenticar(email, senha)
         .then(function (resultadoAutenticar) {
             console.log(`Resultados encontrados: ${resultadoAutenticar.length}`);
+            console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`);
+
             if (resultadoAutenticar.length === 1) {
                 const usuario = resultadoAutenticar[0];
-                cozinhasModel.buscarcozinhasPorEmpresa(usuario.empresaId)
-                    .then((resultadocozinhass) => {
-                        res.json({
-                            id: usuario.id,
-                            email: usuario.email,
-                            nome: usuario.nome,
-                            senha: usuario.senha,
-                            cozinhas: resultadocozinhas.length > 0 ? resultadocozinhass : []
-                        });
+
+                // Buscando cozinhas associadas à empresa
+                cozinhaModel.buscarcozinhasPorEmpresa(usuario.empresaId)
+                    .then((resultadocozinhas) => {
+                        if (resultadocozinhas.length > 0) {
+                            res.json({
+                                id: usuario.id,
+                                email: usuario.email,
+                                nome: usuario.nome,
+                                senha: usuario.senha,
+                                cozinhas: resultadocozinhas
+                            });
+                        } else {
+                            res.status(204).json({ cozinhas: [] });
+                        }
                     })
                     .catch((erro) => {
                         console.error("Erro ao buscar cozinhas:", erro);
@@ -40,29 +48,27 @@ function autenticar(req, res) {
             }
         })
         .catch(function (erro) {
-            console.log("\nHouve um erro ao realizar o login! Erro:", erro.sqlMessage);
+            console.error("\nHouve um erro ao realizar o login! Erro:", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         });
 }
 
 function cadastrar(req, res) {
     // Recupera os valores do corpo da requisição
-    var { nome, email, senha, idEmpresaVincularServer: fkEmpresa, cpfServer: cpf } = req.body;
+    var { nomeServer, sobrenomeServer, telefoneServer, emailServer, senhaServer, idEmpresaVincularServer: fkEmpresa } = req.body;
 
-    // Validação de entradas
-    if (!nome) return res.status(400).send("Seu nome está undefined!");
-    if (!email) return res.status(400).send("Seu email está undefined!");
-    if (!senha) return res.status(400).send("Sua senha está undefined!");
-    if (!fkEmpresa) return res.status(400).send("Sua empresa a vincular está undefined!");
-    if (!cpf) return res.status(400).send("Seu CPF está undefined!");
+    // Validação das entradas
+    if (!nomeServer) return res.status(400).send("Seu nome está undefined!");
+    if (!emailServer) return res.status(400).send("Seu email está undefined!");
+    if (!senhaServer) return res.status(400).send("Sua senha está undefined!");
 
     // Cadastro do usuário
-    usuarioModel.cadastrar(nome, email, senha, fkEmpresa, cpf)
+    usuarioModel.cadastrar(nomeServer, emailServer, senhaServer, fkEmpresa)
         .then(function (resultado) {
             res.json(resultado);
         })
         .catch(function (erro) {
-            console.log("\nHouve um erro ao realizar o cadastro! Erro:", erro.sqlMessage);
+            console.error("\nHouve um erro ao realizar o cadastro! Erro:", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         });
 }
