@@ -152,11 +152,44 @@ function selecionarCozinhaB() {
   // sensores_cozinhas.style.display = 'flex'
   // container_sensores.style.display = 'flex'
 
+  SecCozinhaB.style.backgroundColor = '#D9D9D9'
+  SecCozinhaB.style.width = '75%'
+  SecCozinhaB.style.height = '9vw'
+  SecCozinhaB.style.border = '2px solid #002E52'
+
+  SecCozinhaA.style.backgroundColor = 'white'
+  SecCozinhaA.style.width = '80%'
+  SecCozinhaA.style.height = '10vw'
+  SecCozinhaA.style.border = 'none'
+
+  SecCozinhaC.style.backgroundColor = 'white'
+  SecCozinhaC.style.width = '80%'
+  SecCozinhaC.style.height = '10vw'
+  SecCozinhaC.style.border = 'none'
+
+  SecCozinhaD.style.backgroundColor = 'white'
+  SecCozinhaD.style.width = '80%'
+  SecCozinhaD.style.height = '10vw'
+  SecCozinhaD.style.border = 'none'
+
+  SecCozinhaE.style.backgroundColor = 'white'
+  SecCozinhaE.style.width = '80%'
+  SecCozinhaE.style.height = '10vw'
+  SecCozinhaE.style.border = 'none'
+  
+
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
   todas_dash.style.display = 'none';
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
-
+  container_sessoes.style.margin = '1vw 1vw 0 0'
+   scroll_cozinhas.style.margin = '0 0 0 8vw'
 
   cozinha_selecionada_sensor.innerHTML = ` B`
   ultimo_vazamento.innerHTML = 'Sensor A'
@@ -179,13 +212,46 @@ function selecionarCozinhaB() {
 
 }
 function selecionarCozinhaA() {
+  container_sessoes.style.margin = '1vw 1vw 0 0'
   todas_dash.style.display = 'none';
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
-
+ scroll_cozinhas.style.margin = '0 0 0 8vw'
   cozinha_selecionada_sensor.innerHTML = ` A`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
+
+  SecCozinhaB.style.backgroundColor = 'white'
+  SecCozinhaB.style.width = '80%'
+  SecCozinhaB.style.height = '10vw'
+  SecCozinhaB.style.border = 'none'
+
+  SecCozinhaA.style.backgroundColor = '#D9D9D9'
+  SecCozinhaA.style.width = '75%'
+  SecCozinhaA.style.height = '9vw'
+  SecCozinhaA.style.border = '2px solid #002E52'
+
+
+  SecCozinhaC.style.backgroundColor = 'white'
+  SecCozinhaC.style.width = '80%'
+  SecCozinhaC.style.height = '10vw'
+  SecCozinhaC.style.border = 'none'
+
+  SecCozinhaD.style.backgroundColor = 'white'
+  SecCozinhaD.style.width = '80%'
+  SecCozinhaD.style.height = '10vw'
+  SecCozinhaD.style.border = 'none'
+
+  SecCozinhaE.style.backgroundColor = 'white'
+  SecCozinhaE.style.width = '80%'
+  SecCozinhaE.style.height = '10vw'
+  SecCozinhaE.style.border = 'none'
+
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   horario_vazamento.innerHTML = 'Sem vazamentos ativos'
   total_sensores.innerHTML = '2'
@@ -213,16 +279,47 @@ function selecionarCozinhaD() {
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
-
+  container_sessoes.style.margin = '1vw 1vw 0 0'
   sensores_vazamentos.style.color = 'black'
   horario_vazamento.style.color = 'black'
   ultimo_vazamento.style.color = 'black'
-
+ scroll_cozinhas.style.margin = '0 0 0 8vw'
   cozinha_selecionada_sensor.innerHTML = ` D`
   ultimo_vazamento.innerHTML = 'Sensor A'
   horario_vazamento.innerHTML = '10:00'
   total_sensores.innerHTML = '2'
   sensores_vazamentos.innerHTML = '1'
+
+  SecCozinhaD.style.backgroundColor = '#D9D9D9'
+  SecCozinhaD.style.width = '75%'
+  SecCozinhaD.style.height = '9vw'
+  SecCozinhaD.style.border = '2px solid #002E52'
+
+  SecCozinhaA.style.backgroundColor = 'white'
+  SecCozinhaA.style.width = '80%'
+  SecCozinhaA.style.height = '10vw'
+  SecCozinhaA.style.border = 'none'
+
+  SecCozinhaC.style.backgroundColor = 'white'
+  SecCozinhaC.style.width = '80%'
+  SecCozinhaC.style.height = '10vw'
+  SecCozinhaC.style.border = 'none'
+
+  SecCozinhaB.style.backgroundColor = 'white'
+  SecCozinhaB.style.width = '80%'
+  SecCozinhaB.style.height = '10vw'
+  SecCozinhaB.style.border = 'none'
+
+  SecCozinhaE.style.backgroundColor = 'white'
+  SecCozinhaE.style.width = '80%'
+  SecCozinhaE.style.height = '10vw'
+  SecCozinhaE.style.border = 'none'
+
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_amarelo.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
@@ -243,8 +340,8 @@ function selecionarCozinhaC() {
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
-
-
+ scroll_cozinhas.style.margin = '0 0 0 8vw'
+  container_sessoes.style.margin = '1vw 1vw 0 0'
   cozinha_selecionada_sensor.innerHTML = ` C`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
   ultimo_vazamento.style.color = 'green'
@@ -253,6 +350,31 @@ function selecionarCozinhaC() {
   sensores_vazamentos.innerHTML = 'Sem vazamentos ativos'
   sensores_vazamentos.style.color = 'green'
   horario_vazamento.style.color = 'green'
+
+  SecCozinhaC.style.backgroundColor = '#D9D9D9'
+  SecCozinhaC.style.width = '75%'
+  SecCozinhaC.style.height = '9vw'
+  SecCozinhaC.style.border = '2px solid #002E52'
+
+  SecCozinhaA.style.backgroundColor = 'white'
+  SecCozinhaA.style.width = '80%'
+  SecCozinhaA.style.height = '10vw'
+  SecCozinhaA.style.border = 'none'
+
+  SecCozinhaB.style.backgroundColor = 'white'
+  SecCozinhaB.style.width = '80%'
+  SecCozinhaB.style.height = '10vw'
+  SecCozinhaB.style.border = 'none'
+
+  SecCozinhaD.style.backgroundColor = 'white'
+  SecCozinhaD.style.width = '80%'
+  SecCozinhaD.style.height = '10vw'
+  SecCozinhaD.style.border = 'none'
+
+  SecCozinhaE.style.backgroundColor = 'white'
+  SecCozinhaE.style.width = '80%'
+  SecCozinhaE.style.height = '10vw'
+  SecCozinhaE.style.border = 'none'
 
   status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
@@ -265,6 +387,12 @@ function selecionarCozinhaC() {
   sensores_cozinha_d.style.display = 'none'
   sensores_cozinha_e.style.display = 'none'
 
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
 
 }
 
@@ -273,7 +401,7 @@ function selecionarCozinhaE() {
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
-
+  container_sessoes.style.margin = '1vw 1vw 0 0'
   cozinha_selecionada_sensor.innerHTML = ` E`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
   ultimo_vazamento.style.color = 'green'
@@ -287,12 +415,42 @@ function selecionarCozinhaE() {
   status_mensagem_sensores.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem_sensores.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
 
+  SecCozinhaE.style.backgroundColor = '#D9D9D9'
+  SecCozinhaE.style.width = '75%'
+  SecCozinhaE.style.height = '9vw'
+  SecCozinhaE.style.border = '2px solid #002E52'
+
+  SecCozinhaA.style.backgroundColor = 'white'
+  SecCozinhaA.style.width = '80%'
+  SecCozinhaA.style.height = '10vw'
+  SecCozinhaA.style.border = 'none'
+
+  SecCozinhaC.style.backgroundColor = 'white'
+  SecCozinhaC.style.width = '80%'
+  SecCozinhaC.style.height = '10vw'
+  SecCozinhaC.style.border = 'none'
+
+  SecCozinhaD.style.backgroundColor = 'white'
+  SecCozinhaD.style.width = '80%'
+  SecCozinhaD.style.height = '10vw'
+  SecCozinhaD.style.border = 'none'
+
+  SecCozinhaB.style.backgroundColor = 'white'
+  SecCozinhaB.style.width = '80%'
+  SecCozinhaB.style.height = '10vw'
+  SecCozinhaB.style.border = 'none'
 
   sensores_cozinha_a.style.display = 'none'
   sensores_cozinha_b.style.display = 'none'
   sensores_cozinha_c.style.display = 'none'
   sensores_cozinha_d.style.display = 'none'
   sensores_cozinha_e.style.display = 'flex'
+
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
 }
 
@@ -1309,11 +1467,28 @@ new Chart(linha_dois_d, {
 function sensorUmCozinhaA() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'flex'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
+  scroll_um_a.style.backgroundColor = '#D9D9D9'
+  scroll_um_a.style.width = '73%'
+  scroll_um_a.style.height = '8vw'
+  scroll_um_a.style.border = '2px solid #002E52'
+
+  scroll_dois_a.style.backgroundColor = 'white'
+  scroll_dois_a.style.width = '80%'
+  scroll_dois_a.style.height = '10vw'
+  scroll_dois_a.style.border = 'none'
+
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
-
+scroll_cozinhas.style.display = 'flex'
 
   sensores_a.style.display = 'block'
   
@@ -1340,11 +1515,29 @@ function sensorUmCozinhaA() {
 function sensorDoisCozinhaA() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
+
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'flex'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
+  scroll_dois_a.style.backgroundColor = '#D9D9D9'
+  scroll_dois_a.style.width = '73%'
+  scroll_dois_a.style.height = '8vw'
+  scroll_dois_a.style.border = '2px solid #002E52'
+
+  scroll_um_a.style.backgroundColor = 'white'
+  scroll_um_a.style.width = '80%'
+  scroll_um_a.style.height = '10vw'
+  scroll_um_a.style.border = 'none'
+
   
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
-
+  
 
   sensores_a.style.display = 'block'
   
@@ -1373,11 +1566,37 @@ function sensorDoisCozinhaA() {
 function sensorUmCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
+
   
+  scroll_um_b.style.backgroundColor = '#D9D9D9'
+  scroll_um_b.style.width = '73%'
+  scroll_um_b.style.height = '8vw'
+  scroll_um_b.style.border = '2px solid #002E52'
+
+  scroll_dois_b.style.backgroundColor = 'white'
+  scroll_dois_b.style.width = '80%'
+  scroll_dois_b.style.height = '10vw'
+  scroll_dois_b.style.border = 'none'
+
+  scroll_tres_b.style.backgroundColor = 'white'
+  scroll_tres_b.style.width = '80%'
+  scroll_tres_b.style.height = '10vw'
+  scroll_tres_b.style.border = 'none'
+
+  scroll_quatro_b.style.backgroundColor = 'white'
+  scroll_quatro_b.style.width = '80%'
+  scroll_quatro_b.style.height = '10vw'
+  scroll_quatro_b.style.border = 'none'
+  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
-
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
   sensores_b.style.display = 'block'
 
@@ -1409,7 +1628,41 @@ function sensorUmCozinhaB() {
 function sensorDoisCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
+
+  scroll_dois_b.style.backgroundColor = '#D9D9D9'
+  scroll_dois_b.style.width = '73%'
+  scroll_dois_b.style.height = '8vw'
+  scroll_dois_b.style.border = '2px solid #002E52'
+
+  scroll_um_b.style.backgroundColor = 'white'
+  scroll_um_b.style.width = '80%'
+  scroll_um_b.style.height = '10vw'
+  scroll_um_b.style.border = 'none'
+
+  scroll_tres_b.style.backgroundColor = 'white'
+  scroll_tres_b.style.width = '80%'
+  scroll_tres_b.style.height = '10vw'
+  scroll_tres_b.style.border = 'none'
+
+  scroll_quatro_b.style.backgroundColor = 'white'
+  scroll_quatro_b.style.width = '80%'
+  scroll_quatro_b.style.height = '10vw'
+  scroll_quatro_b.style.border = 'none'
+  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
@@ -1445,10 +1698,43 @@ function sensorTresCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
   
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
+
+  scroll_tres_b.style.backgroundColor = '#D9D9D9'
+  scroll_tres_b.style.width = '73%'
+  scroll_tres_b.style.height = '8vw'
+  scroll_tres_b.style.border = '2px solid #002E52'
+
+  scroll_dois_b.style.backgroundColor = 'white'
+  scroll_dois_b.style.width = '80%'
+  scroll_dois_b.style.height = '10vw'
+  scroll_dois_b.style.border = 'none'
+
+  scroll_um_b.style.backgroundColor = 'white'
+  scroll_um_b.style.width = '80%'
+  scroll_um_b.style.height = '10vw'
+  scroll_um_b.style.border = 'none'
+
+  scroll_quatro_b.style.backgroundColor = 'white'
+  scroll_quatro_b.style.width = '80%'
+  scroll_quatro_b.style.height = '10vw'
+  scroll_quatro_b.style.border = 'none'
+  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
   sensores_b.style.display = 'block'
 
@@ -1477,11 +1763,44 @@ function sensorQuatroCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
   
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
+  scroll_quatro_b.style.backgroundColor = '#D9D9D9'
+  scroll_quatro_b.style.width = '73%'
+  scroll_quatro_b.style.height = '8vw'
+  scroll_quatro_b.style.border = '2px solid #002E52'
+
+  scroll_dois_b.style.backgroundColor = 'white'
+  scroll_dois_b.style.width = '80%'
+  scroll_dois_b.style.height = '10vw'
+  scroll_dois_b.style.border = 'none'
+
+  scroll_tres_b.style.backgroundColor = 'white'
+  scroll_tres_b.style.width = '80%'
+  scroll_tres_b.style.height = '10vw'
+  scroll_tres_b.style.border = 'none'
+
+  scroll_um_b.style.backgroundColor = 'white'
+  scroll_um_b.style.width = '80%'
+  scroll_um_b.style.height = '10vw'
+  scroll_um_b.style.border = 'none'
+  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
+
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
 
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensores_b.style.display = 'block'
 
  sensores_a.style.display = 'none'  
@@ -1511,9 +1830,41 @@ function sensorUmCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
   
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'flex'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
+
+  scroll_um_c.style.backgroundColor = '#D9D9D9'
+  scroll_um_c.style.width = '73%'
+  scroll_um_c.style.height = '8vw'
+  scroll_um_c.style.border = '2px solid #002E52'
+
+  scroll_dois_c.style.backgroundColor = 'white'
+  scroll_dois_c.style.width = '80%'
+  scroll_dois_c.style.height = '10vw'
+  scroll_dois_c.style.border = 'none'
+
+  scroll_tres_c.style.backgroundColor = 'white'
+  scroll_tres_c.style.width = '80%'
+  scroll_tres_c.style.height = '10vw'
+  scroll_tres_c.style.border = 'none'
+  
+  scroll_quatro_c.style.backgroundColor = 'white'
+  scroll_quatro_c.style.width = '80%'
+  scroll_quatro_c.style.height = '10vw'
+  scroll_quatro_c.style.border = 'none'
+  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'flex'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
 
   sensores_b.style.display = 'none'
@@ -1542,8 +1893,35 @@ function sensorDoisCozinhaC() {
   container_dash.style.display = 'flex'
   
 
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
+
+  scroll_dois_c.style.backgroundColor = '#D9D9D9'
+  scroll_dois_c.style.width = '73%'
+  scroll_dois_c.style.height = '8vw'
+  scroll_dois_c.style.border = '2px solid #002E52'
+
+  scroll_um_c.style.backgroundColor = 'white'
+  scroll_um_c.style.width = '80%'
+  scroll_um_c.style.height = '10vw'
+  scroll_um_c.style.border = 'none'
+
+  scroll_tres_c.style.backgroundColor = 'white'
+  scroll_tres_c.style.width = '80%'
+  scroll_tres_c.style.height = '10vw'
+  scroll_tres_c.style.border = 'none'
+  
+  scroll_quatro_c.style.backgroundColor = 'white'
+  scroll_quatro_c.style.width = '80%'
+  scroll_quatro_c.style.height = '10vw'
+  scroll_quatro_c.style.border = 'none'
+
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'flex'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
 
   sensores_b.style.display = 'none'
@@ -1571,6 +1949,32 @@ function sensorTresCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
   
+  scroll_tres_c.style.backgroundColor = '#D9D9D9'
+  scroll_tres_c.style.width = '73%'
+  scroll_tres_c.style.height = '8vw'
+  scroll_tres_c.style.border = '2px solid #002E52'
+
+  scroll_um_c.style.backgroundColor = 'white'
+  scroll_um_c.style.width = '80%'
+  scroll_um_c.style.height = '10vw'
+  scroll_um_c.style.border = 'none'
+
+  scroll_dois_c.style.backgroundColor = 'white'
+  scroll_dois_c.style.width = '80%'
+  scroll_dois_c.style.height = '10vw'
+  scroll_dois_c.style.border = 'none'
+  
+  scroll_quatro_c.style.backgroundColor = 'white'
+  scroll_quatro_c.style.width = '80%'
+  scroll_quatro_c.style.height = '10vw'
+  scroll_quatro_c.style.border = 'none'
+
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'flex'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
@@ -1600,7 +2004,35 @@ function sensorTresCozinhaC() {
 function sensorQuatroCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
+
   
+  scroll_quatro_c.style.backgroundColor = '#D9D9D9'
+  scroll_quatro_c.style.width = '73%'
+  scroll_quatro_c.style.height = '8vw'
+  scroll_quatro_c.style.border = '2px solid #002E52'
+
+  scroll_um_c.style.backgroundColor = 'white'
+  scroll_um_c.style.width = '80%'
+  scroll_um_c.style.height = '10vw'
+  scroll_um_c.style.border = 'none'
+
+  scroll_dois_c.style.backgroundColor = 'white'
+  scroll_dois_c.style.width = '80%'
+  scroll_dois_c.style.height = '10vw'
+  scroll_dois_c.style.border = 'none'
+  
+  scroll_tres_c.style.backgroundColor = 'white'
+  scroll_tres_c.style.width = '80%'
+  scroll_tres_c.style.height = '10vw'
+  scroll_tres_c.style.border = 'none'
+
+  
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'flex'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'none'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
@@ -1633,10 +2065,26 @@ function sensorUmCozinhaD() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
   
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'flex'
+  box_sensores_e.style.display = 'none'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
+
+  scroll_um_d.style.backgroundColor = '#D9D9D9'
+  scroll_um_d.style.width = '73%'
+  scroll_um_d.style.height = '8vw'
+  scroll_um_d.style.border = '2px solid #002E52'
+
+  scroll_dois_d.style.backgroundColor = 'white'
+  scroll_dois_d.style.width = '80%'
+  scroll_dois_d.style.height = '10vw'
+  scroll_dois_d.style.border = 'none'
 
   sensores_b.style.display = 'none'
  sensores_a.style.display = 'none'  
@@ -1660,8 +2108,23 @@ function sensorUmCozinhaD() {
 function sensorDoisCozinhaD() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'flex'
+  box_sensores_e.style.display = 'none'
 
+  scroll_dois_d.style.backgroundColor = '#D9D9D9'
+  scroll_dois_d.style.width = '73%'
+  scroll_dois_d.style.height = '8vw'
+  scroll_dois_d.style.border = '2px solid #002E52'
+
+  scroll_um_d.style.backgroundColor = 'white'
+  scroll_um_d.style.width = '80%'
+  scroll_um_d.style.height = '10vw'
+  scroll_um_d.style.border = 'none'
+
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
@@ -1690,8 +2153,24 @@ function sensorDoisCozinhaD() {
 function sensorUmCozinhaE() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'flex'
 
+
+  scroll_um_e.style.backgroundColor = '#D9D9D9'
+  scroll_um_e.style.width = '73%'
+  scroll_um_e.style.height = '8vw'
+  scroll_um_e.style.border = '2px solid #002E52'
+
+  scroll_dois_e.style.backgroundColor = 'white'
+  scroll_dois_e.style.width = '80%'
+  scroll_dois_e.style.height = '10vw'
+  scroll_dois_e.style.border = 'none'
+
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
@@ -1718,7 +2197,23 @@ function sensorUmCozinhaE() {
 function sensorDoisCozinhaE() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+
+  scroll_dois_e.style.backgroundColor = '#D9D9D9'
+  scroll_dois_e.style.width = '73%'
+  scroll_dois_e.style.height = '8vw'
+  scroll_dois_e.style.border = '2px solid #002E52'
+
+  scroll_um_e.style.backgroundColor = 'white'
+  scroll_um_e.style.width = '80%'
+  scroll_um_e.style.height = '10vw'
+  scroll_um_e.style.border = 'none'
+
+scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  box_sensores_a.style.display = 'none'
+  box_sensores_b.style.display = 'none'
+  box_sensores_c.style.display = 'none'
+  box_sensores_d.style.display = 'none'
+  box_sensores_e.style.display = 'flex'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'

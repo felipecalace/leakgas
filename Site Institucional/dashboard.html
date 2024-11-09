@@ -21,10 +21,10 @@
     <div class="nav_dash">
       <div class="box_icons">
         <a href="./dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav"
-            src="assets/back_icon.png" alt=""></a>
-        <a href="./homeLogado.html"><img class="icons_nav" src="assets/icon_home.png" alt=""></a>
-        <a onclick="barras()" style="cursor: pointer;"><img class="icons_nav" src="assets/barra_icon.png" alt=""></a>
-        <a href=""><img class="icons_nav" src="assets/configurar_icon.png" alt=""></a>
+            src="assets/icon_home.png" alt=""></a>
+            <a onclick="barras()" style="cursor: pointer;"><img class="icons_nav" src="assets/barra_icon.png" alt=""></a>
+            <a href=""><img class="icons_nav" src="assets/configurar_icon.png" alt=""></a>
+            <a href="./home.html"><img class="icons_nav" src="assets/exit.png" alt=""></a>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
       </div>
 
       <!-- tirar o style -->
-      <div class="container_sessoes">
+      <div class="container_sessoes" id="container_sessoes">
         <div  id="todas_dash" class="container_monitorados">
           <div class="header_sessoes">
             <div class="box_kpi">
@@ -105,27 +105,100 @@
         <!-- tirar o style -->
         <div id="scroll_cozinhas" class="container_cozinhas" style="display: none;">
           <div class="box_cozinhas">
-            <div class="cozinhas" onclick="selecionarCozinhaA()">
+            <div class="cozinhas"  id="SecCozinhaA" onclick="selecionarCozinhaA()">
               <div class="imagem_cozinha_safe"></div>
               <p>Cozinha A</p>
             </div>
-            <div class="cozinhas" onclick="selecionarCozinhaB()">
+            <div class="cozinhas" id="SecCozinhaB" onclick="selecionarCozinhaB()">
               <div class="imagem_cozinha_danger"></div>
               <p>Cozinha B</p>
             </div>
-            <div class="cozinhas" onclick="selecionarCozinhaC()">
+            <div class="cozinhas" id="SecCozinhaC" onclick="selecionarCozinhaC()">
               <div class="imagem_cozinha_safe "></div>
               <p>Cozinha C</p>
             </div>
-            <div class="cozinhas" onclick="selecionarCozinhaD()">
+            <div class="cozinhas"  id="SecCozinhaD" onclick="selecionarCozinhaD()">
               <div class="imagem_cozinha_warning"></div>
               <p>Cozinha D</p>
             </div>
-            <div class="cozinhas" onclick="selecionarCozinhaE()">
+            <div class="cozinhas"  id="SecCozinhaE" onclick="selecionarCozinhaE()">
               <div class="imagem_cozinha_safe"></div>
               <p>Cozinha E</p>
             </div>
           </div>
+
+          
+          
+            <div  class="box_sensores"  id="box_sensores_b" style='display: none;'>
+              <div id="scroll_um_b" class="cozinhas" onclick="sensorUmCozinhaB()">
+                <div class="imagem_cozinha_danger"></div>
+            <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div id="scroll_dois_b" class="cozinhas" onclick="sensorDoisCozinhaB()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+              <div id="scroll_tres_b" class="cozinhas" onclick="sensorTresCozinhaB()">
+                <div class="imagem_cozinha_safe "></div>
+                <p style="font-size: 1.5vw;">Sensor Três</p>
+              </div>
+              <div id="scroll_quatro_b" class="cozinhas" onclick="sensorQuatroCozinhaB()">
+                <div class="imagem_cozinha_warning"></div>
+                <p style="font-size: 1.5vw;">Sensor Quatro</p>
+              </div>
+            </div>
+
+            <div class="box_sensores"  id="box_sensores_a" style='display: none;'>
+              <div id="scroll_um_a" class="cozinhas" onclick="sensorUmCozinhaA()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div id="scroll_dois_a" class="cozinhas" onclick="sensorDoisCozinhaA()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+            </div>
+
+            <div class="box_sensores" id="box_sensores_c" style='display: none;'>
+              <div  id="scroll_um_c" class="cozinhas" onclick="sensorUmCozinhaC()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div  id="scroll_dois_c" class="cozinhas" onclick="sensorDoisCozinhaC()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+              <div  id="scroll_tres_c" class="cozinhas" onclick="sensorTresCozinhaC()">
+                <div class="imagem_cozinha_safe "></div>
+                <p style="font-size: 1.5vw;">Sensor Três</p>
+              </div>
+              <div  id="scroll_quatro_c" class="cozinhas" onclick="sensorQuatroCozinhaC()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Quatro</p>
+              </div>
+            </div>
+
+            <div class="box_sensores"  id="box_sensores_d" style='display: none;'>
+              <div  id="scroll_um_d" class="cozinhas" onclick="sensorUmCozinhaD()">
+                <div class="imagem_cozinha_warning"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div  id="scroll_dois_d" class="cozinhas" onclick="sensorDoisCozinhaD()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+            </div>
+
+            <div class="box_sensores"  id="box_sensores_e" style='display: none;'>
+              <div  id="scroll_um_e" class="cozinhas" onclick="sensorUmCozinhaE()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div  id="scroll_dois_e" class="cozinhas" onclick="sensorDoisCozinhaE()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+            </div>
 
 
           <!-- CONTAINER DO PANORAMA DOS SENSORES DA COZINHA SELECIONADA! -->
