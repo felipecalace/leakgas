@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" type="text/javascript" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>LeakGas</title>
+</head>
+<header>
+    <div class="cabecalho">
+        <a href="./home.html"><img class="logo" src="./assets/logo.png"></a>
+
+        <div class="box_nav">
+            <nav>
+                <a href="./sobre.html">SOBRE</a>
+                <a href="./servicos.html">SERVIÇOS</a>
+                <a href="./contato.html">CONTATO</a>
+            </nav>
+
+            <div>
+
+            </div>
+
+                <div id="box_loginCadastro" class="box_login_cadastro">
+                <a class="cadastrar" href="LoginCadastro.html">CADASTRE-SE</a>
+                <a class="logar" href="./LoginCadastro.html">ENTRAR</a>
+                </div>
+
+
+            
+        </div>
+    </div>
+</header>
+<body>
+    <div class="home">
+<div class="home_embarque">
+    <h2><span>Tranquilidade</span> que você merece, </h2>
+    <h2><span>Segurança</span> que você precisa!</h2>
+    <a href="LoginCadastro.html">FAÇA LOGIN</a>
+</div>
+    </div>
+   
+
+<div class="sobre_home">
+    <div class="container_sobre_home">
+        <img src="./assets/fachada_empresa.jpeg">
+        <div class="box_sobre_home">
+            <h3>SOBRE A LEAKGAS</h3>
+            <p>Somos uma empresa fundada em 2024 visando a melhora da <span>segurança de cozinhas industriais,</span>  queremos conquistar a confiança de grandes negócios e se estabelecer no mercado, valorizamos a <span>confiança e a segurança</span> do cliente e seus funcionários.</p>
+            <a href="./sobre.html">CONTINUAR LENDO</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="container_servicos_home">
+        <div class="box_servicos_home">
+            <h3>CONHEÇA NOSSOS SERVIÇOS</h3>
+            <p>Descubra o que fazemos e como iremos impactar positivamente com nossos serviços em seu negócio! </p>
+            <div> <a href="./servicos.html#simulador">Faça uma simulação</a><img src="./assets/seta_direita.png" alt="imagem de seta"></div>
+        </div>
+        <div class="box_servicos_imagens">
+           <a href="./servicos.html#simulador"> <div class="div_imagem1 hoverImage">Simulador</div></a>
+           <a href="./login.html"> <div class="div_imagem2 hoverImage">Monitoramento</div></a>
+           <a href="./login.html">  <div class="div_imagem3 hoverImage">Dashboard</div></a>
+            <a href="./servicos.html#arquitetura"><div class="div_imagem4 hoverImage">Arquitetura</div></a>
+        </div>
+    </div>
+
+    <div class="container_info">
+        <div class="box_info">
+            <h3>RECEBA MAIS INFORMAÇÕES</h3>
+            <p>Preencha o campo abaixo para <br>receber mais informações sobre o sistema da LeakGas.</p>
+        
+        <div> <input type="text" placeholder="Seu endereço de e-mail"> <button>Receber informações</button></div>
+    </div>
+    </div>
+
+</body>
+<footer>
+    
+    <div class="box_footer_cabecalho">
+        <img src="./assets/logo_leak.png" alt="">
+        <div class="box_footer_redes">
+            <div class="img_footer1"></div>
+        <div class="img_footer2"></div>
+        <div class="img_footer3"></div>
+        </div>
+        <div class="div_linha"></div>
+    </div>
+    
+    <div class="box_footer_rodape">
+        <div class="box_footer_contato">
+            <p class="footer_title">LeakGas</p>
+            <p>contato@leakgas.com</p>
+            <p>(11)95883-6788</p>
+            <br>
+            <p>Rua Haddock Lobo, 595 - Cerqueira César</p>
+            <p>São Paulo - SP</p>
+            <p>14144000</p>
+            <p>Razão Social: LeakGas Monitoramento de Gás</p>
+            <p>IndustrialLTDA</p>
+            <p>CNPJ 12.345.678/0001-90</p>
+
+        </div>
+        <div class="box_footer_termos">
+            <p>Política de Privacidade</p>
+            <p>Termos de Uso</p>
+            <a href="https://eletroalta.com.br/nfpa/" target="_blank"><p>Normas de Segurança (NFPA)</p></a>
+            <a  href="./contato.html">Fale Conosco</a>
+        </div>
+        <a class="a_footer" href="./home.html">Voltar ao topo</a>
+    </div>
+
+    <p class="footer_final">© 2024 LeakGas - Todos os direitos reservados.</p>
+</footer>
+</html>
+<script>
+    if (window.localStorage.getItem("logado") === "true"){
+        anchorDashboard.href="./dashboard.html";
+        anchorDashboard.style.display="block";
+    }
+</script>
