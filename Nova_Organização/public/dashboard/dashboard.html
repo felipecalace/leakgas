@@ -1,194 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="text/javascript" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" src="script.js"></script>
-    <script src="main.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
-    <title>LeakGas - Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" type="text/javascript" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
+  <title>LeakGas - Dashboard</title>
 </head>
+
 <body>
   <div class="container_dashboard">
     <div class="nav_dash">
       <div class="box_icons">
-        <a href="../dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav" src="assets/back_icon.png" alt=""></a>
-        <a href="../home.html"><img class="icons_nav" src="assets/icon_home.png" alt=""></a>
-        <a onclick="barras()" style="cursor: pointer;"><img class="icons_nav" src="assets/barra_icon.png" alt=""></a>
-        <a href=""><img class="icons_nav" src="assets/configurar_icon.png" alt=""></a>
+        <a href="./dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav"
+            src="../assets/icon_home.png" alt=""></a>
+            <a onclick="barras()" style="cursor: pointer;"><img class="icons_nav" src="../assets/barra_icon.png" alt=""></a>
+            <a href=""><img class="icons_nav" src="../assets/configurar_icon.png" alt=""></a>
+            <a href="../home.html"><img class="icons_nav" src="../assets/exit.png" alt=""></a>
       </div>
     </div>
 
     <div class="main_content">
       <div class="header_dash">
         <div class="box_usuario_header_dash">
-          <img class="imagem_guest" src="./assets/guest_icon.png">
+          <img class="imagem_guest" src="../assets/guest_icon.png">
           <div class="box_texto_usuario">
             <h2>XPTO</h2>
             <p>Bem vindo, Guest da Silva</p>
           </div>
-        </div> 
+        </div>
         <div class="box_trespontos">
-          <img  class="trespontos" src="./assets/pontos_icon.png" alt="">
+          <img class="trespontos" src="../assets/pontos_icon.png" alt="">
         </div>
       </div>
 
-
-      <div class="container_sessoes">
-        <div id="todas_dash" class="container_monitorados">
-        <div class="header_sessoes">
-        <div class="box_kpi"> <h4>Cozinhas Monitoradas:</h4> <p>5</p></div>
-         <div class="box_kpi"><h4>Último Vazamento:</h4> <span>ATIVO</span></div> 
-         <div class="box_kpi"><h4>Vazamentos Ativos:</h4> <div class="imagem_danger_header"><span>2 !</span> <img src="./assets/danger_icon.png" alt=""> </div></div>
+      <!-- tirar o style -->
+      <div class="container_sessoes" id="container_sessoes">
+        <div  id="todas_dash" class="container_monitorados">
+          <div class="header_sessoes">
+            <div class="box_kpi">
+              <h4>Cozinhas Monitoradas:</h4>
+              <p>5</p>
+            </div>
+            <div class="box_kpi">
+              <h4>Último Vazamento:</h4> <span>30/10 10:00 - Cozinha B</span>
+            </div>
+            <div class="box_kpi">
+              <h4>Vazamentos Ativos:</h4>
+              <div class="imagem_danger_header"><span>2 !</span> <img src="../assets/danger_icon.png" alt=""> </div>
+            </div>
+          </div>
+          <div class="linha">
+            <div class="box_sessao" onclick="selecionarCozinhaA()"><img class="imagem_sessao" src="../assets/safe.png"
+                alt="">
+              <div class="title_sec">
+                <h4>Cozinha A</h4>
+              </div>
+            </div>
+            <div class="box_sessao" onclick="selecionarCozinhaB()"><img class="imagem_sessao" src="../assets/danger.png"
+                alt="">
+              <div class="title_sec">
+                <h4>Cozinha B</h4>
+              </div>
+            </div>
+            <div class="box_sessao" onclick="selecionarCozinhaC()"><img class="imagem_sessao" src="../assets/safe.png"
+                alt="">
+              <div class="title_sec">
+                <h4>Cozinha C</h4>
+              </div>
+            </div>
+          </div>
+          <div class="linha">
+            <div class="box_sessao" onclick="selecionarCozinhaD()"><img class="imagem_sessao" src="../assets/warning.png"
+                alt="">
+              <div class="title_sec">
+                <h4>Cozinha D</h4>
+              </div>
+            </div>
+            <div class="box_sessao" onclick="selecionarCozinhaE()"><img class="imagem_sessao" src="../assets/safe.png"
+                alt="">
+              <div class="title_sec">
+                <h4>Cozinha E</h4>
+              </div>
+            </div>
+            <div class="box_more"><img class="imagem_mais" src="../assets/more.png" alt=""> </div>
+          </div>
         </div>
-    <div class="linha">
-        <div class="box_sessao" onclick="cozinhaA()"><img class="imagem_sessao" src="./assets/safe.png" alt=""> <div class="title_sec"><h4>Cozinha A</h4></div></div>
-        <div class="box_sessao" onclick="cozinhaB()"><img class="imagem_sessao" src="./assets/danger.png" alt=""> <div class="title_sec"><h4>Cozinha B</h4></div></div> 
-        <div class="box_sessao" onclick="cozinhaC()"><img class="imagem_sessao" src="./assets/safe.png" alt=""> <div class="title_sec"><h4>Cozinha C</h4></div></div>
-    </div>
-    <div class="linha">
-        <div class="box_sessao" onclick="cozinhaD()"><img class="imagem_sessao" src="./assets/warning.png" alt=""> <div class="title_sec"><h4>Cozinha D</h4></div></div>
-        <div class="box_sessao" onclick="cozinhaE()"><img class="imagem_sessao" src="./assets/safe.png" alt=""> <div class="title_sec"><h4>Cozinha E</h4></div></div>
-        <div class="box_more"><img class="imagem_mais" src="./assets/more.png" alt=""> </div>
-    </div>
+
+
+
+
+        <!-- BARRA DE ROLAGEM DE COZINHAS! -->
+
+        <!-- <div id="dash_cozinhas" class="container_cozinhas" > -->
+
+        <!-- tirar o style -->
+        <div id="scroll_cozinhas" class="container_cozinhas" style="display: none;">
+          <div class="box_cozinhas">
+            <div class="cozinhas"  id="SecCozinhaA" onclick="selecionarCozinhaA()">
+              <div class="imagem_cozinha_safe"></div>
+              <p>Cozinha A</p>
+            </div>
+            <div class="cozinhas" id="SecCozinhaB" onclick="selecionarCozinhaB()">
+              <div class="imagem_cozinha_danger"></div>
+              <p>Cozinha B</p>
+            </div>
+            <div class="cozinhas" id="SecCozinhaC" onclick="selecionarCozinhaC()">
+              <div class="imagem_cozinha_safe "></div>
+              <p>Cozinha C</p>
+            </div>
+            <div class="cozinhas"  id="SecCozinhaD" onclick="selecionarCozinhaD()">
+              <div class="imagem_cozinha_warning"></div>
+              <p>Cozinha D</p>
+            </div>
+            <div class="cozinhas"  id="SecCozinhaE" onclick="selecionarCozinhaE()">
+              <div class="imagem_cozinha_safe"></div>
+              <p>Cozinha E</p>
+            </div>
+          </div>
+
+          
+          
+            <div  class="box_sensores"  id="box_sensores_b" style='display: none;'>
+              <div id="scroll_um_b" class="cozinhas" onclick="sensorUmCozinhaB()">
+                <div class="imagem_cozinha_danger"></div>
+            <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div id="scroll_dois_b" class="cozinhas" onclick="sensorDoisCozinhaB()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+              <div id="scroll_tres_b" class="cozinhas" onclick="sensorTresCozinhaB()">
+                <div class="imagem_cozinha_safe "></div>
+                <p style="font-size: 1.5vw;">Sensor Três</p>
+              </div>
+              <div id="scroll_quatro_b" class="cozinhas" onclick="sensorQuatroCozinhaB()">
+                <div class="imagem_cozinha_warning"></div>
+                <p style="font-size: 1.5vw;">Sensor Quatro</p>
+              </div>
+            </div>
+
+            <div class="box_sensores"  id="box_sensores_a" style='display: none;'>
+              <div id="scroll_um_a" class="cozinhas" onclick="sensorUmCozinhaA()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div id="scroll_dois_a" class="cozinhas" onclick="sensorDoisCozinhaA()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+            </div>
+
+            <div class="box_sensores" id="box_sensores_c" style='display: none;'>
+              <div  id="scroll_um_c" class="cozinhas" onclick="sensorUmCozinhaC()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div  id="scroll_dois_c" class="cozinhas" onclick="sensorDoisCozinhaC()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+              <div  id="scroll_tres_c" class="cozinhas" onclick="sensorTresCozinhaC()">
+                <div class="imagem_cozinha_safe "></div>
+                <p style="font-size: 1.5vw;">Sensor Três</p>
+              </div>
+              <div  id="scroll_quatro_c" class="cozinhas" onclick="sensorQuatroCozinhaC()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Quatro</p>
+              </div>
+            </div>
+
+            <div class="box_sensores"  id="box_sensores_d" style='display: none;'>
+              <div  id="scroll_um_d" class="cozinhas" onclick="sensorUmCozinhaD()">
+                <div class="imagem_cozinha_warning"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div  id="scroll_dois_d" class="cozinhas" onclick="sensorDoisCozinhaD()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+            </div>
+
+            <div class="box_sensores"  id="box_sensores_e" style='display: none;'>
+              <div  id="scroll_um_e" class="cozinhas" onclick="sensorUmCozinhaE()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Um</p>
+              </div>
+              <div  id="scroll_dois_e" class="cozinhas" onclick="sensorDoisCozinhaE()">
+                <div class="imagem_cozinha_safe"></div>
+                <p style="font-size: 1.5vw;">Sensor Dois</p>
+              </div>
+            </div>
+
+
+          <!-- CONTAINER DO PANORAMA DOS SENSORES DA COZINHA SELECIONADA! -->
+
+          <!-- tirar o style -->
+          <div class="container_kpi_cozinhas" id="container_sensores" style="display: none;">
+            <div class="box_kpi_cozinhas">
+              <div class="line_kpi_cozinhas" style="border-top: none; border-bottom: none;">
+                <div class="kpi_dash_cozinhas">
+                  <h4>Cozinha Selelecionada:</h4>
+                  <div style="display: flex;">
+                    <p style="margin-right: 1vw;">Cozinha <b id="cozinha_selecionada_sensor"> </b></p>
+                  </div>
+                </div>
+                <div class="kpi_dash_cozinhas">
+                  <h4>Último vazamento recente:</h4>
+                  <p id="ultimo_vazamento"></p>
+                </div>
+                <div class="kpi_dash_cozinhas">
+                  <h4>Horário último vazamento:</h4>
+                  <p id="horario_vazamento"></p>
+                </div>
+              </div>
+              <div class="line_kpi_cozinhas" style="margin-top: 0vw; margin-bottom: 2vw; border-radius: 0 0 2vw 2vw;">
+                <div class="kpi_dash_cozinhas">
+                  <h4>Total de sensores:</h4>
+                  <div style="display: flex;">
+                    <p id="total_sensores"></p>
+                  </div>
+                </div>
+                <div class="kpi_dash_cozinhas">
+                  <h4>Sensores com vazamentos:</h4>
+                  <p id="sensores_vazamentos"></p>
+                </div>
+                <div class="kpi_dash_cozinhas">
+                  <h4>Status da cozinha:</h4>
+                  <p id="status_imagem_sensores"></p> <span id="status_mensagem_sensores"
+                    class="status_mensagem_sensores"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="container_sensores_cozinhas">
+              <div class="box_sensores_cozinhas">
+
+                <div style="display: none;">
+                  <div style="display: flex;" id="linha_1_sensores">
+                    <div class="sensores_cozinhas">
+                      <p></p>
+                    </div>
+                    <div class="sensores_cozinhas">
+                      <p></p>
+                    </div>
+                  </div>
+                  <div style="display: flex;" id="linha_2_sensores">
+                    <div class="sensores_cozinhas" id="sensor_tres">
+                      <p id="nome_sensor_tres"></p>
+                    </div>
+                    <div class="sensores_cozinhas" id="sensor_quatro">
+                      <p id="nome_sensor_quatro"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SENSORES COZINHA A -->
+                <div id="sensores_cozinha_a">
+                  <div style="display: flex;" id="linha_1_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorUmCozinhaA()"> <img class="imagem_sensor"
+                        src="../assets/sensor_vermelho.png">
+                      <p>Sensor Um</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorDoisCozinhaA()"><img class="imagem_sensor"
+                        src="../assets/sensor_verde.png">
+                      <p>Sensor Dois</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SENSORES COZINHA B -->
+                <div class="box_sensores_cozinhas" id="sensores_cozinha_b">
+                  <div style="display: flex;" id="linha_1_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorUmCozinhaB()"> <img class="imagem_sensor"
+                        src="../assets/sensor_danger.png">
+                      <p>Sensor Um</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorDoisCozinhaB()"><img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Dois</p>
+                    </div>
+                  </div>
+                  <div style="display: flex;" id="linha_2_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorTresCozinhaB()"> <img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Três</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorQuatroCozinhaB()"><img class="imagem_sensor"
+                        src="../assets/sensor_warning.png">
+                      <p>Sensor Quatro</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SENSORES COZINHA C -->
+                <div class="box_sensores_cozinhas" id="sensores_cozinha_c">
+                  <div style="display: flex;" id="linha_1_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorUmCozinhaC()"> <img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Um</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorDoisCozinhaC()"><img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Dois</p>
+                    </div>
+                  </div>
+                  <div style="display: flex;" id="linha_2_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorTresCozinhaC()"> <img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Três</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorQuatroCozinhaC()"><img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Quatro</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SENSORES COZINHA D -->
+                <div class="box_sensores_cozinhas" id="sensores_cozinha_d">
+                  <div style="display: flex;" id="linha_1_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorUmCozinhaD()"> <img class="imagem_sensor"
+                        src="../assets/sensor_warning.png">
+                      <p>Sensor Um</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorDoisCozinhaD()"><img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Dois</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SENSORES COZINHA E -->
+                <div class="box_sensores_cozinhas" id="sensores_cozinha_e">
+                  <div style="display: flex;" id="linha_1_sensores">
+                    <div class="sensores_cozinhas" onclick="sensorUmCozinhaE()"> <img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Um</p>
+                    </div>
+                    <div class="sensores_cozinhas" onclick="sensorDoisCozinhaE()"><img class="imagem_sensor"
+                        src="../assets/sensor_safe.png">
+                      <p>Sensor Dois</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- container dos sensores -->
+          <!-- tirar o style -->
+
+          <div id="container_dash" class="box_dashboards" style="display: flex;">
+            <div class="box_kpi_dash">
+              <div class="kpi_dash" style="border-right: 2px solid #D9D9D9;">
+                <div style="margin-top: -1vw;">
+                  <h4>Cozinha Selecionada:</h4>
+                  <p style="margin-right: 1vw; margin-top: 0vw">Cozinha <b id="nome_cozinha_selecionada"> </b></p>
+                </div>
+                <div style="margin-top: 1.4vw">
+                  <h4>Sensor Selelecionado:</h4>
+                  <p style="margin-right: 1vw; margin-top: 0vw">Sensor <b id="sensor_selecionado"> </b></p>
+                </div>
+                
+              </div>
+              <div class="kpi_dash" style="border-right: 2px solid #D9D9D9;">
+                <h4>Início do vazamento:</h4>
+                <p id="inicio_vazamento"></p>
+              </div>
+              <div class="kpi_dash">
+                <h4>Status do sensor:</h4>
+                <p id="imagem_status"></p> <span id="status_mensagem" class="mensagem_status"></span>
+              </div>
+
+            </div>
+
+            <div id="section_sensores" class="secao_sensores" style="display: none;">
+
+            <div id="sensores_a" class="dashboard"  style="display: none;">
+              <div id="sensor_um_a" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_um_a"></canvas> <img onclick="selecionarCozinhaA()" class="voltar_sensores"
+                  src="../assets/voltar_icon.png"></div>
+              <div id="sensor_dois_a" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_dois_a"></canvas> <img onclick="selecionarCozinhaA()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+            </div>
+
+            <div id="sensores_b" class="dashboard" style="display: none;">
+              <div id="sensor_um_b" class="box_canva"  style="display: none;"><canvas class="grafico" id="chart_linha_um_b"></canvas> <img onclick="selecionarCozinhaB()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_dois_b" class="box_canva"  style="display: none;"><canvas class="grafico" id="chart_linha_dois_b"></canvas> <img onclick="selecionarCozinhaB()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_tres_b" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_tres_b"></canvas> <img onclick="selecionarCozinhaB()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_quatro_b" class="box_canva"  style="display: none;"><canvas class="grafico" id="chart_linha_quatro_b"></canvas> <img onclick="selecionarCozinhaB()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+            </div>
+
+            <div id="sensores_c" class="dashboard"  style="display: none;">
+              <div id="sensor_um_c" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_um_c"></canvas> <img onclick="selecionarCozinhaC()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_dois_c" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_dois_c"></canvas> <img onclick="selecionarCozinhaC()" class="voltar_sensores"
+                src="../assets/voltar_icon.png" ></div>
+              <div id="sensor_tres_c" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_tres_c"></canvas> <img onclick="selecionarCozinhaC()"  class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_quatro_c"  class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_quatro_c"></canvas> <img onclick="selecionarCozinhaC()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+            </div>
+
+            <div id="sensores_d" class="dashboard"  style="display: none;">
+              <div id="sensor_um_d" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_um_d"></canvas> <img onclick="selecionarCozinhaD()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_dois_d" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_dois_d"></canvas> <img onclick="selecionarCozinhaD()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+            </div>
+
+            <div id="sensores_e" class="dashboard"  style="display: none;">
+              <div id="sensor_um_e" class="box_canva"  style="display: none;"><canvas class="grafico" id="chart_linha_um_e"></canvas> <img onclick="selecionarCozinhaE()" class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+              <div id="sensor_dois_e" class="box_canva" style="display: none;"><canvas class="grafico" id="chart_linha_dois_e"></canvas> <img  class="voltar_sensores"
+                src="../assets/voltar_icon.png"></div>
+            </div>
+
+          </div>
+
+            <!-- 
+          
+            <div id="dashboard_safe" class="dashboard">
+              <canvas class="grafico" id="chart_linha_safe"></canvas>
+            </div>
+
+            <div id="dashboard_warning" class="dashboard">
+              <canvas class="grafico" id="chart_linha_warning"></canvas>
+            </div>
+
+
+          ESSA TA DINAMICA!!!!!
+            <div id="dashboard_a" class="dashboard">
+              <canvas class="grafico" id="chart_linha_a"></canvas>
+            </div> -->
+
+          </div>
+
+
+          <!-- CONTAINER DAS BARRAS -->
+
+        </div>
+
+        <div class="container_barras" id="cont_barras">
+          <div class="box_barras">
+            <div class="texto_ano">
+              <h3>Quantidade de vazametos ao longo do ano:</h3>
+              <p>Ao longo do ano de <span>2024</span>, você teve um total de <span>96</span> vazamentos, sendo o mês de
+                <span>Outubro</span> o de maior número de vazamentos e o mês de <span>Agosto</span> o de menor número de
+                vazamentos!
+              </p>
+            </div>
+            <canvas class="barras_grafico" id="chart_linha_ano"></canvas>
+          </div>
+
+          <div class="box_barras">
+            <div class="texto_ano">
+              <h3 style="font-size: 1.3vw;;">Quantidade de vazametos no mês de outubro:</h3>
+              <p>No mês de <span>outubro</span>, você teve um total de <span>15</span> vazamentos, sendo a <span>Cozinha
+                  A</span> a de maior número de vazamentos, tendo um total de <span>14 vazamentos</span> e a
+                <span>Cozinha E</span> a de menor número de vazamentos, registrando <span>1 vazamento</span>!
+              </p>
+            </div>
+            <canvas class="barras_grafico" id="chart_barra_mes"></canvas>
+          </div>
+        </div>
       </div>
-
-<div id="dash_cozinhas" class="container_cozinhas">
-
-    <div class="box_cozinhas">
-        <div class="cozinhas" onclick="cozinhaA()"><div class="imagem_cozinha_safe"></div><p>Cozinha A</p></div>
-        <div class="cozinhas" onclick="cozinhaB()"><div class="imagem_cozinha_danger"></div><p>Cozinha B</p></div>
-        <div class="cozinhas" onclick="cozinhaC()"><div class="imagem_cozinha_safe "></div><p>Cozinha C</p></div>
-        <div class="cozinhas" onclick="cozinhaD()"><div class="imagem_cozinha_warning"></div><p>Cozinha D</p></div>
-        <div class="cozinhas" onclick="cozinhaE()"><div class="imagem_cozinha_safe"></div><p>Cozinha E</p></div>
-    </div> 
-    <div class="box_dashboards">
-        <div class="box_kpi_dash">
-    <div class="kpi_dash"><h4>Cozinha Selelecionada:</h4> <div style="display: flex;"><p style="margin-right: 1vw;">Cozinha <b id="cozinha_selecionada"> </b></p></div></div> 
-    <div class="kpi_dash"><h4>Média inicio do vazamento:</h4> <p id="inicio_vazamento"></p></div> 
-    <div class="kpi_dash"><h4>Status:</h4> <p id="termino_vazamento"></p> <span id="status_mensagem" class="status_mensagem"></span></div>
-
-</div>
-
-    <div id="dashboardB" class="dashboard">
-        <canvas class="grafico" id="chart_linha"></canvas>
-    </div>
-
-    <div id="dashboard_safe" class="dashboard">
-      <canvas class="grafico" id="chart_linha_safe"></canvas>
-  </div>
-
-  <div id="dashboard_warning" class="dashboard">
-    <canvas class="grafico" id="chart_linha_warning"></canvas>
-  </div>
-
-
-  <!-- DASHBOARD PARA DEIXAR DINAMICO (CALACE) -->
-  <div id="dashboard_a" class="dashboard">
-    <canvas id="sensorAnalogico"></canvas>
-  </div>
-  
-    </div>
-
-    
-
-</div>
-
-<div class="container_barras" id="cont_barras">
-<div class="box_barras">
-  <div class="texto_ano">
-  <h3>Quantidade de vazametos ao longo do ano:</h3>
-  <p>Ao longo do ano de <span>2024</span>, você teve um total de <span>96</span> vazamentos, sendo o mês de <span>Outubro</span> o de maior número de vazamentos e o mês de <span>Agosto</span> o de menor número de vazamentos! </p>
-</div>
-  <canvas class="barras_grafico" id="chart_linha_ano"></canvas>
-</div>
-
-<div class="box_barras"><div class="texto_ano">
-  <h3 style="font-size: 1.3vw;;">Quantidade de vazametos no mês de outubro:</h3>
-  <p>No mês de <span>outubro</span>, você teve um total de <span>15</span> vazamentos, sendo a  <span>Cozinha A</span> a de maior número de vazamentos, tendo um total de <span>14 vazamentos</span> e a <span>Cozinha E</span> a de menor número de vazamentos, registrando <span>1 vazamento</span>! </p>
-</div>
-  <canvas class="barras_grafico" id="chart_barra_mes"></canvas>
-</div>
-</div>
-    </div>
     </div>
   </div>
 </body>
+
 </html>
-<script>
-          var sensorAnalogico = new Chart(document.getElementById('sensorAnalogico').getContext('2d'), {
-            type: 'line',
-            data: {
-                datasets: [{
-                    label: 'Quantidade de Gás',
-                    borderColor: '#63B1BC',
-                    backgroundColor: '#ED145B'
-                },
-                {
-                    label: 'Limite de Segurança (2%)',
-                    data: [2, 2, 2, 2, 2],
-                    borderColor: 'blue',
-                    backgroundColor: 'rgba(0, 0, 255, 0.1)',
-                    borderWidth: 1,
-                    borderDash: [5, 5],
-                    pointRadius: 0
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: '(%)'
-                        },
-                        beginAtZero: true,
-                    },
-                },
-            }
-        });
-
-        var paginacao = {};
-        var tempo = {};
-
-        function obterDados(grafico, endpoint) {
-            fetch('http://localhost:3300/sensores/' + endpoint)
-                .then(response => response.json())
-                .then(valores => {
-                    if (paginacao[endpoint] == null) {
-                        paginacao[endpoint] = 0;
-                    }
-                    if (tempo[endpoint] == null) {
-                        tempo[endpoint] = 0;
-                    }
-
-                    var ultimaPaginacao = paginacao[endpoint];
-                    paginacao[endpoint] = valores.length;
-                    valores = valores.slice(ultimaPaginacao);
-
-                    valores.forEach((valor) => {
-                        if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-                            grafico.data.labels.shift();
-                            grafico.data.datasets[0].data.shift();
-                        }
-
-                        grafico.data.labels.push(tempo[endpoint]++);
-                        grafico.data.datasets[0].data.push(parseFloat(valor));
-                        grafico.update();
-                    });
-                })
-                .catch(error => console.error('Erro ao obter dados:', error));
-        }
-        setInterval(() => {
-            obterDados(sensorAnalogico, 'analogico');
-        }, 1000);
-</script>
