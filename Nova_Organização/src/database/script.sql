@@ -6,9 +6,9 @@ CREATE DATABASE leakgas;
 
 USE leakgas;
 
--- Cria uma tabela para representantes
+-- Cria uma tabela para representante
 
-CREATE TABLE cadastro (
+CREATE TABLE representante (
     idRepresentante INT PRIMARY KEY AUTO_INCREMENT,  
     nome VARCHAR(50),                                
     sobrenome VARCHAR(50),                           
@@ -29,7 +29,7 @@ CREATE TABLE empresa (
     fkRepresentante INT,
     fkMatriz INT,
     CONSTRAINT fkMatrizEmpresa FOREIGN KEY (fkMatriz) REFERENCES empresa(idEmpresa),                           
-    CONSTRAINT fkCadastroEmpresa FOREIGN KEY (fkRepresentante) REFERENCES cadastro(idRepresentante), 
+    CONSTRAINT fkrepresentanteEmpresa FOREIGN KEY (fkRepresentante) REFERENCES representante(idRepresentante), 
     PRIMARY KEY (idEmpresa, fkRepresentante)       
 );
 
@@ -53,10 +53,10 @@ CREATE TABLE sensores (
     idSensor INT AUTO_INCREMENT,                  
     estadoAtual VARCHAR(10) NOT NULL,             
     localizacaoSensor VARCHAR(50),                            
-    fkEmpresa INT,                                
+    fkCozinhaEmpresa INT,                                
     CONSTRAINT chkEstado CHECK (estadoAtual IN ('Ativo', 'Inativo', 'Manutenção')), 
-    CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),  
-    PRIMARY KEY (idSensor, fkEmpresa)               
+    CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkCozinhaEmpresa) REFERENCES empresa(idEmpresa),  
+    PRIMARY KEY (idSensor, fkCozinhaEmpresa)               
 );
 
 -- Cria uma tabela para dados dos sensores
@@ -81,9 +81,9 @@ CREATE TABLE faleConosco (
     CONSTRAINT chkTipo CHECK(tipo in('FaleConosco','Publicidade'))
 );
 
--- Insere um representante na tabela cadastro
+-- Insere um representante na tabela representante
 
-INSERT INTO cadastro VALUES (
+INSERT INTO representante VALUES (
     DEFAULT,
     'Ricardo ', 
     'Silva', 
