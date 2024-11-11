@@ -51,13 +51,25 @@ CREATE TABLE endereco (
 
 CREATE TABLE sensores (
     idSensor INT AUTO_INCREMENT,                  
-    estadoAtual VARCHAR(10) NOT NULL,             
-    localizacaoSensor VARCHAR(50),                            
+    estadoAtual VARCHAR(10) NOT NULL,                                         
     fkCozinhaEmpresa INT,                                
     CONSTRAINT chkEstado CHECK (estadoAtual IN ('Ativo', 'Inativo', 'Manutenção')), 
     CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkCozinhaEmpresa) REFERENCES empresa(idEmpresa),  
     PRIMARY KEY (idSensor, fkCozinhaEmpresa)               
 );
+
+-- Cria uma tabela para localização dos sensores
+
+CREATE TABLE localSensor(
+    idlocalSensor INT ,
+    quadrante VARCHAR(45) ,
+    FKsensores_idSensor INT,
+    FKsensores_fkCozinhaEmpresa INT,
+    PRIMARY KEY (idlocalSensor, FKsensores_idSensor, FKsensores_fkCozinhaEmpresa),
+       FOREIGN KEY (FKsensores_idSensor , FKsensores_fkCozinhaEmpresa)
+    REFERENCES sensores (idSensor , fkCozinhaEmpresa)
+);
+
 
 -- Cria uma tabela para dados dos sensores
 
@@ -145,20 +157,17 @@ INSERT INTO empresa VALUES (
 
 INSERT INTO sensores VALUES (
     DEFAULT,
-    'Ativo', 
-    'Cozinha', 
+    'Ativo',  
     1
     ),
     (
     DEFAULT,
-    'Inativo', 
-    'Próximo aos botijões', 
+    'Inativo',  
     2
     ),
     (
     DEFAULT,
-    'Manutenção', 
-    'Cozinha 2', 
+    'Manutenção',  
     3
     );
 
