@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" type="text/javascript" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>LeakGas - Contato</title>
+</head>
+<header>
+    <div class="cabecalho">
+        <a href="./index.html"><img class="logo" src="./assets/logo.png"></a>
+
+        <div class="box_nav">
+            <nav>
+                <a href="./sobre.html">SOBRE</a>
+                <a href="./servicos.html">SERVIÇOS</a>
+                <a href="./contato.html">CONTATO</a>
+            </nav>
+                <div class="box_login_cadastro">
+                <a class="cadastrar" href="LoginCadastro.html">CADASTRE-SE</a>
+                <a class="logar" href="LoginCadastro.html">ENTRAR</a>
+                </div>
+
+
+            
+        </div>
+    </div>
+</header>
+
+<body>
+    
+  <div class="container_contato">
+    <h3 class="title_contato">Fale conosco</h3>
+    <div class="box_form">
+    <p>Nome:</p>
+    <input type="text" name="" id="">
+    <p>Email:</p>
+    <input type="text" name="" id="">
+    <p>Mensagem:</p>
+    <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
+    <button>Enviar mensagem</button>
+
+    </div>
+    <div class="box_endereco">
+        <p>Rua Haddock Lobo, 595 - Cerqueira César</p>
+        <p>São Paulo- SP</p>
+        <br>
+        <p>(11) 95883-6788</p>
+        <p>contato@leakgas.com</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.288297654102!2d-46.664250025422106!3d-23.55808706147043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2a5270055%3A0x3c7ea4f4c7d51fb6!2sRua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!5e0!3m2!1spt-BR!2sbr!4v1728357259013!5m2!1spt-BR!2sbr"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+    <div class="container_info">
+        <div class="box_info">
+            <h3>RECEBA MAIS INFORMAÇÕES</h3>
+            <p>Preencha o campo abaixo para <br>receber mais informações sobre o sistema da LeakGas.</p>
+        
+        <div> <input type="text" placeholder="Seu endereço de e-mail"> <button>Receber informações</button></div>
+    </div>
+    </div>
+
+</body>
+<footer>
+    
+    <div class="box_footer_cabecalho">
+        <img src="./assets/logo_leak.png" alt="">
+        <div class="box_footer_redes">
+            <div class="img_footer1"></div>
+        <div class="img_footer2"></div>
+        <div class="img_footer3"></div>
+        </div>
+        <div class="div_linha"></div>
+    </div>
+    
+    <div class="box_footer_rodape">
+        <div class="box_footer_contato">
+            <p class="footer_title">LeakGas</p>
+            <p>contato@leakgas.com</p>
+            <p>(11)95883-6788</p>
+            <br>
+            <p>Rua Haddock Lobo, 595 - Cerqueira César</p>
+            <p>São Paulo - SP</p>
+            <p>14144000</p>
+            <p>Razão Social: LeakGas Monitoramento de Gás</p>
+            <p>IndustrialLTDA</p>
+            <p>CNPJ 12.345.678/0001-90</p>
+
+        </div>
+        <div class="box_footer_termos">
+            <p>Política de Privacidade</p>
+            <p>Termos de Uso</p>
+            <p>Normas de Segurança (NFPA)</p>
+            <a href="./contato.html">Fale Conosco</a>
+        </div>
+        <a class="a_footer" href="./contato.html">Voltar ao topo</a>
+    </div>
+
+    <p class="footer_final">© 2024 LeakGas - Todos os direitos reservados.</p>
+</footer>
+</html>
+<script>
+        if (window.localStorage.getItem("logado") === "true"){
+        anchorDashboard.href="./dashboard.html";
+        anchorDashboard.style.display="block";
+    }
+</script>
