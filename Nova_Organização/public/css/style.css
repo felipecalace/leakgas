@@ -1740,3 +1740,25 @@ cursor: pointer;
   transition: opacity 0.3s ease, max-height 0.5s ease-out;
   background-color: solid #092B43;
 }
+
+.faq-answer p {
+  font-size: 1vw;
+}
+
+/* Ajuste no botão de contato */
+.contact {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.contact strong {
+  margin-bottom: auto;
+  font-size: 1.7vw;
+  color: #092B43;
+}
+
+.contact p {
+  font-size: 1.3vw;
+  color: #202020;
+}
