@@ -1777,3 +1777,10 @@ cursor: pointer;
 .contact button:hover {
   background-color: #092B43;
 }
+
+/* Ícone de expansão */
+.icon {
+  font-size: 1.2vw;
+  transition: transform 0.5s ease;
+  color: #002E52;
+}
