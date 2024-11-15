@@ -1712,3 +1712,31 @@ cursor: pointer;
   font-size: 1vw;
   color: #333;
 }
+
+/* Estado quando a FAQ é aberta (ícone vira "X") */
+.faq-item.open .plus {
+  transform: rotate(45deg);
+  /* Ícone rotaciona 45 graus */
+}
+
+/* Resposta */
+.faq-answer {
+  padding: 1vw 1.5vw;
+  background-color: #f7f7f7;
+  display: none;
+  border-left: 0.2vw solid #002E52;
+  border-bottom-right-radius: 1vw;
+  color: #666;
+  margin-top: 0.2vw;
+  transition: opacity 0.3s ease;
+}
+
+/* Exibe a resposta com animação */
+.faq-item.open .faq-answer {
+  display: block;
+  opacity: 10vw;
+  max-height: 10vw;
+  /* Limita a altura máxima para garantir que a resposta não fique excessivamente grande */
+  transition: opacity 0.3s ease, max-height 0.5s ease-out;
+  background-color: solid #092B43;
+}
