@@ -1797,3 +1797,16 @@ cursor: pointer;
   /* Começa sem rotação */
   color: #0577c9;
 }
+
+/* Estado quando a FAQ é aberta (ícone vira "X") */
+.minus {
+  transform: rotate(45deg);
+  /* Ícone rotaciona 45 graus */
+  color: #092B43;
+}
+
+.minus:hover {
+  transform: rotate(45deg);
+  /* Ícone rotaciona 45 graus */
+  color: #0577c9;
+}
