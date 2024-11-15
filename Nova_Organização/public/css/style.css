@@ -492,18 +492,23 @@ font-size: 1.4vw
   resize: none;
 }
 
-  .box_form button{
-    width: 100%;
+.box_form button {
+  width: 100%;
   border: none;
-  height: 4.5vw;
-  font-size: 1.4vw;
+  height: 3rem;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
   background-color: #092B43;
-  border-radius: 0.6vw;
+  border-radius: 0.5vw;
   cursor: pointer;
-  margin-top: 1vw
-  }
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.box_form button:hover {
+  background-color: #064060;
+}
   
   .box_endereco{
     display: flex;
