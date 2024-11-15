@@ -1650,3 +1650,15 @@ cursor: pointer;
 .faq {
   padding-top: 7%;
 }
+
+/* Container principal da FAQ */
+.faq-container {
+  padding: 3vw;
+}
+
+.faq-container h2 {
+  text-align: center;
+  font-size: 3vw;
+  margin-bottom: 0.3vw;
+  color: #333;
+}
