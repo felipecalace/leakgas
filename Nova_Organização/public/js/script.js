@@ -35,7 +35,7 @@ questions.forEach(question => {
     } else {
       icon.classList.remove('minus');
       icon.classList.add('plus');
-      answer.style.display = 'none';
+      answer.style.display = 'none'; // Fecha a resposta se o ícone for clicado novamente
     }
   });
 });
