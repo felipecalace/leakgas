@@ -1689,3 +1689,26 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
 }
+
+/* Itens de FAQ */
+.faq-item {
+  margin-bottom: 1vw;
+}
+
+/* Estilo da pergunta */
+.faq-question {
+  background-color: #f9f9f9;
+  padding: 1vw 1vw;
+  border: 0.11vw solid #ddd;
+  border-radius: 0.4vw;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.4s ease, padding 0.2s ease;
+  font-size: 18px;
+}
+
+.faq-question span {
+  font-size: 1vw;
+  color: #333;
+}
