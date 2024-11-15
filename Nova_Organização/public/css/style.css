@@ -1762,3 +1762,18 @@ cursor: pointer;
   font-size: 1.3vw;
   color: #202020;
 }
+
+.contact button {
+  padding: 1vw;
+  font-size: 1.10vw;
+  background-color: #092B43;
+  color: white;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #092B43;
+}
