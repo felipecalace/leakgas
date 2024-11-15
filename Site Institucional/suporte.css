@@ -224,3 +224,18 @@ h1 {
   font-size: 36px; /* Aumenta o tamanho do texto quando expandido */
 }
 
+footer {
+  background-color: #092B43; /* Fundo escuro como o tema principal */
+  color: white; /* Texto branco para contraste */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px 0; /* Espaçamento vertical */
+  font-size: 14px; /* Tamanho do texto */
+  border-top: 2px solid #0080BA; /* Linha superior para destacar o rodapé */
+}
+
+.footer_final {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
