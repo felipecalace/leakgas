@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte LeakGas</title>
+  <link rel="stylesheet" href="suporte.css">
+</head>
+<body>
+  <!-- Barra de Navegação Superior -->
+  <header>
+    <div class="cabecalho">
+      <a href="./home.html"><img class="logo" src="./assets/logo.png"></a>
+      <div class="box_nav">
+        <nav>
+          <a href="./sobre.html">SOBRE</a>
+          <a href="./servicos.html">SERVIÇOS</a>
+          <a href="./contato.html">CONTATO</a>
+          <a href="./contato.html">JIRA</a>
+        </nav>
+        <div class="box_login_cadastro">
+          <a class="logar" href="LoginCadastro.html">SUPORTE</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Navegação Lateral Expansível -->
+    <nav class="sidebar" id="sidebar">
+      <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+      <a href="home.html">Home</a>
+      <a href="#">Lista de chamados em Aberto</a>
+      <a href="#">Lista de chamados Encerrados</a>
+      <a href="#">Ir para o JIRA</a>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="content">
+      <h1>Suporte LeakGas</h1>
+
+      <!-- Primeiro Card -->
+      <div class="full-width-card">
+        <h2>Chamados</h2>
+        <h3>Entre aqui para acessar os chamados em aberto</h3>
+        <button>Abrir lista de chamados</button>
+      </div>
+
+      <!-- Segundo Card -->
+      <div class="full-width-card">
+        <h2>BobIA</h2>
+        <h3>Clique aqui para perguntar algo</h3>
+        <p>**BobIA**</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-button" onclick="toggleButton()">+</div>
+
+
+  <script src="suporte.js"></script>
+</body>
+</html>

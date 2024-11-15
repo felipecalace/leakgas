@@ -1,0 +1,226 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Saira", sans-serif;
+}
+
+/* Barra de Navegação Superior */
+header {
+  width: 100%;
+  height: 6vw;
+  position: fixed;
+  z-index: 3;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+.cabecalho {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.logo {
+  width: 15vw;
+  height: 100%;
+  margin-left: 2vw;
+  cursor: pointer;  
+  margin-top: 0.6vw;  
+}
+
+.box_nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav {
+  width: 40vw;
+  margin-right: 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+a {
+  font-style: normal;
+  color: white;
+  text-decoration: none; 
+  font-size: 1.5vw;
+  font-weight: 400;
+  text-align: center;
+}
+a:hover {
+  font-weight: bold;
+}
+
+/* Estilo para o container principal */
+.container {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 6vw; /* Adicionado para evitar sobreposição com o header */
+}
+
+/*BOX LOGIN E CADASTRO*/
+.box_login_cadastro {
+  display: flex;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  justify-content: space-around;
+  align-items: center;
+  width: 20vw;
+}
+.box_login_cadastro a {
+  width: 9vw;
+  height: 3vw;
+  border-radius: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.cadastrar {
+  border: 0.14vw solid #002E52;
+  background-color: #eeeeee2c;
+  font-size: 1vw;
+}
+.cadastrar:hover {
+  background-color: #002E52;
+}
+.logar {
+  background-color: #0080BA;
+  font-size: 1.3vw;
+}
+
+/* Estilo da navegação lateral */
+.sidebar {
+  width: 60px;
+  background-color: #092B43;
+  color: white;
+  padding-top: 20px; /* Adicionado para espaçar a logo e o botão */
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: width 0.5s;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza conteúdo horizontalmente */
+}
+
+.sidebar.expanded {
+  width: 250px;
+}
+
+.toggle-btn {
+  background-color: #092B43;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px; /* Para ajustar o espaçamento logo abaixo da logo */
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 20px; /* Ajusta o espaçamento interno dos links */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-align: center;
+}
+
+.sidebar.expanded a {
+  opacity: 1;
+}
+
+/* Estilo do conteúdo principal */
+.content {
+  margin-left: 60px;
+  padding: 20px;
+  width: 100%;
+  transition: margin-left 0.3s;
+}
+
+.content.expanded {
+  margin-left: 250px;
+}
+
+h1 {
+  color: #092B43;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o card de largura total */
+.full-width-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.full-width-card h2 {
+  color: #092B43;
+  margin-bottom: 10px;
+}
+
+.full-width-card h3 {
+  color: #0c3a53;
+  margin-bottom: 10px;
+}
+
+.full-width-card p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Estilo para o botão nos cards */
+.full-width-card button {
+  background-color: #092B43;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.full-width-card button:hover {
+  background-color: #0c3a53;
+}
+
+/* Botão flutuante redondo no canto inferior direito */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0080BA; /* Cor de fundo do botão */
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transição para suavizar a expansão */
+  z-index: 1000; /* Mantém o botão acima de outros elementos */
+}
+
+/* Expansão do botão ao passar o mouse */
+.floating-button:hover {
+  width: 150px;
+  height: 150px;
+  font-size: 36px; /* Aumenta o tamanho do texto quando expandido */
+}
+
