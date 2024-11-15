@@ -1644,3 +1644,9 @@ cursor: pointer;
   pointer-events: auto; /* Permite interação quando visível */
   transform: translateY(0); /* Move para a posição original */
 }
+
+/* FAQ */
+
+.faq {
+  padding-top: 7%;
+}
