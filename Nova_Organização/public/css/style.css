@@ -434,16 +434,36 @@ font-size: 1.4vw
     color: white;
     font-weight:lighter;
   }
-  .container_contato{
-    padding-top: 6vw;
+
+  .container_contato {
     background-color: #F8F7F7;
     width: 100%;
-    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw;
+    gap: 2vw;
+    position: relative;
+  }
+
+  .container_contato strong {
+    position: absolute;
+    top: 1.5vw; /* Ajuste da distância do topo */
+    font-size: 2.5vw;
+    font-weight: 600;
+    color: #092B43;
+    text-align: center;
+  }
+  
+  .content_wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    gap: 4vw; /* Espaçamento entre o formulário e o endereço */
+    width: 100%;
+    margin-top: 5vw; /* Espaço extra abaixo do título */
   }
+
   .box_form{
     background-color: #FFFFFF;
     border-radius: 0.5vw;
