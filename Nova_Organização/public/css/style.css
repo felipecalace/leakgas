@@ -1784,3 +1784,16 @@ cursor: pointer;
   transition: transform 0.5s ease;
   color: #002E52;
 }
+
+/* Estado inicial do ícone (+) */
+.plus {
+  transform: rotate(0deg);
+  /* Começa sem rotação */
+  color: #092B43;
+}
+
+.plus:hover {
+  transform: rotate(0deg);
+  /* Começa sem rotação */
+  color: #0577c9;
+}
