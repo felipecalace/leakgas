@@ -6,97 +6,12 @@
   font-family: "Saira", sans-serif;
 }
 
-/* Barra de Navegação Superior */
-header {
-  width: 100%;
-  height: 6vw;
-  position: fixed;
-  z-index: 3;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-}
-.cabecalho {
-  display: flex;
-  align-items: center;
-  z-index: 2;
-}
-.logo {
-  width: 15vw;
-  height: 100%;
-  margin-left: 2vw;
-  cursor: pointer;  
-  margin-top: 0.6vw;  
-}
-
-.box_nav {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-nav {
-  width: 40vw;
-  margin-right: 5vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-}
-a {
-  font-style: normal;
-  color: white;
-  text-decoration: none; 
-  font-size: 1.5vw;
-  font-weight: 400;
-  text-align: center;
-}
-a:hover {
-  font-weight: bold;
-}
-
-/* Estilo para o container principal */
-.container {
-  display: flex;
-  min-height: 100vh;
-  padding-top: 6vw; /* Adicionado para evitar sobreposição com o header */
-}
-
-/*BOX LOGIN E CADASTRO*/
-.box_login_cadastro {
-  display: flex;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  justify-content: space-around;
-  align-items: center;
-  width: 20vw;
-}
-.box_login_cadastro a {
-  width: 9vw;
-  height: 3vw;
-  border-radius: 0.5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-}
-.cadastrar {
-  border: 0.14vw solid #002E52;
-  background-color: #eeeeee2c;
-  font-size: 1vw;
-}
-.cadastrar:hover {
-  background-color: #002E52;
-}
-.logar {
-  background-color: #0080BA;
-  font-size: 1.3vw;
-}
-
-/* Estilo da navegação lateral */
+/* Estilo para a barra lateral */
 .sidebar {
   width: 60px;
   background-color: #092B43;
   color: white;
-  padding-top: 20px; /* Adicionado para espaçar a logo e o botão */
+  padding-top: 20px;
   position: fixed;
   height: 100%;
   top: 0;
@@ -106,14 +21,37 @@ a:hover {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza conteúdo horizontalmente */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sidebar.expanded {
   width: 250px;
 }
 
-.toggle-btn {
+
+/* Estilo para a logo */
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.logo img {
+  width: 40px; /* Largura inicial */
+  height: 40px; /* Altura inicial */
+  transition: all 0.5s ease;
+  object-fit: contain; /* Garante que a logo mantenha a proporção */
+}
+
+.sidebar.expanded .logo img {
+  width: 100px; /* Largura expandida */
+  height: 100px; /* Altura expandida */
+}
+
+
+/* Botão de Toggle */
+.sidebar .toggle-btn {
   background-color: #092B43;
   color: white;
   border: none;
@@ -122,12 +60,11 @@ a:hover {
   cursor: pointer;
   width: 100%;
   text-align: center;
-  margin-top: 40px; /* Para ajustar o espaçamento logo abaixo da logo */
 }
 
 .sidebar a {
   display: block;
-  padding: 15px 20px; /* Ajusta o espaçamento interno dos links */
+  padding: 15px 20px;
   color: white;
   text-decoration: none;
   font-size: 16px;
@@ -140,25 +77,81 @@ a:hover {
   opacity: 1;
 }
 
-/* Estilo do conteúdo principal */
-.content {
-  margin-left: 60px;
-  padding: 20px;
+.sidebar a:hover {
+  background-color: #0c3a53;
+}
+
+/* Botão de Sair */
+.logout {
   width: 100%;
-  transition: margin-left 0.3s;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.content.expanded {
-  margin-left: 250px;
+.logout a {
+  display: block;
+  width: 100%;
 }
 
-h1 {
+.logout button {
+  background-color: #092B43;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre o ícone e o texto */
+  padding: 15px 20px;
+  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.logout img {
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease;
+}
+
+.logout button:hover img {
+  transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.logout span {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.expanded .logout span {
+  display: inline;
+  opacity: 1;
+}
+
+
+/* Estilo para o conteúdo principal */
+.container {
+  margin-left: 60px; /* Margem padrão da sidebar */
+  padding: 20px;
+  width: calc(100% - 60px); /* Largura ajustada para a sidebar não cobrir o conteúdo */
+  transition: margin-left 0.3s, width 0.3s; /* Transição suave */
+}
+
+/* Quando a sidebar é expandida, ajusta a margem e a largura */
+.sidebar.expanded + .container {
+  margin-left: 250px; /* Aumenta a margem quando a sidebar expande */
+  width: calc(100% - 250px); /* Ajusta a largura do conteúdo quando a sidebar é expandida */
+}
+
+.content h1 {
   color: #092B43;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Estilo para o card de largura total */
+/* Estilo para os cards */
 .full-width-card {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -179,12 +172,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-.full-width-card p {
-  color: #666;
-  font-size: 14px;
-}
-
-/* Estilo para o botão nos cards */
 .full-width-card button {
   background-color: #092B43;
   color: white;
@@ -198,7 +185,7 @@ h1 {
   background-color: #0c3a53;
 }
 
-/* Botão flutuante redondo no canto inferior direito */
+/* Botão flutuante */
 .floating-button {
   position: fixed;
   bottom: 20px;
@@ -206,36 +193,29 @@ h1 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #0080BA; /* Cor de fundo do botão */
+  background-color: #0080BA;
   color: white;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transição para suavizar a expansão */
-  z-index: 1000; /* Mantém o botão acima de outros elementos */
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-/* Expansão do botão ao passar o mouse */
 .floating-button:hover {
   width: 150px;
   height: 150px;
-  font-size: 36px; /* Aumenta o tamanho do texto quando expandido */
+  font-size: 36px;
 }
 
+/* Rodapé */
 footer {
-  background-color: #092B43; /* Fundo escuro como o tema principal */
-  color: white; /* Texto branco para contraste */
-  text-align: center; /* Centraliza o texto */
-  padding: 20px 0; /* Espaçamento vertical */
-  font-size: 14px; /* Tamanho do texto */
-  border-top: 2px solid #0080BA; /* Linha superior para destacar o rodapé */
+  background-color: #092B43;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  border-top: 2px solid #0080BA;
 }
-
-.footer_final {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-
