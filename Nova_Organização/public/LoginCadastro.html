@@ -11,7 +11,7 @@
 <body>
 <div id="divLogin" style="display: block;">
         <!-- Link para a página inicial com um logo como botão -->
-        <a href="home.html">
+        <a href="index.html">
             <img src="assets/logoAzul.png" alt="Home" class="home-button">
         </a>
 
@@ -45,7 +45,7 @@
                 <div id="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
                 <a href="#">Esqueceu sua senha?</a>
                 
-                <button onclick="validateLogin()" style="cursor: pointer;">Entrar</button>
+                <button id="loginButton" style="cursor: pointer;">Entrar</button>
             </form>
         </div>
 
@@ -70,7 +70,7 @@
 </div>
 <div id="divCadastro" style="display: none;">
     <!-- Botão que retorna para a página inicial (index.html), representado por uma logo -->
-    <a href="home.html">
+    <a href="index.html">
         <img src="assets/logoAzul.png" alt="Home" class="home-button">
     </a>
 
@@ -199,7 +199,7 @@
                         <!-- Botão que retorna para a etapa anterior -->
                         <button type="button" class="btn prev-btn">Voltar</button>
                         <!-- Botão que submete o formulário -->
-                        <button type="submit" class="btn submit-btn" onclick="Finalizar()">Finalizar</button>
+                        <button id="btnFinalizar" type="submit" class="btn submit-btn">Finalizar</button>
                     </div>
                 </div>
             </form>
