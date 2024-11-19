@@ -188,12 +188,15 @@
 /* Botão flutuante */
 .floating-button {
   position: fixed;
+  background-color: #092B43;
   bottom: 20px;
   right: 20px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #0080BA;
+  background-image:url(./assets/bob_icon.png);
+  background-size: cover;
+  background-position: center;
   color: white;
   font-size: 24px;
   display: flex;
@@ -205,17 +208,7 @@
 }
 
 .floating-button:hover {
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
   font-size: 36px;
-}
-
-/* Rodapé */
-footer {
-  background-color: #092B43;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  border-top: 2px solid #0080BA;
 }
