@@ -2057,20 +2057,20 @@ footer hr {
 
 
 /* Estilo para a logo */
-.logo {
+.logos {
   text-align: center;
   margin-bottom: 20px;
   transition: all 0.5s ease;
 }
 
-.logo img {
+.logos img {
   width: 40px; /* Largura inicial */
   height: 40px; /* Altura inicial */
   transition: all 0.5s ease;
   object-fit: contain; /* Garante que a logo mantenha a proporção */
 }
 
-.sidebar.expanded .logo img {
+.sidebar.expanded .logos img {
   width: 100px; /* Largura expandida */
   height: 100px; /* Altura expandida */
 }
