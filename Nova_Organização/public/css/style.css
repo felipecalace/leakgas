@@ -1961,6 +1961,7 @@ footer hr {
 
 .faq-answer p {
   font-size: 1vw;
+  text-align: left;
 }
 
 /* Ajuste no botão de contato */
