@@ -188,12 +188,15 @@
 /* Botão flutuante */
 .floating-button {
   position: fixed;
+  background-color: #092B43;
   bottom: 20px;
   right: 20px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #0080BA;
+  background-image:url(./assets/bob_icon.png);
+  background-size: cover;
+  background-position: center;
   color: white;
   font-size: 24px;
   display: flex;
@@ -205,17 +208,67 @@
 }
 
 .floating-button:hover {
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
   font-size: 36px;
 }
 
-/* Rodapé */
-footer {
+/* Estilo do pop-up */
+.popup {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteúdo do pop-up */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Botão de fechar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Estilos do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
   background-color: #092B43;
   color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  border-top: 2px solid #0080BA;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0c3a53;
 }
