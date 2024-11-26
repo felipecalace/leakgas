@@ -1,4 +1,5 @@
 var mysql = require("mysql2");
+var fs = require("fs")
 
 // CONEXÃO DO BANCO MYSQL SERVER
 var mySqlConfig = {
@@ -6,7 +7,8 @@ var mySqlConfig = {
     database: process.env.DB_DATABASE,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT,
+    multipleStatements: true // Permitir múltiplas instruções
 };
 
 function executar(instrucao) {
@@ -33,6 +35,13 @@ function executar(instrucao) {
     });
 }
 
+function inicializarBanco(){
+    // var inserts = fs.readFileSync("./src/database/inserts.sql").toString();
+    // var initScript = fs.readFileSync("./src/database/script.sql").toString();
+    // executar()
+}
+
 module.exports = {
-    executar
+    executar,
+    inicializarBanco
 };

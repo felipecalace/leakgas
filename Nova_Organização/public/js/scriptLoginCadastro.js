@@ -31,7 +31,7 @@ const prevBtns = document.querySelectorAll(".prev-btn");
 let currentStep = 0;
 
 // Para cada botão "Próximo", adiciona um evento de clique
-function cadastroEmpresa() {
+function cadastroEmpresa(incrementar = true) {
   var cnpjvar = cnpj.value;
   var socialNome = nomeSocial.value;
   var fantasiaNome = nomeFantasia.value;
@@ -44,21 +44,31 @@ function cadastroEmpresa() {
     cnpjvar.length == 14 &&
     arrobaIndex != -1 &&
     pontoIndex != -1 &&
-    arrobaIndex < pontoIndex &&
     arrobaIndex > 0 &&
     pontoIndex < email.length - 1 &&
     socialNome.length > 1 &&
     fantasiaNome.length > 1 &&
     telefoneCorp.length > 10
   ) {
-    // Remove a classe 'active' da etapa atual
-    steps[currentStep].classList.remove("active");
-    formSteps[currentStep].classList.remove("active");
-    // Incrementa a etapa atual
-    currentStep++;
-    // Adiciona a classe 'active' à próxima etapa
-    steps[currentStep].classList.add("active");
-    formSteps[currentStep].classList.add("active");
+
+    if(incrementar) {
+      // Remove a classe 'active' da etapa atual
+      steps[currentStep].classList.remove("active");
+      formSteps[currentStep].classList.remove("active");
+      // Incrementa a etapa atual
+      currentStep++;
+      // Adiciona a classe 'active' à próxima etapa
+      steps[currentStep].classList.add("active");
+      formSteps[currentStep].classList.add("active");
+    }
+    
+    return {
+      cnpj: cnpjvar,
+      nomeSocial: socialNome,
+      nomeFantasia: fantasiaNome,
+      emailEmpresa: email,
+      telefoneCorp: telefoneCorp
+    }
   } else {
     // Validações adicionais
     if (cnpjvar.length != 14) {
@@ -106,7 +116,7 @@ function cadastroEmpresa() {
       document.body.classList.add("fade-in");
     };
 
-function etapaDois() {
+function etapaDois(incrementar = true) {
   var enderecoLocal = endereco.value;
   var numeroLocal = numero.value;
   var cepLocal = cep.value;
@@ -120,14 +130,25 @@ function etapaDois() {
     cepLocal.length == 8 &&
     estadoLocal.length > 0
   ) {
-    // Remove a classe 'active' da etapa atual
-    steps[currentStep].classList.remove("active");
-    formSteps[currentStep].classList.remove("active");
-    // Incrementa a etapa atual
-    currentStep++;
-    // Adiciona a classe 'active' à próxima etapa
-    steps[currentStep].classList.add("active");
-    formSteps[currentStep].classList.add("active");
+
+    if (incrementar) {
+      // Remove a classe 'active' da etapa atual
+      steps[currentStep].classList.remove("active");
+      formSteps[currentStep].classList.remove("active");
+      // Incrementa a etapa atual
+      currentStep++;
+      // Adiciona a classe 'active' à próxima etapa
+      steps[currentStep].classList.add("active");
+      formSteps[currentStep].classList.add("active");
+    }
+    
+    return {
+      endereco: enderecoLocal,
+      numero: numeroLocal,
+      cep: cepLocal,
+      estado: estadoLocal,
+      cidade: cidadeLocal
+    }
   } else {
     // Validações adicionais
     if (enderecoLocal.length === 0) {
@@ -147,7 +168,9 @@ function etapaDois() {
     }
   }
 }
-function Finalizar() {
+
+function Finalizar(ev) {
+  ev.preventDefault()
     var pessoalSobrenome = sobrenomePessoal.value;
     var pessoalNome = nomePessoal.value;
     var pessoalTelefone = telefonePessoal.value;
@@ -156,6 +179,7 @@ function Finalizar() {
     var email = emailLoginPessoal.value; // Captura o valor do campo de e-mail
     var arrobaIndex = email.indexOf("@");
     var pontoIndex = email.indexOf(".");
+    var erro= false;
     
     // Captura o span de erro para o e-mail
     var spanEmailLoginPessoal = document.getElementById('spanEmailLoginPessoal');
@@ -177,33 +201,66 @@ function Finalizar() {
         pontoIndex >= email.length - 1
     ) {
         spanEmailLoginPessoal.innerHTML = `O e-mail deve ser válido!`;
+        erro = true
     }
-
     // Validação do nome
     if (pessoalNome.length === 0) {
         spanNomePessoal.innerHTML = `O nome é obrigatório!`;
+        erro = true
     }
-
     // Validação do sobrenome
     if (pessoalSobrenome.length === 0) {
         spanSobrenomePessoal.innerHTML = `O sobrenome é obrigatório!`;
+        erro = true
     }
-
     // Validação do telefone
     if (pessoalTelefone.length === 0) {
         spanTelefonePessoal.innerHTML = `O telefone é obrigatório!`;
+        erro = true
     }
-
     // Validação da senha
     if (pessoalSenha.length === 0) {
         spanSenhaPessoal.innerHTML = `A senha é obrigatória!`;
+        erro = true
     }
-
     // Validação da confirmação da senha
     if (pessoalSenha !== pessoalConfirmaSenha) {
         spanConfirmaSenhaPessoal.innerHTML = `A senha não confere!`;
+        erro = true
+    }
+    if (erro){
+      return;
     }
 
+    var body = {
+    ...cadastroEmpresa(false),
+    ...etapaDois(false),
+    pessoalSobrenome: pessoalSobrenome,
+    pessoalNome: pessoalNome,
+    pessoalTelefone: pessoalTelefone,
+    pessoalSenha: pessoalSenha,
+    pessoalConfirmaSenha: pessoalConfirmaSenha,
+    email: email
+  }
+
+  console.log(body);
+
+  fetch("/usuarios/cadastrar",{
+    method:"POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  }).then((res) => {
+     // Redireciona para a página desejada se os dados estiverem corretos
+    if(res.status != 200){
+      throw new Error("Erro ao cadastrar")
+    }
+    // window.location.href = 'dashboard/dashboard.html'
+  }).catch((err) => {
+    // Exibe uma mensagem de erro se o login falhar
+    // mensagemErro.textContent = 'Login ou senha inválida.';
+  });
 }
 function senhaLive(){
   var pessoalSenha = senhaPessoal.value;
@@ -254,22 +311,36 @@ function senhaLive(){
 function validateLogin(event) {
   // Impede o comportamento padrão do formulário
   event.preventDefault();
+  console.log(event)
   
   // Obtém os valores dos campos de e-mail e senha
   const email = document.querySelector('.sign-in-container input[type="email"]').value;
   const password = document.querySelector('.sign-in-container input[type="password"]').value;
   const mensagemErro = document.getElementById('error-message'); // Obtém a div de mensagem de erro
 
-  // Verifica se o e-mail e senha correspondem aos valores esperados
-  if (email === 'admin@admin' && password === 'urubu100') {
-      // Redireciona para a página desejada se os dados estiverem corretos
-      window.location.href = 'dashboard.html'; // Página linkada
-  } else {
-      // Exibe uma mensagem de erro se o login falhar
-      mensagemErro.textContent = 'Login ou senha inválida.'; // mensagem de erro
-  }
+  fetch("/usuarios/autenticar",{
+    method:"POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({email, password})
+  }).then((res) => {
+     // Redireciona para a página desejada se os dados estiverem corretos
+    if(res.status != 200){
+      throw new Error("Erro ao logar")
+    }
+    window.location.href = 'dashboard/dashboard.html'
+  }).catch((err) => {
+    // Exibe uma mensagem de erro se o login falhar
+    mensagemErro.textContent = 'Login ou senha inválida.';
+  });
 }
 
 // Adiciona um evento de clique ao botão de login para chamar a função de validação
-const loginButton = document.querySelector('.sign-in-container button');
-loginButton.addEventListener('click', validateLogin);
+loginButton.addEventListener('click',(event) => {
+  validateLogin(event)
+});
+// Adiciona um evento de clique ao botão de login para chamar a função de validação
+btnFinalizar.addEventListener('click',(event) => {
+  Finalizar(event)
+});
