@@ -32,24 +32,25 @@ let currentStep = 0;
 
 // Para cada botão "Próximo", adiciona um evento de clique
 function cadastroEmpresa() {
-  var cnpjvar = cnpj.value;
-  var socialNome = nomeSocial.value;
-  var fantasiaNome = nomeFantasia.value;
-  var email = emailCorp.value;
-  var telefoneCorp = telCorp.value;
-  var arrobaIndex = email.indexOf("@");
-  var pontoIndex = email.indexOf(".");
+  var cnpjVar = cnpj.value;
+  var nomeSocialVar = nomeSocial.value;
+  var nomefantasiaVar = nomeFantasia.value;
+  var emailVar = emailVarCorp.value;
+  var telefoneCorporativoVar = telCorp.value;
+  
+  var arrobaIndex = emailVar.indexOf("@");
+  var pontoIndex = emailVar.indexOf(".");
 
   if (
-    cnpjvar.length == 14 &&
+    cnpjVar.length == 14 &&
     arrobaIndex != -1 &&
     pontoIndex != -1 &&
     arrobaIndex < pontoIndex &&
     arrobaIndex > 0 &&
-    pontoIndex < email.length - 1 &&
-    socialNome.length > 1 &&
+    pontoIndex < emailVar.length - 1 &&
+    nomeSocialVar.length > 1 &&
     fantasiaNome.length > 1 &&
-    telefoneCorp.length > 10
+    telefoneCorporativoVar.length > 10
   ) {
     // Remove a classe 'active' da etapa atual
     steps[currentStep].classList.remove("active");
@@ -61,16 +62,16 @@ function cadastroEmpresa() {
     formSteps[currentStep].classList.add("active");
   } else {
     // Validações adicionais
-    if (cnpjvar.length != 14) {
+    if (cnpjVar.length != 14) {
       spanCnpj.innerHTML = `O CNPJ não possui 14 dígitos!`;
     }
-    if (socialNome.length <= 1) {
-      spanSocialNome.innerHTML = `O nome social deve ter mais de 1 caractere!`;
+    if (nomeSocialVar.length <= 1) {
+      spannomeSocialVar.innerHTML = `O nome social deve ter mais de 1 caractere!`;
     }
     if (fantasiaNome.length <= 1) {
       spanFantasiaNome.innerHTML = `O nome fantasia deve ter mais de 1 caractere!`;
     }
-    if (telefoneCorp.length < 10) {
+    if (telefoneCorporativoVar.length < 10) {
       spanTelefone.innerHTML = `O telefone deve ter mais de 10 dígitos!`;
     }
     if (
@@ -78,9 +79,9 @@ function cadastroEmpresa() {
       pontoIndex == -1 ||
       arrobaIndex >= pontoIndex ||
       arrobaIndex <= 0 ||
-      pontoIndex >= email.length - 1
+      pontoIndex >= emailVar.length - 1
     ) {
-      spanEmail.innerHTML = `O e-mail deve ser válido!`;
+      spanEmailVar.innerHTML = `O e-mail deve ser válido!`;
     }
   }
 }
@@ -148,20 +149,21 @@ function etapaDois() {
   }
 }
 function Finalizar() {
-    var pessoalSobrenome = sobrenomePessoal.value;
-    var pessoalNome = nomePessoal.value;
-    var pessoalTelefone = telefonePessoal.value;
-    var pessoalSenha = senhaPessoal.value;
-    var pessoalConfirmaSenha = confirmaSenhaPessoal.value;
-    var email = emailLoginPessoal.value; // Captura o valor do campo de e-mail
-    var arrobaIndex = email.indexOf("@");
-    var pontoIndex = email.indexOf(".");
+    var sobrenomePessoalVar = sobrenomePessoal.value;
+    var nomePessoalVar = nomePessoal.value;
+    var telefonePessoalVar = telefonePessoal.value;
+    var senhaPessoalVar = senhaPessoal.value;
+    var senhaConfirmaVar = confirmaSenhaPessoal.value;
+
+    var emailVar = emailLoginPessoal.value; // Captura o valor do campo de e-mail
+    var arrobaIndex = emailVar.indexOf("@");
+    var pontoIndex = emailVar.indexOf(".");
     
     // Captura o span de erro para o e-mail
-    var spanEmailLoginPessoal = document.getElementById('spanEmailLoginPessoal');
+    var spanEmailVarLoginPessoal = document.getElementById('spanEmailLoginPessoal');
     
     // Limpar mensagens de erro anteriores
-    spanEmailLoginPessoal.innerHTML = '';
+    spanEmailVarLoginPessoal.innerHTML = '';
     spanNomePessoal.innerHTML = '';
     spanSobrenomePessoal.innerHTML = '';
     spanTelefonePessoal.innerHTML = '';
@@ -174,40 +176,40 @@ function Finalizar() {
         pontoIndex === -1 ||
         arrobaIndex >= pontoIndex ||
         arrobaIndex <= 0 ||
-        pontoIndex >= email.length - 1
+        pontoIndex >= emailVar.length - 1
     ) {
         spanEmailLoginPessoal.innerHTML = `O e-mail deve ser válido!`;
     }
 
     // Validação do nome
-    if (pessoalNome.length === 0) {
+    if (nomePessoalVar.length === 0) {
         spanNomePessoal.innerHTML = `O nome é obrigatório!`;
     }
 
     // Validação do sobrenome
-    if (pessoalSobrenome.length === 0) {
+    if (sobrenomePessoalVar.length === 0) {
         spanSobrenomePessoal.innerHTML = `O sobrenome é obrigatório!`;
     }
 
     // Validação do telefone
-    if (pessoalTelefone.length === 0) {
+    if (telefonePessoalVar.length === 0) {
         spanTelefonePessoal.innerHTML = `O telefone é obrigatório!`;
     }
 
     // Validação da senha
-    if (pessoalSenha.length === 0) {
+    if (senhaPessoalVar.length === 0) {
         spanSenhaPessoal.innerHTML = `A senha é obrigatória!`;
     }
 
     // Validação da confirmação da senha
-    if (pessoalSenha !== pessoalConfirmaSenha) {
+    if (senhaPessoalVar !== senhaConfirmaVar) {
         spanConfirmaSenhaPessoal.innerHTML = `A senha não confere!`;
     }
 
 }
 function senhaLive(){
-  var pessoalSenha = senhaPessoal.value;
-  var tamanho_senha= pessoalSenha.length;
+  var senhaPessoalVar = senhaPessoal.value;
+  var tamanho_senha = senhaPessoalVar.length;
   var especiais = ["!", "@", "#", "$", "%", "^", "&", "*", "(" , ")", "_", "+", "[", "]", "{","}","|",";",":","'",".","<",">","?","/"]
   var indiceespecial;
       if (tamanho_senha >= 8) {
@@ -217,7 +219,7 @@ function senhaLive(){
       }
 
       for(var i = 0;i < 25; i++){
-        if (pessoalSenha.indexOf(especiais[i]) != -1){
+        if (senhaPessoalVar.indexOf(especiais[i]) != -1){
           verificaCaracterEspecial.style.color = "#008000";
           break
         }else {
@@ -230,20 +232,20 @@ function senhaLive(){
         
       }
   var senhaMaiuscula, senhaMinuscula;
-  senhaMaiuscula = pessoalSenha.toUpperCase();
-  senhaMinuscula = pessoalSenha.toLowerCase();
+  senhaMaiuscula = senhaPessoalVar.toUpperCase();
+  senhaMinuscula = senhaPessoalVar.toLowerCase();
 
-  if(senhaMaiuscula != pessoalSenha){
+  if(senhaMaiuscula != senhaPessoalVar){
     verificaMinuscula.style.color = "#008000";
   } else{
     verificaMinuscula.style.color = "#ff0000";
   }
-  if(senhaMinuscula != pessoalSenha){
+  if(senhaMinuscula != senhaPessoalVar){
     verificaMaiusculo.style.color = "#008000";
   } else{
     verificaMaiusculo.style.color = "#ff0000";
   }
-  if(tamanho_senha >= 8 && indice_especiais >= 0 && senhaMaiuscula != pessoalSenha && senhaMinuscula != pessoalSenha){
+  if(tamanho_senha >= 8 && indice_especiais >= 0 && senhaMaiuscula != senhaPessoalVar && senhaMinuscula != senhaPessoalVar){
     return true;
   } else{
     return false;
@@ -256,12 +258,12 @@ function validateLogin(event) {
   event.preventDefault();
   
   // Obtém os valores dos campos de e-mail e senha
-  const email = document.querySelector('.sign-in-container input[type="email"]').value;
+  const emailVar = document.querySelector('.sign-in-container input[type="email"]').value;
   const password = document.querySelector('.sign-in-container input[type="password"]').value;
   const mensagemErro = document.getElementById('error-message'); // Obtém a div de mensagem de erro
 
   // Verifica se o e-mail e senha correspondem aos valores esperados
-  if (email === 'admin@admin' && password === 'urubu100') {
+  if (emailVar === 'admin@admin' && password === 'urubu100') {
       // Redireciona para a página desejada se os dados estiverem corretos
       window.location.href = './dashboard/dashboard.html'; // Página linkada
   } else {

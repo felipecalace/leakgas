@@ -87,7 +87,7 @@ a:hover{
   font-weight: bold;
 }
 .home {
-  background-image: url('./assets/tela_home.png');
+  background-image: url('../assets/tela_home.png');
   background-size: cover; 
     background-position: center;
   background-repeat: no-repeat;
@@ -253,20 +253,20 @@ width: 3vw;
   transition: transform 0.3s ease;
 }
 .div_imagem1{
-  background-image: url('./assets/monitorar.png');
+  background-image: url('../assets/monitorar.png');
  
 }
 .div_imagem2{
-  background-image: url('./assets/sensores.webp');
+  background-image: url('../assets/sensores.webp');
  
 }
 .div_imagem3{
-  background-image: url('./assets/dash.png');
+  background-image: url('../assets/dash.png');
  
   
 }
 .div_imagem4{
-  background-image: url('./assets/arquitetura.png');
+  background-image: url('../assets/arquitetura.png');
   
 }
 .hoverImage:hover {
@@ -277,7 +277,7 @@ width: 3vw;
   cursor: pointer;
 }
 .container_info{
-  background-image: url('./assets/mais_info.png');
+  background-image: url('../assets/mais_info.png');
   background-size: cover;
 width: 100%;
 height: 32vw;
@@ -349,7 +349,7 @@ width: 5vw;
 height: 5vw;
 border-radius: 50%;
 background-color: #ffffff49;
-background-image: url(./assets/insta_icon.png);
+background-image: url(../assets/insta_icon.png);
 background-repeat: no-repeat;
 background-size: 2.8vw;
 background-position: center;
@@ -360,7 +360,7 @@ cursor: pointer;
 height: 5vw;
 border-radius: 50%;
 background-color: #ffffff49;
-background-image: url(./assets/face_icon.png);
+background-image: url(../assets/face_icon.png);
 background-repeat: no-repeat;
 background-size: 2.8vw;
 background-position: center;
@@ -371,7 +371,7 @@ cursor: pointer;
 height: 5vw;
 border-radius: 50%;
 background-color: #ffffff49;
-background-image: url(./assets/twitter_icon.png);
+background-image: url(../assets/twitter_icon.png);
 background-repeat: no-repeat;
 background-size: 2.8vw;
 background-position: center;
@@ -516,7 +516,7 @@ font-size: 1.4vw
   }
   .header_sobre{
     position: relative;
-  background-image: url('./assets/fachada_empresa.jpeg');
+  background-image: url('../assets/fachada_empresa.jpeg');
   background-size:cover; 
   background-position: center;
   width: 100%;
@@ -843,7 +843,7 @@ cursor: pointer;
 .imagem_cozinha_safe{
   width: 80%;
   height: 7vw;
-  background-image: url(./assets/safe.png);
+  background-image: url(../assets/safe.png);
   background-size: cover;
   background-position: center;
   border-radius: 0.5vw;
@@ -852,7 +852,7 @@ cursor: pointer;
 .imagem_cozinha_warning{
   width: 80%;
   height: 7vw;
-  background-image: url(./assets/warning.png);
+  background-image: url(../assets/warning.png);
   background-size: cover;
   background-position: center;
   border-radius: 0.5vw;
@@ -861,7 +861,7 @@ cursor: pointer;
 .imagem_cozinha_danger{
   width: 80%;
   height: 7vw;
-  background-image: url(./assets/danger.png);
+  background-image: url(../assets/danger.png);
   background-size: cover;
   background-position: center;
   margin-top: 1vw; 
@@ -918,7 +918,7 @@ border-radius: 0.4vw;
 }
 .header_servicos{
     position: relative;
-  background-image: url('./assets/servicos.png');
+  background-image: url('../assets/servicos.png');
   background-size:cover; 
   background-position: center;
   width: 100%;
@@ -1060,7 +1060,7 @@ border-radius: 0.4vw;
     font-weight: 600;
   }
   .container_chef{
-    background-image: url('./assets/retangulo_servicos.png');
+    background-image: url('../assets/retangulo_servicos.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 23vw;
@@ -1643,4 +1643,8 @@ cursor: pointer;
   opacity: 1; /* Exibe o modal com efeito de fade */
   pointer-events: auto; /* Permite interação quando visível */
   transform: translateY(0); /* Move para a posição original */
+}
+
+#button_container{
+  cursor: pointer;
 }
