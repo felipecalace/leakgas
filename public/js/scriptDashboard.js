@@ -135,7 +135,7 @@ function cozinhaB() {
   dashboard_a.style.display = 'none';
   inicio_vazamento.style.color = 'red'
 
-  termino_vazamento.innerHTML = `<img class='leak_vermelho' src="../assets/leak_vermelho.png">`
+  termino_vazamento.innerHTML = `<img class='leak_vermelho' src="./assets/leak_vermelho.png">`
   status_mensagem.innerHTML = `Vazamento crítico ativo, risco de explosões!`
   status_mensagem.style.backgroundColor = 'rgba(150, 24, 24, 0.63)'
 
@@ -202,7 +202,7 @@ function selecionarCozinhaB() {
   horario_vazamento.style.color = 'red'
   ultimo_vazamento.style.color = 'red'
 
-  status_imagem_sensores.innerHTML = `<img class='leak_status' src="../assets/leak_vermelho.png">`
+  status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_vermelho.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(150, 24, 24, 0.63)'
   status_mensagem_sensores.innerHTML = `Vazamento crítico ativo, risco de explosões!`
 
@@ -262,7 +262,7 @@ function selecionarCozinhaA() {
   horario_vazamento.style.color = 'green'
   ultimo_vazamento.style.color = 'green'
 
-  status_imagem_sensores.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem_sensores.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
 
@@ -323,7 +323,7 @@ function selecionarCozinhaD() {
   box_sensores_d.style.display = 'none'
   box_sensores_e.style.display = 'none'
 
-  status_imagem_sensores.innerHTML = `<img class='leak_status' src="../assets/leak_amarelo.png">`
+  status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_amarelo.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
   status_mensagem_sensores.innerHTML = `Vazamento médio ativo, podendo se agravar!`
 
@@ -378,7 +378,7 @@ function selecionarCozinhaC() {
   SecCozinhaE.style.height = '10vw'
   SecCozinhaE.style.border = 'none'
 
-  status_imagem_sensores.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem_sensores.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
 
@@ -413,7 +413,7 @@ function selecionarCozinhaE() {
   sensores_vazamentos.style.color = 'green'
   horario_vazamento.style.color = 'green'
 
-  status_imagem_sensores.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  status_imagem_sensores.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem_sensores.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem_sensores.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
 
@@ -470,17 +470,17 @@ function cozinhaA() {
   inicio_vazamento.innerHTML = `Sem vazamentos ativos`
   termino_vazamento.innerHTML = `Sem vazamentos ativos`
 
-  termino_vazamento.innerHTML = `<img class='leak_azul' src="../assets/leak_azul.png">`
+  termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem.style.fontSize = `1.3vw`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
 
   //  if( se o vazamento for == 0 ){
-  //   termino_vazamento.innerHTML = `<img class='leak_azul' src="../assets/leak_azul.png">`
+  //   termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
   //  }else if(se o vazamento for < 2){
   //   termino_vazamento.innerHTML = `<img class='leak_amarelo' src="./assets/leak_amarelo.png">`
   //  }else{
-  //   termino_vazamento.innerHTML = `<img class='leak_vermelho' src="../assets/leak_vermelho.png">`
+  //   termino_vazamento.innerHTML = `<img class='leak_vermelho' src="./assets/leak_vermelho.png">`
   //  }
 
 }
@@ -498,7 +498,7 @@ function cozinhaC() {
   inicio_vazamento.innerHTML = `Sem vazamentos ativos`
   termino_vazamento.innerHTML = `Sem vazamentos ativos`
 
-  termino_vazamento.innerHTML = `<img class='leak_azul' src="../assets/leak_azul.png">`
+  termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
 
   stativosus_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem.style.fontSize = `1.3vw`
@@ -516,7 +516,7 @@ function cozinhaD() {
   inicio_vazamento.style.color = 'rgb(145, 145, 28)'
   cozinha_selecionada.innerHTML = ` D`
   inicio_vazamento.innerHTML = `07:00`
-  termino_vazamento.innerHTML = `<img class='leak_amarelo' src="../assets/leak_amarelo.png">`
+  termino_vazamento.innerHTML = `<img class='leak_amarelo' src="./assets/leak_amarelo.png">`
 
   status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
   status_mensagem.style.fontSize = `1.3vw`
@@ -535,7 +535,7 @@ function cozinhaE() {
   inicio_vazamento.innerHTML = `Sem vazamentos ativos`
   termino_vazamento.innerHTML = `Sem vazamentos ativos`
 
-  termino_vazamento.innerHTML = `<img class='leak_azul' src="../assets/leak_azul.png">`
+  termino_vazamento.innerHTML = `<img class='leak_azul' src="./assets/leak_azul.png">`
 
   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
   status_mensagem.style.fontSize = `1.3vw`
@@ -1508,7 +1508,7 @@ scroll_cozinhas.style.display = 'flex'
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
@@ -1557,7 +1557,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
@@ -1621,7 +1621,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `10:00`
   inicio_vazamento.style.color = 'red'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_vermelho.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_vermelho.png">`
  status_mensagem.innerHTML = `Vazamento crítico ativo, risco de explosões!`
   status_mensagem.style.backgroundColor = 'rgba(150, 24, 24, 0.63)'
 
@@ -1691,7 +1691,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
@@ -1756,7 +1756,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Três`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
@@ -1820,7 +1820,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Quatro`
   inicio_vazamento.innerHTML = `07:00`
   inicio_vazamento.style.color = 'black'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_amarelo.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_amarelo.png">`
   status_mensagem.innerHTML = `Vazamento médio ativo, podendo se agravar!`
    status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
 
@@ -1886,7 +1886,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
@@ -1943,7 +1943,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
@@ -1999,7 +1999,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Três`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
@@ -2057,7 +2057,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Três`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
@@ -2102,7 +2102,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `07:00`
   inicio_vazamento.style.color = 'black'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_amarelo.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_amarelo.png">`
   status_mensagem.innerHTML = `Vazamento médio ativo, podendo se agravar!`
    status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
 
@@ -2145,7 +2145,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
@@ -2191,7 +2191,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
@@ -2235,7 +2235,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
-  imagem_status.innerHTML = `<img class='leak_status' src="../assets/leak_azul.png">`
+  imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
    status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
