@@ -1,7 +1,6 @@
 -- Cria o banco de dados chamado 'leakgas'
 
 CREATE DATABASE IF NOT EXISTS leakgas;
-
 -- Utiliza o banco de dados recém-criado
 
 USE leakgas;
@@ -16,6 +15,17 @@ CREATE TABLE IF NOT EXISTS representante (
     email VARCHAR(50),                         
     senha VARCHAR(20)                               
 );
+
+-- ADICIONANDO O LOGIN PARA SUPORTE
+
+insert into representante (idRepresentante, nome, sobrenome, email, senha) values
+(1000, 'Leak', 'Suporte', 'suporte@suporte', 'urubu100');
+
+-- ADICIONANDO OS DADOS PARA O USUÁRIO QUE TERÁ AS DASHBOARDS CADASTRADAS!!
+insert into representante (idRepresentante, nome, sobrenome, telefone, email, senha) values
+(1, 'Woods ', 'Staton', 'mequi@email.com', 'urubu100');
+
+select * from representante;
 
 -- Cria uma tabela para a empresa matriz
 
@@ -33,10 +43,17 @@ CREATE TABLE IF NOT EXISTS empresa (
     PRIMARY KEY (idEmpresa, fkRepresentante)       
 );
 
+insert into empresa (idEmpresa, nomeFantasia, nomeSocial, CNPJ, emailCorporativo, telefoneCorporativo, fkRepresentante) values
+(1, 'McDonalds', 'Arcos Dorados', '12345678901234', 'arcosdorados@email.com', '11999999999', 1) ;
+
+
+
 -- Cria uma tabela para o endereço da empresa
+
 
 CREATE TABLE IF NOT EXISTS endereco (
     idEndereco INT AUTO_INCREMENT,
+    logradouro VARCHAR(45),
     numero VARCHAR(6),           
     cep CHAR(8),                                  
     complemento VARCHAR(45),                      
@@ -46,6 +63,13 @@ CREATE TABLE IF NOT EXISTS endereco (
     CONSTRAINT fkEnderecoEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
     PRIMARY KEY(idEndereco, fkEmpresa)
 );
+
+insert into enderedo(idEndereco, logradouro, numero, cep, complemento, cidade, estado, fkEmpresa) values
+(1, 'Av. Paulista', 1811, 01311200, 'Perto da avenida paulista', 'São Paulo', 'SP', 1);
+
+select * from endereco;
+
+select * from endereco;
 
 -- Cria uma tabela para sensores
 
@@ -82,6 +106,7 @@ CREATE TABLE IF NOT EXISTS dadosSensores (
     PRIMARY KEY (idDado, fkSensores)                
 );
 
+
 -- Cria uma tabela para contato via email
 
 CREATE TABLE IF NOT EXISTS faleConosco (
@@ -92,3 +117,4 @@ CREATE TABLE IF NOT EXISTS faleConosco (
     tipo VARCHAR(20) NOT NULL,
     CONSTRAINT chkTipo CHECK(tipo in('FaleConosco','Publicidade'))
 );
+

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suporte LeakGas</title>
-  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <!-- Barra Lateral -->
@@ -26,12 +26,12 @@
   <!-- Botão de sair -->
 <!-- Botão de Sair -->
 <div class="logout">
-  <a href="login.html">
-    <button>
+ 
+    <button onclick="logout()">
       <img src="assets/botão sair suporte.png" alt="Logout Icon">
       <span>Sair</span>
     </button>
-  </a>
+
 </div>
 </div>
   <!-- Conteúdo Principal -->
@@ -81,3 +81,12 @@
 <script src="./js/suporteTecnico.js"></script>
 </body>
 </html>
+
+
+<script>
+  function logout() {
+    sessionStorage.clear();
+
+    window.location = "loginCadastro.html";
+}
+</script>

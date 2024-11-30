@@ -347,10 +347,14 @@ function validateLogin(event) {
       console.log("SOBRENOME_USUARIO:", sessionStorage.SOBRENOME_USUARIO);
       console.log("ID_USUARIO:", sessionStorage.ID_USUARIO);
 
-      console.log("Redirecionando para dashboard.html");
+      
+      if(sessionStorage.EMAIL_USUARIO == 'suporte@suporte'){
+        window.location.href = 'suporteTecnico.html'
+      }else{
+        window.location.href = 'dashboard.html'
+      }
     
       
-      window.location.href = 'dashboard/dashboard.html'
   });
    
   }).catch((err) => {
