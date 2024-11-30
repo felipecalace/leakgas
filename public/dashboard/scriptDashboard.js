@@ -1,4 +1,6 @@
 
+
+
 function calcular() {
   // 'Resetar' o conteúdo da div caso a gente queira fazer cálculos em sequência
   div_resultado.innerHTML = ''

@@ -26,7 +26,7 @@ function cadastrar(body) {
         database.executar(instrucaoSql2).then((res) => {
             var idEmpresa = res.insertId;
     
-            var instrucaoSql3 = `INSERT INTO endereco (logradouro, numero, cep, complemento, cidade, estado, fkEmpresa) VALUES (${body.logradouro}, ${body.numero}, ${body.cep}, '${body.complemento}', '${body.cidade}',  '${body.estado}', ${idEmpresa});`;
+            var instrucaoSql3 = `INSERT INTO endereco (logradouro, numero, cep, complemento, cidade, estado, fkEmpresa) VALUES ('${body.logradouro}', ${body.numero}, ${body.cep}, '${body.complemento}', '${body.cidade}',  '${body.estado}', ${idEmpresa});`;
     
             database.executar(instrucaoSql3);
         })

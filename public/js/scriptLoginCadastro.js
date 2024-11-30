@@ -150,7 +150,6 @@ function etapaDois(incrementar = true) {
       cep: cepLocal,
       estado: estadoLocal,
       cidade: cidadeLocal
-
     }
   } else {
     // Validações adicionais
@@ -328,22 +327,32 @@ function validateLogin(event) {
     },
     body: JSON.stringify({email, password})
   }).then((res) => {
+    console.log('teste', res)
     // Redireciona para a página desejada se os dados estiverem corretos
     if(res.status != 200){
       throw new Error("Erro ao logar")
     }
-    window.location.href = 'dashboard/dashboard.html'
+    
+    res.json().then(respostaJSON => {
+      console.log(respostaJSON);
+      console.log(JSON.stringify(respostaJSON));
+      sessionStorage.EMAIL_USUARIO = respostaJSON.email;
+      sessionStorage.NOME_USUARIO = respostaJSON.nome;
+      sessionStorage.ID_USUARIO = respostaJSON.id;
+      sessionStorage.SOBRENOME_USUARIO = respostaJSON.sobrenome;
 
-    console.log(json);
-    console.log(JSON.stringify(json));
-    sessionStorage.EMAIL_USUARIO = json.email;
-    sessionStorage.NOME_USUARIO = json.nome;
-    sessionStorage.ID_USUARIO = json.id;
-    console.log("EMAIL_USUARIO:", sessionStorage.EMAIL_USUARIO);
-    console.log("NOME_USUARIO:", sessionStorage.NOME_USUARIO);
-    console.log("ID_USUARIO:", sessionStorage.ID_USUARIO);
-    console.log("Redirecionando para index.html");
+      console.log("Dados salvos no sessionStorage:");
+      console.log("EMAIL_USUARIO:", sessionStorage.EMAIL_USUARIO);
+      console.log("NOME_USUARIO:", sessionStorage.NOME_USUARIO);
+      console.log("SOBRENOME_USUARIO:", sessionStorage.SOBRENOME_USUARIO);
+      console.log("ID_USUARIO:", sessionStorage.ID_USUARIO);
 
+      console.log("Redirecionando para dashboard.html");
+    
+      
+      window.location.href = 'dashboard/dashboard.html'
+  });
+   
   }).catch((err) => {
     // Exibe uma mensagem de erro se o login falhar
     mensagemErro.textContent = 'Login ou senha inválida.';
