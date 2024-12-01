@@ -707,6 +707,9 @@ function cozinhaE() {
 
 function barras() {
   todas_dash.style.display = 'none';
+  scroll_cozinhas.style.display = 'none'
+
+  cont_barras.style.margin = '0 0 0 2vw'
   cont_barras.style.display = 'flex';
   dash_cozinhas.style.display = 'none';
 }

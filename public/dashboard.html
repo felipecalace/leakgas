@@ -15,13 +15,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap" rel="stylesheet">
   <title>LeakGas - Dashboard</title>
 </head>
-<body>
+<body onload="verificarUsuario()">
   <div class="container_dashboard">
     <div class="nav_dash">
       <div class="box_icons">
         <a href="./dashboard.html " style="margin-bottom: 5vw; margin-top: -2vw;"><img class="icons_nav"
             src="./assets/icon_home.png" alt=""></a>
-            <a onclick="barras()" style="cursor: pointer;"><img class="icons_nav" src="./assets/barra_icon.png" alt=""></a>
+            <a onclick="barras()" style="cursor: pointer;"><img id="grafico_barras" class="icons_nav" src="./assets/barra_icon.png" alt=""></a>
             <a href=""><img class="icons_nav" src="./assets/configurar_icon.png" alt=""></a>
             <a style="cursor: pointer;"><img class="icons_nav" onclick="logout()" src="./assets/exit.png" alt=""></a>
       </div>
@@ -32,8 +32,8 @@
         <div class="box_usuario_header_dash">
           <img class="imagem_guest" src="./assets/guest_icon.png">
           <div class="box_texto_usuario">
-            <h2>XPTO</h2>
-            <p>Bem vindo, <span id="idNome"></span> <span id="idSobrenome"></span></p>
+            <h2 id="nomeEmpresa">XPTO</h2>
+            <p id="mensagem_bemvindo"></p>
           </div>
         </div>
         <div class="box_trespontos">
@@ -43,6 +43,50 @@
 
       <!-- tirar o style -->
       <div class="container_sessoes" id="container_sessoes">
+
+        <div id="newUser" class="container_newUser" style="display: none;">
+          <h4>Ops... :(</h4>
+          <p>Verificamos que você ainda não tem nenhuma cozinha cadastrada com nosso monitamento instalado, agende abaixo a instalação do nosso sensor em seu estabelecimento e tenha um ambiente 100% seguro e acesso à sua dashboard personalizada!</p>
+          <button onclick="aparecerCaixaAgendamento()">Agendar instalação do sensor</button>
+        </div>
+
+        <section class="section_formularioAgendamento" id="formularioAgendamento" style="display: none;">
+        <div class="container_formularioAgendamento">
+          <h6 class="fecharAgendamento" onclick="sumirCaixaAgendamento()">&times;</h6>
+          <div class="box_formularioAgendamento">
+          <h4>Preencha nosso formulário para agendamento da instação do sensor Leak:</h4>
+
+          <h5 style="width: 40vw;";">Representante na unidade: <span class="virgulaAgendamento">?
+
+            <div class="informativo">
+              <h2>Informativo:</h2>
+              <p>O representante cadastrado, será o responsável pela supervisão da instalação solicitada dentro da unidade informada!</p>
+            </div>
+          </span> </h5> 
+          
+          <p>Nome:</p> <input type="text" id="idNome">
+          <p>CPF:</p> <input type="number" id="idCnpj">
+          <p>Email pra contato:</p> <input type="text" name="" id="idEmail">
+          <p>Telefone pra contato:</p> <input type="text" id="idTelefone">
+
+          <h5>Endereço para instalação:</h5>
+          <p>Cidade:</p> <input type="text" name="" id="idCidade">
+          <p>CEP:</p> <input type="text" name="" id="idCEP">
+          <p>Logradouro:</p> <input type="text" name="" id="idLogradouro">
+          <p>Número:</p> <input type="text" name="" id="idNumero">
+
+          <h5>Dia disponível para instalação:</h5>
+          <p>Dia da semana: (Dia da semana e data)</p> <input type="text" id="idData" placeholder="Exemplo: Quarta-feira 01/11">
+          <h5>Horário disponível para instalação:</h5> 
+          <p>De:</p> <input type="text" placeholder="00:00" id="idHorarioInicio"> 
+          <p>Até: </p> <input type="text" placeholder="00:00" id="idHorarioTermino"> 
+          <button>Solicitar agendamento</button>
+
+
+        </div>
+        </div>
+      </section>
+
         <div  id="todas_dash" class="container_monitorados">
           <div class="header_sessoes">
             <div class="box_kpi">
@@ -90,7 +134,7 @@
                 <h4>Cozinha E</h4>
               </div>
             </div>
-            <div class="box_more"><img class="imagem_mais" src="./assets/more.png" alt=""> </div>
+            <div onclick="aparecerCaixaAgendamento()" class="box_more"><img class="imagem_mais" src="./assets/more.png" alt=""> </div>
           </div>
         </div>
 
@@ -455,7 +499,7 @@
 
         </div>
 
-        <div class="container_barras" id="cont_barras">
+        <div class="container_barras" id="cont_barras" style="background-color: red; width: 80vw; height: 100vh;">
           <div class="box_barras">
             <div class="texto_ano">
               <h3>Quantidade de vazametos ao longo do ano:</h3>
@@ -486,8 +530,35 @@
 </html>
 
 <script>
-      idNome.innerHTML = `${sessionStorage.NOME_USUARIO}`
-      idSobrenome.innerHTML = `${sessionStorage.SOBRENOME_USUARIO}`
+      var nome = `${sessionStorage.NOME_USUARIO}`
+     var sobrenome = `${sessionStorage.SOBRENOME_USUARIO}`
+
+
+      function verificarUsuario(){
+        if(sessionStorage.ID_USUARIO == 1){
+          nomeEmpresa.innerHTML = `McDonald's`
+     mensagem_bemvindo.innerHTML = `Bem vindo, ${nome} ${sobrenome}`
+  
+
+
+        
+        }else{
+    nomeEmpresa.innerHTML = `${nome} ${sobrenome}`
+     mensagem_bemvindo.innerHTML = `Bem vindo!`
+
+     newUser.style.display = 'flex'
+            todas_dash.style.display = 'none'
+          grafico_barras.style.display = 'none'
+        }
+      }
+
+    function aparecerCaixaAgendamento(){
+      formularioAgendamento.style.display = 'flex'
+    }
+    function sumirCaixaAgendamento(){
+      formularioAgendamento.style.display = 'none'
+    }
+
 
   function logout() {
     // Limpa os dados do sessionStorage
