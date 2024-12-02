@@ -577,4 +577,25 @@
 
     window.location = "index.html";
 }
+
+const idRepresentante = sessionStorage.ID_USUARIO;
+
+async function puxarAvaliacoes(idRepresentante) {
+        await fetch(`/cozinha/puxar/${idRepresentante}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then((res) => {
+            if (res.ok) {
+              console.log(res)
+                return res.json();
+            }
+        }).then((data) => {
+          data.forEach(element => {
+              
+          });
+        });
+    }
+    puxarAvaliacoes(idRepresentante)
 </script>
