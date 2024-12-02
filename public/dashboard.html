@@ -16,6 +16,7 @@
   <title>LeakGas - Dashboard</title>
 </head>
 <body onload="verificarUsuario()">
+  <script data-jsd-embedded data-key="8219c5f6-89a3-407b-8d94-9c28d8fd15c8" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js" ></script>
   <div class="container_dashboard">
     <div class="nav_dash">
       <div class="box_icons">
@@ -64,28 +65,35 @@
             </div>
           </span> </h5> 
           
-          <p>Nome:</p> <input type="text" id="idNome">
-          <p>CPF:</p> <input type="number" id="idCnpj">
-          <p>Email pra contato:</p> <input type="text" name="" id="idEmail">
-          <p>Telefone pra contato:</p> <input type="text" id="idTelefone">
+          <p>Nome:</p> <input type="text" id="inputNome">
+          <p>CPF:</p> <input type="number" id="inputCpf">
+          <p>Email pra contato:</p> <input type="text" id="inputEmail">
+          <p>Telefone pra contato:</p> <input type="text" id="inputTelefone">
 
           <h5>Endereço para instalação:</h5>
-          <p>Cidade:</p> <input type="text" name="" id="idCidade">
-          <p>CEP:</p> <input type="text" name="" id="idCEP">
-          <p>Logradouro:</p> <input type="text" name="" id="idLogradouro">
-          <p>Número:</p> <input type="text" name="" id="idNumero">
+          <p>Cidade:</p> <input type="text" id="inputCidade">
+          <p>CEP:</p> <input type="text" id="inputCEP">
+          <p>Logradouro:</p> <input type="text" id="inputLogradouro">
+          <p>Número:</p> <input type="text" id="inputNumero">
 
           <h5>Dia disponível para instalação:</h5>
-          <p>Dia da semana: (Dia da semana e data)</p> <input type="text" id="idData" placeholder="Exemplo: Quarta-feira 01/11">
+          <p>Dia da semana: (Dia da semana e data)</p> <input type="text" id="inputData" placeholder="Exemplo: Quarta-feira 01/11">
           <h5>Horário disponível para instalação:</h5> 
-          <p>De:</p> <input type="text" placeholder="00:00" id="idHorarioInicio"> 
-          <p>Até: </p> <input type="text" placeholder="00:00" id="idHorarioTermino"> 
-          <button>Solicitar agendamento</button>
+          <p>De:</p> <input type="text" placeholder="00:00" id="inputHorarioDe"> 
+          <p>Até: </p> <input type="text" placeholder="00:00" id="inputHorarioAte"> 
+          <p style="color: red; font-weight: 700;" id="mensagemErro"></p>
+          <button onclick="cadastrarAgendamento()">Solicitar agendamento</button>
 
 
         </div>
         </div>
       </section>
+
+      <div class="cardMensagem" id="cardMensagem">
+        <span onclick="fecharMensagem()">&times;</span>
+        <p>Chamado realizado com sucesso!
+          Retornaremos com uma resposta em menos de 1 hora!</p>
+      </div>
 
         <div  id="todas_dash" class="container_monitorados">
           <div class="header_sessoes">
@@ -559,6 +567,9 @@
       formularioAgendamento.style.display = 'none'
     }
 
+    function fecharMensagem(){
+      cardMensagem.style.display = 'none'
+    }
 
   function logout() {
     // Limpa os dados do sessionStorage

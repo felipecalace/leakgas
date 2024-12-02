@@ -178,7 +178,7 @@ function selecionarCozinhaB() {
   SecCozinhaE.style.width = '80%'
   SecCozinhaE.style.height = '10vw'
   SecCozinhaE.style.border = 'none'
-  
+
 
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'none'
@@ -191,7 +191,7 @@ function selecionarCozinhaB() {
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
   container_sessoes.style.margin = '1vw 1vw 0 0'
-   scroll_cozinhas.style.margin = '0 0 0 8vw'
+  scroll_cozinhas.style.margin = '0 0 0 8vw'
 
   cozinha_selecionada_sensor.innerHTML = ` B`
   ultimo_vazamento.innerHTML = 'Sensor A'
@@ -219,7 +219,7 @@ function selecionarCozinhaA() {
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
- scroll_cozinhas.style.margin = '0 0 0 8vw'
+  scroll_cozinhas.style.margin = '0 0 0 8vw'
   cozinha_selecionada_sensor.innerHTML = ` A`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
 
@@ -285,7 +285,7 @@ function selecionarCozinhaD() {
   sensores_vazamentos.style.color = 'black'
   horario_vazamento.style.color = 'black'
   ultimo_vazamento.style.color = 'black'
- scroll_cozinhas.style.margin = '0 0 0 8vw'
+  scroll_cozinhas.style.margin = '0 0 0 8vw'
   cozinha_selecionada_sensor.innerHTML = ` D`
   ultimo_vazamento.innerHTML = 'Sensor A'
   horario_vazamento.innerHTML = '10:00'
@@ -342,7 +342,7 @@ function selecionarCozinhaC() {
   scroll_cozinhas.style.display = 'flex'
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
- scroll_cozinhas.style.margin = '0 0 0 8vw'
+  scroll_cozinhas.style.margin = '0 0 0 8vw'
   container_sessoes.style.margin = '1vw 1vw 0 0'
   cozinha_selecionada_sensor.innerHTML = ` C`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
@@ -1473,7 +1473,7 @@ function sensorUmCozinhaA() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'flex'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'none'
@@ -1493,14 +1493,14 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
-scroll_cozinhas.style.display = 'flex'
+  scroll_cozinhas.style.display = 'flex'
 
   sensores_a.style.display = 'block'
-  
- sensores_b.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+
+  sensores_b.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_a.style.display = 'block'
@@ -1513,7 +1513,7 @@ scroll_cozinhas.style.display = 'flex'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 
@@ -1521,7 +1521,7 @@ function sensorDoisCozinhaA() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'flex'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'none'
@@ -1538,18 +1538,18 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   scroll_um_a.style.height = '10vw'
   scroll_um_a.style.border = 'none'
 
-  
+
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
-  
+
 
   sensores_a.style.display = 'block'
-  
- sensores_b.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+
+  sensores_b.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_a.style.display = 'none'
@@ -1562,7 +1562,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 
@@ -1572,7 +1572,7 @@ function sensorUmCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
 
-  
+
   scroll_um_b.style.backgroundColor = '#D9D9D9'
   scroll_um_b.style.width = '73%'
   scroll_um_b.style.height = '8vw'
@@ -1592,7 +1592,7 @@ function sensorUmCozinhaB() {
   scroll_quatro_b.style.width = '80%'
   scroll_quatro_b.style.height = '10vw'
   scroll_quatro_b.style.border = 'none'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1601,23 +1601,23 @@ function sensorUmCozinhaB() {
 
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
   sensores_b.style.display = 'block'
 
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_b.style.display = 'block'
 
-   sensor_dois_b.style.display = 'none'
-    sensor_tres_b.style.display = 'none'
-     sensor_quatro_b.style.display = 'none'
-     
-  
+  sensor_dois_b.style.display = 'none'
+  sensor_tres_b.style.display = 'none'
+  sensor_quatro_b.style.display = 'none'
+
+
 
 
   nome_cozinha_selecionada.innerHTML = `B`
@@ -1625,16 +1625,16 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.innerHTML = `10:00`
   inicio_vazamento.style.color = 'red'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_vermelho.png">`
- status_mensagem.innerHTML = `Vazamento crítico ativo, risco de explosões!`
+  status_mensagem.innerHTML = `Vazamento crítico ativo, risco de explosões!`
   status_mensagem.style.backgroundColor = 'rgba(150, 24, 24, 0.63)'
 
-  
+
 }
 function sensorDoisCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
-  
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1661,7 +1661,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   scroll_quatro_b.style.width = '80%'
   scroll_quatro_b.style.height = '10vw'
   scroll_quatro_b.style.border = 'none'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1675,19 +1675,19 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
   sensores_b.style.display = 'block'
 
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_b.style.display = 'none'
 
-   sensor_dois_b.style.display = 'block'
-    sensor_tres_b.style.display = 'none'
-     sensor_quatro_b.style.display = 'none'
-     
-  
+  sensor_dois_b.style.display = 'block'
+  sensor_tres_b.style.display = 'none'
+  sensor_quatro_b.style.display = 'none'
+
+
 
 
   nome_cozinha_selecionada.innerHTML = `B`
@@ -1696,13 +1696,13 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 function sensorTresCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1729,7 +1729,7 @@ function sensorTresCozinhaB() {
   scroll_quatro_b.style.width = '80%'
   scroll_quatro_b.style.height = '10vw'
   scroll_quatro_b.style.border = 'none'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1739,21 +1739,21 @@ function sensorTresCozinhaB() {
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
   sensores_b.style.display = 'block'
 
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_b.style.display = 'none'
 
-   sensor_dois_b.style.display = 'none'
-    sensor_tres_b.style.display = 'block'
-     sensor_quatro_b.style.display = 'none'
+  sensor_dois_b.style.display = 'none'
+  sensor_tres_b.style.display = 'block'
+  sensor_quatro_b.style.display = 'none'
 
   nome_cozinha_selecionada.innerHTML = `B`
   sensor_selecionado.innerHTML = `Três`
@@ -1761,13 +1761,13 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 function sensorQuatroCozinhaB() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1793,7 +1793,7 @@ function sensorQuatroCozinhaB() {
   scroll_um_b.style.width = '80%'
   scroll_um_b.style.height = '10vw'
   scroll_um_b.style.border = 'none'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1805,19 +1805,19 @@ function sensorQuatroCozinhaB() {
   scroll_cozinhas.style.display = 'flex'
 
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   sensores_b.style.display = 'block'
 
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_b.style.display = 'none'
-   sensor_dois_b.style.display = 'none'
-    sensor_tres_b.style.display = 'none'
-     sensor_quatro_b.style.display = 'block'
+  sensor_dois_b.style.display = 'none'
+  sensor_tres_b.style.display = 'none'
+  sensor_quatro_b.style.display = 'block'
 
   nome_cozinha_selecionada.innerHTML = `B`
   sensor_selecionado.innerHTML = `Quatro`
@@ -1825,7 +1825,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'black'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_amarelo.png">`
   status_mensagem.innerHTML = `Vazamento médio ativo, podendo se agravar!`
-   status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
+  status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
 
 }
 
@@ -1834,8 +1834,8 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 function sensorUmCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'flex'
@@ -1859,12 +1859,12 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   scroll_tres_c.style.width = '80%'
   scroll_tres_c.style.height = '10vw'
   scroll_tres_c.style.border = 'none'
-  
+
   scroll_quatro_c.style.backgroundColor = 'white'
   scroll_quatro_c.style.width = '80%'
   scroll_quatro_c.style.height = '10vw'
   scroll_quatro_c.style.border = 'none'
-  
+
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'flex'
   box_sensores_c.style.display = 'none'
@@ -1873,17 +1873,17 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'block'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'block'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_c.style.display = 'block'
 
-   sensor_dois_c.style.display = 'none'
-    sensor_tres_c.style.display = 'none'
-     sensor_quatro_c.style.display = 'none'
+  sensor_dois_c.style.display = 'none'
+  sensor_tres_c.style.display = 'none'
+  sensor_quatro_c.style.display = 'none'
 
   nome_cozinha_selecionada.innerHTML = `C`
   sensor_selecionado.innerHTML = `Um`
@@ -1891,14 +1891,14 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
 function sensorDoisCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
@@ -1916,7 +1916,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   scroll_tres_c.style.width = '80%'
   scroll_tres_c.style.height = '10vw'
   scroll_tres_c.style.border = 'none'
-  
+
   scroll_quatro_c.style.backgroundColor = 'white'
   scroll_quatro_c.style.width = '80%'
   scroll_quatro_c.style.height = '10vw'
@@ -1930,17 +1930,17 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'block'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'block'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_c.style.display = 'none'
 
-   sensor_dois_c.style.display = 'block'
-    sensor_tres_c.style.display = 'none'
-     sensor_quatro_c.style.display = 'none'
+  sensor_dois_c.style.display = 'block'
+  sensor_tres_c.style.display = 'none'
+  sensor_quatro_c.style.display = 'none'
 
   nome_cozinha_selecionada.innerHTML = `C`
   sensor_selecionado.innerHTML = `Dois`
@@ -1948,12 +1948,12 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
 function sensorTresCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
+
   scroll_tres_c.style.backgroundColor = '#D9D9D9'
   scroll_tres_c.style.width = '73%'
   scroll_tres_c.style.height = '8vw'
@@ -1968,13 +1968,13 @@ function sensorTresCozinhaC() {
   scroll_dois_c.style.width = '80%'
   scroll_dois_c.style.height = '10vw'
   scroll_dois_c.style.border = 'none'
-  
+
   scroll_quatro_c.style.backgroundColor = 'white'
   scroll_quatro_c.style.width = '80%'
   scroll_quatro_c.style.height = '10vw'
   scroll_quatro_c.style.border = 'none'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'flex'
@@ -1986,17 +1986,17 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'block'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'block'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_c.style.display = 'none'
 
-   sensor_dois_c.style.display = 'none'
-    sensor_tres_c.style.display = 'block'
-     sensor_quatro_c.style.display = 'none'
+  sensor_dois_c.style.display = 'none'
+  sensor_tres_c.style.display = 'block'
+  sensor_quatro_c.style.display = 'none'
 
   nome_cozinha_selecionada.innerHTML = `C`
   sensor_selecionado.innerHTML = `Três`
@@ -2004,13 +2004,13 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
 function sensorQuatroCozinhaC() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
 
-  
+
   scroll_quatro_c.style.backgroundColor = '#D9D9D9'
   scroll_quatro_c.style.width = '73%'
   scroll_quatro_c.style.height = '8vw'
@@ -2025,14 +2025,14 @@ function sensorQuatroCozinhaC() {
   scroll_dois_c.style.width = '80%'
   scroll_dois_c.style.height = '10vw'
   scroll_dois_c.style.border = 'none'
-  
+
   scroll_tres_c.style.backgroundColor = 'white'
   scroll_tres_c.style.width = '80%'
   scroll_tres_c.style.height = '10vw'
   scroll_tres_c.style.border = 'none'
 
-  
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'flex'
@@ -2044,17 +2044,17 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'block'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'block'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_c.style.display = 'none'
 
-   sensor_dois_c.style.display = 'none'
-    sensor_tres_c.style.display = 'none'
-     sensor_quatro_c.style.display = 'block'
+  sensor_dois_c.style.display = 'none'
+  sensor_tres_c.style.display = 'none'
+  sensor_quatro_c.style.display = 'block'
 
   nome_cozinha_selecionada.innerHTML = `C`
   sensor_selecionado.innerHTML = `Três`
@@ -2062,15 +2062,15 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 }
 
 //Lógica dos sensores cozinha D
 function sensorUmCozinhaD() {
   container_sensores.style.display = 'none'
   container_dash.style.display = 'flex'
-  
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'none'
@@ -2092,14 +2092,14 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   scroll_dois_d.style.border = 'none'
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'block'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'block'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_d.style.display = 'block'
-   sensor_dois_d.style.display = 'none'
+  sensor_dois_d.style.display = 'none'
 
   nome_cozinha_selecionada.innerHTML = `D`
   sensor_selecionado.innerHTML = `Um`
@@ -2107,7 +2107,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'black'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_amarelo.png">`
   status_mensagem.innerHTML = `Vazamento médio ativo, podendo se agravar!`
-   status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
+  status_mensagem.style.backgroundColor = 'rgba(145, 145, 28, 0.623)'
 
 }
 function sensorDoisCozinhaD() {
@@ -2129,20 +2129,20 @@ function sensorDoisCozinhaD() {
   scroll_um_d.style.height = '10vw'
   scroll_um_d.style.border = 'none'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'block'  
- sensores_e.style.display = 'none'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'block'
+  sensores_e.style.display = 'none'
 
 
   sensor_um_d.style.display = 'none'
-   sensor_dois_d.style.display = 'block'
+  sensor_dois_d.style.display = 'block'
 
   nome_cozinha_selecionada.innerHTML = `D`
   sensor_selecionado.innerHTML = `Dois`
@@ -2150,7 +2150,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 
@@ -2175,20 +2175,20 @@ function sensorUmCozinhaE() {
   scroll_dois_e.style.height = '10vw'
   scroll_dois_e.style.border = 'none'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   section_sensores.style.display = 'flex'
   scroll_cozinhas.style.display = 'flex'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'block'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'block'
 
 
   sensor_um_e.style.display = 'block'
-   sensor_dois_e.style.display = 'none'
+  sensor_dois_e.style.display = 'none'
 
   nome_cozinha_selecionada.innerHTML = `E`
   sensor_selecionado.innerHTML = `Um`
@@ -2196,7 +2196,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 function sensorDoisCozinhaE() {
@@ -2213,7 +2213,7 @@ function sensorDoisCozinhaE() {
   scroll_um_e.style.height = '10vw'
   scroll_um_e.style.border = 'none'
 
-scroll_cozinhas.style.margin = '1vw 1vw 0 0'
+  scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   box_sensores_a.style.display = 'none'
   box_sensores_b.style.display = 'none'
   box_sensores_c.style.display = 'none'
@@ -2225,14 +2225,14 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
 
 
   sensores_b.style.display = 'none'
- sensores_a.style.display = 'none'  
- sensores_c.style.display = 'none'  
- sensores_d.style.display = 'none'  
- sensores_e.style.display = 'block'  
+  sensores_a.style.display = 'none'
+  sensores_c.style.display = 'none'
+  sensores_d.style.display = 'none'
+  sensores_e.style.display = 'block'
 
 
   sensor_um_e.style.display = 'none'
-   sensor_dois_e.style.display = 'block'
+  sensor_dois_e.style.display = 'block'
 
   nome_cozinha_selecionada.innerHTML = `E`
   sensor_selecionado.innerHTML = `Dois`
@@ -2240,7 +2240,7 @@ scroll_cozinhas.style.margin = '1vw 1vw 0 0'
   inicio_vazamento.style.color = 'green'
   imagem_status.innerHTML = `<img class='leak_status' src="./assets/leak_azul.png">`
   status_mensagem.innerHTML = `Nenhum vazamento ativo, ambiente seguro!`
-   status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
+  status_mensagem.style.backgroundColor = 'rgba(30, 105, 30, 0.479)'
 
 }
 
@@ -2354,3 +2354,101 @@ new Chart(linha_dois_e, {
     }
   }
 });
+
+
+
+
+function cadastrarAgendamento() {
+
+  const nomeVar = inputNome.value
+  const cpfVar = inputCpf.value
+  const emailVar = inputEmail.value
+  const telefoneVar = inputTelefone.value
+  const cidadeVar = inputCidade.value
+  const cepVar = inputCEP.value
+  const logradouroVar = inputLogradouro.value
+  const numeroVar = inputNumero.value
+  const dataVar = inputData.value
+  const horarioInicioVar = inputHorarioDe.value
+  const horarioTerminoVar = inputHorarioAte.value
+
+  const idUsuarioVar = sessionStorage.ID_USUARIO
+
+  if (!nomeVar || !emailVar || !cpfVar || !telefoneVar || !cidadeVar || !cepVar || !logradouroVar || !numeroVar || !dataVar || !horarioInicioVar) {
+    mensagemErro.innerHTML = `Todos os campos são obrigatórios!`
+
+    return;
+  } else if (!emailVar.includes("@") || !emailVar.includes(".com")) {
+    mensagemErro.innerHTML = `Insira um email válido!`;
+  } else if (cpfVar.length < 11) {
+    mensagemErro.innerHTML = `Insira um CPF válido!`
+
+  } else if (telefoneVar.length < 11) {
+    mensagemErro.innerHTML = `Insira um telefone válido!`
+  } else if (cepVar.length < 8) {
+    mensagemErro.innerHTML = `Insira um CEP válido!`
+  } else {
+    fetch("/usuarios/cadastrarAgendamento", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        idUsuarioServer: idUsuarioVar,
+        nomeServer: nomeVar,
+        cpfServer: cpfVar,
+        emailServer: emailVar,
+        telefoneServer: telefoneVar,
+        cidadeServer: cidadeVar,
+        cepServer: cepVar,
+        logradouroServer: logradouroVar,
+        numeroServer: numeroVar,
+        dataServer: dataVar,
+        horarioDeServer: horarioInicioVar,
+        horarioAteServer: horarioTerminoVar
+      }),
+    })
+      .then(function (resposta) {
+        if (resposta.ok) {
+          formularioAgendamento.style.display = 'none'
+          cardMensagem.style.display = "flex";
+          cardMensagem.innerHTML = ` <span onclick="fecharMensagem()">&times;</span>
+                <p>Chamado realizado com sucesso!
+          Retornaremos com uma resposta em menos de 1 hora!</p>`
+          cardMensagem.style.backgroundColor = `rgb(47, 146, 47)`
+
+          inputNome.value = ''
+          inputCpf.value = ''
+          inputEmail.value = ''
+          inputTelefone.value = ''
+          inputCidade.value = ''
+          inputCEP.value = ''
+          inputLogradouro.value = ''
+          inputNumero.value = ''
+          inputData.value = ''
+          inputHorarioDe.value = ''
+          inputHorarioAte.value = ''
+        } else {
+          formularioAgendamento.style.display = 'none'
+          cardMensagem.style.display = 'flex'
+          cardMensagem.innerHTML = `
+                 <span onclick="fecharMensagem()">&times;</span>
+                <p>ERRO AO REALIZAR CHAMADO!</p>`
+          cardMensagem.style.backgroundColor = 'red'
+          throw "Erro ao realizar o chamado!";
+        }
+      })
+      .catch(function (erro) {
+        formularioAgendamento.style.display = 'none'
+        cardMensagem.style.display = 'flex'
+        cardMensagem.innerHTML = `
+               <span onclick="fecharMensagem()">&times;</span>
+              <p>ERRO AO REALIZAR CHAMADO!</p>`
+        cardMensagem.style.backgroundColor = 'red'
+        throw "Erro ao realizar o chamado!";
+      });
+  }
+}
+
+
+

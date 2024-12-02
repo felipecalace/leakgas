@@ -16,6 +16,24 @@ CREATE TABLE IF NOT EXISTS representante (
     senha VARCHAR(20)                               
 );
 
+
+create table chamadoInstalacao(
+idChamado int auto_increment primary key,
+fkRepresentante int,
+constraint fkDoRepresentante foreign key (fkRepresentante) references representante(idRepresentante),
+nome varchar(45),
+cpf char(11),
+email varchar(45),
+telefone char(11),
+cidade varchar(45),
+cep char(8),
+logradouro varchar(45),
+numero int,
+dia varchar(45),
+horarioDe varchar(45),
+horarioAte varchar(45)
+);
+
 -- ADICIONANDO O LOGIN PARA SUPORTE
 
 insert into representante (idRepresentante, nome, sobrenome, email, senha) values

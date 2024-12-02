@@ -86,8 +86,73 @@ function cadastrar(req, res) {
     });
 }
 
+function cadastrarAgendamento(req, res){
+    var idUsuario = req.body.idUsuarioServer
+    var nome = req.body.nomeServer;
+    var email = req.body.emailServer;
+    var cpf = req.body.cpfServer;
+    var telefone = req.body.telefoneServer;
+    var cidade = req.body.cidadeServer;
+    var cep = req.body.cepServer;
+    var logradouro = req.body.logradouroServer;
+    var numero = req.body.numeroServer;
+    var data = req.body.dataServer;
+    var horariode = req.body.horarioDeServer;
+    var horarioate = req.body.horarioAteServer;
+    var telefone = req.body.telefoneServer;
+    var idUsuario = req.body.idUsuarioServer
+    
+    // Faça as validações dos valores
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    }else if (telefone == undefined) {
+        res.status(400).send("Seu telefone está undefined!");
+    }else if (cidade == undefined) {
+        res.status(400).send("Seu cidade está undefined!");
+    }else if (cpf == undefined) {
+        res.status(400).send("Seu cpf está undefined!");
+    }else if (logradouro == undefined) {
+        res.status(400).send("Seu logradouro está undefined!");
+    }else if (numero == undefined) {
+        res.status(400).send("Seu numero está undefined!");
+    }else if (data == undefined) {
+        res.status(400).send("Sua data está undefined!");
+    }else if (horariode == undefined) {
+        res.status(400).send("Seu horariode está undefined!");
+    }else if (horarioate == undefined) {
+        res.status(400).send("Seu horarioate está undefined!");
+    }else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarAgendamento(idUsuario, nome, email, cpf, telefone, cidade, cep, logradouro, numero, data, horariode, horarioate, telefone, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarAgendamento
 }

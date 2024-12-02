@@ -1980,6 +1980,33 @@ cursor: pointer;
   margin-top: -3vw;
   cursor: pointer;
   margin-right: 1vw;
+  position: fixed;
+}
+.cardMensagem{
+  width: 25vw;
+  height: 14vh;
+  background-color: rgb(47, 146, 47);
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  color: white;
+  padding-left:1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
+  border-radius: 0.4vw;
+}
+.cardMensagem p{
+  font-size: 1.3vw;
+  margin-top: 0.4vw;
+}
+.cardMensagem span{
+  align-self: flex-end;
+  position: absolute;
+  font-size: 2vw;
+  cursor: pointer;
 }
 .virgulaAgendamento{
   width: 10vw;
