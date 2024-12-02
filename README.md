@@ -62,8 +62,8 @@ O sistema **LeakGas** segue um fluxo bem estruturado para garantir monitoramento
 
 ## 👥 Equipe
 
-- **Paloma**: Design da interface e experiência do usuário (Figma).
-- **Felipe Calace**: Desenvolvimento da Navbar e Acesso ao Cadastro.
-- **Mateus Roque**: Especificação da Dashboard.
-- **Luiza**: Criação de Gráficos e Infográficos.
-- **João Vitor Luz**: Desenvolvimento da Planta Baixa da Cozinha.
+- **Paloma**
+- **Felipe Calace**
+- **Mateus Roque**
+- **Luiza**
+- **João Vitor Luz**
