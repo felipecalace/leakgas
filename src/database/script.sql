@@ -16,35 +16,6 @@ CREATE TABLE IF NOT EXISTS representante (
     senha VARCHAR(20)                               
 );
 
-
-create table chamadoInstalacao(
-idChamado int auto_increment primary key,
-fkRepresentante int,
-constraint fkDoRepresentante foreign key (fkRepresentante) references representante(idRepresentante),
-nome varchar(45),
-cpf char(11),
-email varchar(45),
-telefone char(11),
-cidade varchar(45),
-cep char(8),
-logradouro varchar(45),
-numero int,
-dia varchar(45),
-horarioDe varchar(45),
-horarioAte varchar(45)
-);
-
--- ADICIONANDO O LOGIN PARA SUPORTE
-
-insert into representante (idRepresentante, nome, sobrenome, email, senha) values
-(1000, 'Leak', 'Suporte', 'suporte@suporte', 'urubu100');
-
--- ADICIONANDO OS DADOS PARA O USUÁRIO QUE TERÁ AS DASHBOARDS CADASTRADAS!!
-insert into representante (idRepresentante, nome, sobrenome, telefone, email, senha) values
-(1, 'Woods ', 'Staton', 'mequi@email.com', 'urubu100');
-
-select * from representante;
-
 -- Cria uma tabela para a empresa matriz
 
 CREATE TABLE IF NOT EXISTS empresa (
@@ -54,17 +25,19 @@ CREATE TABLE IF NOT EXISTS empresa (
     CNPJ CHAR(14) NOT NULL,                         
     emailCorporativo VARCHAR(50),                   
     telefoneCorporativo CHAR(12),                                         
-    fkRepresentante INT,
-    fkMatriz INT,
-    CONSTRAINT fkMatrizEmpresa FOREIGN KEY (fkMatriz) REFERENCES empresa(idEmpresa),                           
+    fkRepresentante INT,                      
     CONSTRAINT fkrepresentanteEmpresa FOREIGN KEY (fkRepresentante) REFERENCES representante(idRepresentante), 
     PRIMARY KEY (idEmpresa, fkRepresentante)       
 );
 
-insert into empresa (idEmpresa, nomeFantasia, nomeSocial, CNPJ, emailCorporativo, telefoneCorporativo, fkRepresentante) values
-(1, 'McDonalds', 'Arcos Dorados', '12345678901234', 'arcosdorados@email.com', '11999999999', 1) ;
+-- Tabela para cozinhas
 
-
+CREATE TABLE IF NOT EXISTS cozinha(
+    idCozinha INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(30),
+    fkEmpresa INT,
+    FOREIGN KEY(fkEmpresa) REFERENCES empresa(idEmpresa)
+);
 
 -- Cria uma tabela para o endereço da empresa
 
@@ -77,41 +50,21 @@ CREATE TABLE IF NOT EXISTS endereco (
     complemento VARCHAR(45),                      
     cidade VARCHAR(45),                           
     estado VARCHAR(45),                           
-    fkEmpresa INT,
-    CONSTRAINT fkEnderecoEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
-    PRIMARY KEY(idEndereco, fkEmpresa)
+    fkCozinha INT,
+    FOREIGN KEY (fkCozinha) REFERENCES cozinha(idCozinha),
+    PRIMARY KEY(idEndereco, fkCozinha)
 );
-
-insert into enderedo(idEndereco, logradouro, numero, cep, complemento, cidade, estado, fkEmpresa) values
-(1, 'Av. Paulista', 1811, 01311200, 'Perto da avenida paulista', 'São Paulo', 'SP', 1);
-
-select * from endereco;
-
-select * from endereco;
 
 -- Cria uma tabela para sensores
 
 CREATE TABLE IF NOT EXISTS sensores (
     idSensor INT AUTO_INCREMENT,                  
     estadoAtual VARCHAR(10) NOT NULL,                                         
-    fkCozinhaEmpresa INT,                                
+    fkCozinha INT,                                
     CONSTRAINT chkEstado CHECK (estadoAtual IN ('Ativo', 'Inativo', 'Manutenção')), 
-    CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkCozinhaEmpresa) REFERENCES empresa(idEmpresa),  
-    PRIMARY KEY (idSensor, fkCozinhaEmpresa)               
+    FOREIGN KEY (fkCozinha) REFERENCES cozinha(idCozinha),  
+    PRIMARY KEY (idSensor, fkCozinha)               
 );
-
--- Cria uma tabela para localização dos sensores
-
-CREATE TABLE IF NOT EXISTS localSensor(
-    idlocalSensor INT ,
-    quadrante VARCHAR(45) ,
-    FKsensores_idSensor INT,
-    FKsensores_fkCozinhaEmpresa INT,
-    PRIMARY KEY (idlocalSensor, FKsensores_idSensor, FKsensores_fkCozinhaEmpresa),
-       FOREIGN KEY (FKsensores_idSensor , FKsensores_fkCozinhaEmpresa)
-    REFERENCES sensores (idSensor , fkCozinhaEmpresa)
-);
-
 
 -- Cria uma tabela para dados dos sensores
 
@@ -136,3 +89,21 @@ CREATE TABLE IF NOT EXISTS faleConosco (
     CONSTRAINT chkTipo CHECK(tipo in('FaleConosco','Publicidade'))
 );
 
+-- Tabela para chamados para instalação
+
+CREATE TABLE IF NOT EXISTS chamadoInstalacao(
+idChamado int auto_increment primary key,
+fkRepresentante int,
+nome varchar(45),
+cpf char(11),
+email varchar(45),
+telefone char(11),
+cidade varchar(45),
+cep char(8),
+logradouro varchar(45),
+numero int,
+dia varchar(45),
+horarioDe varchar(45),
+horarioAte varchar(45),
+constraint fkDoRepresentante foreign key (fkRepresentante) references representante(idRepresentante)
+);
