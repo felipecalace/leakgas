@@ -62,8 +62,8 @@ O sistema **LeakGas** segue um fluxo bem estruturado para garantir monitoramento
 
 ## 👥 Equipe
 
-- **Paloma**
+- **Paloma Santos**
 - **Felipe Calace**
 - **Mateus Roque**
-- **Luiza**
+- **Luiza Vicente**
 - **João Vitor Luz**
