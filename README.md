@@ -1,52 +1,85 @@
-<img src="/public/assets/logo.png" width="600px">
+# LeakGas - Monitoramento de Vazamentos de Gás em Cozinhas Industriais
 
-LeakGas - Monitoramento de Vazamentos de Gás em Cozinhas Industriais
-🚀 Descrição
-LeakGas é uma solução inovadora e eficaz para o monitoramento de vazamentos de gás GLP (Gás Liquefeito de Petróleo) em cozinhas industriais, com o objetivo de prevenir acidentes graves, como incêndios e explosões. Utilizando sensores avançados de detecção de gás e uma plataforma de monitoramento inteligente, o sistema visa reduzir riscos operacionais, proteger vidas humanas e salvaguardar os ativos dos estabelecimentos.
+**LeakGas** é uma solução inovadora para o monitoramento de vazamentos de gás GLP (Gás Liquefeito de Petróleo) em cozinhas industriais, com foco na prevenção de acidentes graves como incêndios e explosões. Utilizando sensores de alta tecnologia e uma plataforma de monitoramento inteligente, o sistema visa reduzir riscos operacionais, proteger vidas humanas e salvaguardar os ativos dos estabelecimentos.
 
-🎯 Objetivo
-O principal objetivo do LeakGas é desenvolver um sistema de monitoramento em tempo real para detectar vazamentos de gás GLP, minimizando riscos de explosões e incêndios em cozinhas industriais. Ao ser instalado, o sistema oferece até 100% de prevenção de vazamentos de gás, garantindo maior segurança e eficiência operacional.
+---
 
-🔧 Tecnologias Utilizadas
-O projeto LeakGas utiliza um conjunto de tecnologias de ponta para garantir desempenho e segurança:
-Arduino: Plataforma de hardware para coleta e envio de dados dos sensores de gás.
-MySQL: Banco de dados robusto para armazenamento seguro das leituras dos sensores e registros históricos.
-API: Interface de comunicação entre os sensores e a plataforma de monitoramento.
-Dashboard: Interface gráfica moderna para visualização em tempo real dos dados dos sensores.
-Figma: Ferramenta para o design da interface do usuário, garantindo uma experiência visual intuitiva.
+## 🚀 Descrição
 
-🛠️ Funcionalidades
-O sistema LeakGas oferece as seguintes funcionalidades essenciais:
-Monitoramento em Tempo Real: Detecção de vazamentos de gás GLP com alertas instantâneos.
-Histórico de Leitura: Armazenamento e visualização das leituras de sensores ao longo do tempo, com análise de tendências.
-Dashboard: Interface gráfica detalhada que exibe condições de segurança, como níveis de gás, temperatura e pressão, além do status dos sensores.
-Alertas e Notificações: Sistema de alertas por e-mail ou notificações push quando um vazamento é detectado, permitindo resposta imediata.
+LeakGas é um sistema de monitoramento em tempo real para detectar vazamentos de gás GLP, com o objetivo de prevenir explosões e incêndios em cozinhas industriais. Ele foi desenvolvido para fornecer uma resposta imediata aos vazamentos, garantindo segurança para os funcionários e evitando danos materiais significativos. O sistema oferece até 100% de prevenção, melhorando a segurança e a eficiência operacional.
 
-📝 Requisitos
-Hardware Necessário
-Sensores de gás GLP compatíveis com Arduino.
-Placas Arduino para a coleta de dados.
-Computadores ou servidores para hospedagem do banco de dados e execução da API.
-Infraestrutura
-Energia Elétrica: Disponibilidade de tomadas de 127V nas áreas de instalação dos sensores.
-Conectividade: Acesso à internet com velocidade mínima de 100 Mbps para garantir a comunicação eficiente entre os sensores e a plataforma.
-Área de Monitoramento: O sistema é ideal para cozinhas industriais com áreas de 50 m² a 400 m².
+---
 
-⚠️ Regras e Restrições
-Uso Exclusivo: Os sensores devem ser instalados exclusivamente para detecção de gás GLP. Qualquer outra aplicação comprometerá a eficiência do sistema.
-Instalação Imóvel: O sensor não pode ser movido após a instalação, pois qualquer alteração pode afetar sua precisão.
-Proteção Contra Água: O sensor não pode entrar em contato com água. Caso ocorra limpeza na área, é necessário proteger o sensor para garantir seu funcionamento correto.
+## 🎯 Objetivo
 
-🔄 Fluxo de Trabalho
-O funcionamento do LeakGas segue um fluxo bem definido para garantir o monitoramento contínuo e a rápida resposta em casos de vazamento:
-Instalação dos Sensores: Sensores de gás são instalados estrategicamente nas áreas críticas da cozinha.
-Coleta de Dados: Os sensores começam a enviar dados em tempo real para o banco de dados via API.
-Monitoramento: A Dashboard exibe os dados ao vivo, permitindo a visualização das condições de segurança da cozinha.
-Notificação de Alerta: Caso um vazamento de gás seja detectado, o sistema envia alertas imediatos para os responsáveis pela segurança do local.
+Desenvolver um sistema de monitoramento em tempo real para detectar vazamentos de gás GLP em cozinhas industriais, minimizando os riscos de explosões e incêndios. Ao ser instalado, o sistema oferece proteção contínua e previne potenciais acidentes, melhorando o ambiente de trabalho e reduzindo perdas materiais e humanas.
 
-👥 Equipe
-Paloma: Design e Figma.
-Felipe Calace: Navbar e Acesso ao Cadastro.
-Mateus Roque: Especificação da Dashboard.
-Luiza: Gráficos e Infográficos.
-João Vitor Luz: Planta Baixa da Cozinha.
+---
+
+## 🔧 Tecnologias Utilizadas
+
+O **LeakGas** utiliza uma combinação de tecnologias para garantir desempenho, confiabilidade e segurança:
+
+- **Arduino**: Plataforma de hardware para coleta e envio de dados dos sensores de gás.
+- **MySQL**: Banco de dados relacional para armazenamento seguro das leituras dos sensores e registros históricos.
+- **API**: Interface para comunicação entre os sensores e a plataforma de monitoramento.
+- **Dashboard**: Interface gráfica moderna para visualização em tempo real dos dados coletados pelos sensores.
+- **Figma**: Ferramenta de design utilizada para criar uma interface de usuário intuitiva e funcional.
+
+---
+
+## 🛠️ Funcionalidades
+
+As principais funcionalidades do sistema **LeakGas** incluem:
+
+- **Monitoramento em Tempo Real**: Detecção de vazamentos de gás GLP com alertas instantâneos.
+- **Histórico de Leitura**: Armazenamento e visualização das leituras de sensores ao longo do tempo, com possibilidade de análise de tendências.
+- **Dashboard**: Interface gráfica que exibe dados em tempo real sobre níveis de gás, temperatura e pressão, além do status dos sensores.
+- **Alertas e Notificações**: Notificações por e-mail ou push são enviadas imediatamente quando um vazamento é detectado, permitindo ações rápidas de mitigação.
+
+---
+
+## 📝 Requisitos
+
+### Hardware Necessário
+
+- Sensores de gás GLP compatíveis com Arduino.
+- Placas Arduino para coleta de dados dos sensores.
+- Computadores ou servidores para hospedar o banco de dados e executar a API.
+
+### Infraestrutura
+
+- **Energia Elétrica**: Disponibilidade de tomadas 127V nas áreas de instalação dos sensores.
+- **Conectividade**: Conexão de internet com pelo menos 100 Mbps para garantir a comunicação eficaz entre os sensores e a plataforma de monitoramento.
+- **Área de Monitoramento**: O sistema é projetado para monitorar cozinhas industriais de 50 m² a 400 m².
+
+---
+
+## ⚠️ Regras e Restrições
+
+- **Uso Exclusivo**: Os sensores devem ser usados exclusivamente para detecção de gás GLP. Qualquer uso alternativo pode comprometer a eficácia do sistema.
+- **Instalação Fixa**: Os sensores não podem ser movidos após a instalação, pois alterações podem impactar sua precisão.
+- **Proteção Contra Água**: O sensor não pode ser exposto à água. Caso ocorra limpeza, o sensor deve ser protegido para garantir seu funcionamento.
+
+---
+
+## 🔄 Fluxo de Trabalho
+
+O sistema **LeakGas** segue um fluxo bem estruturado para garantir monitoramento contínuo e resposta rápida a qualquer incidente de vazamento de gás:
+
+1. **Instalação dos Sensores**: Os sensores são instalados nas áreas críticas da cozinha industrial.
+2. **Coleta de Dados**: Os sensores começam a enviar dados em tempo real para o banco de dados via API.
+3. **Monitoramento**: A Dashboard exibe os dados ao vivo, permitindo aos responsáveis visualizar as condições de segurança.
+4. **Notificação de Alerta**: Quando um vazamento é detectado, um alerta imediato é enviado aos responsáveis pela segurança para uma rápida ação.
+
+---
+
+## 👥 Equipe
+
+- **Paloma**: Design da interface e experiência do usuário (Figma).
+- **Felipe Calace**: Desenvolvimento da Navbar e Acesso ao Cadastro.
+- **Mateus Roque**: Especificação da Dashboard.
+- **Luiza**: Criação de Gráficos e Infográficos.
+- **João Vitor Luz**: Desenvolvimento da Planta Baixa da Cozinha.
+
+---
