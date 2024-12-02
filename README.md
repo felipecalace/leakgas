@@ -1,6 +1,6 @@
 <img src="/public/assets/logo.png" width="300px">
 
-## LeakGas - Monitoramento de Vazamentos de Gás em Cozinhas Industriais
+## Monitoramento de Vazamentos de Gás em Cozinhas Industriais
 
 **LeakGas** é uma solução inovadora para o monitoramento de vazamentos de gás GLP (Gás Liquefeito de Petróleo) em cozinhas industriais, com foco na prevenção de acidentes graves como incêndios e explosões. Utilizando sensores de alta tecnologia e uma plataforma de monitoramento inteligente, o sistema visa reduzir riscos operacionais, proteger vidas humanas e salvaguardar os ativos dos estabelecimentos.
 
