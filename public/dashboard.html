@@ -99,7 +99,7 @@
           <div class="header_sessoes">
             <div class="box_kpi">
               <h4>Cozinhas Monitoradas:</h4>
-              <p>5</p>
+              <p>3</p>
             </div>
             <div class="box_kpi">
               <h4>Último Vazamento:</h4> <span>30/10 10:00 - Cozinha B</span>
@@ -113,16 +113,23 @@
             <div class="box_sessao" onclick="selecionarCozinhaA()"><img class="imagem_sessao" src="./assets/safe.png"
                 alt="">
               <div class="title_sec">
-                <h4>Cozinha A</h4>
+                <h4>Méqui Mil</h4>
               </div>
             </div>
             <div class="box_sessao" onclick="selecionarCozinhaB()"><img class="imagem_sessao" src="./assets/danger.png"
                 alt="">
               <div class="title_sec">
-                <h4>Cozinha B</h4>
+                <h4>Mequi Itaquera</h4>
               </div>
             </div>
-            <div class="box_sessao" onclick="selecionarCozinhaC()"><img class="imagem_sessao" src="./assets/safe.png"
+
+            <div class="box_sessao" onclick="selecionarCozinhaD()"><img class="imagem_sessao" src="./assets/warning.png"
+              alt="">
+            <div class="title_sec">
+              <h4>Mequi Penha</h4>
+            </div>
+          </div>
+            <div style="display: none;" class="box_sessao" onclick="selecionarCozinhaC()"><img class="imagem_sessao" src="./assets/safe.png"
                 alt="">
               <div class="title_sec">
                 <h4>Cozinha C</h4>
@@ -130,18 +137,8 @@
             </div>
           </div>
           <div class="linha">
-            <div class="box_sessao" onclick="selecionarCozinhaD()"><img class="imagem_sessao" src="./assets/warning.png"
-                alt="">
-              <div class="title_sec">
-                <h4>Cozinha D</h4>
-              </div>
-            </div>
-            <div class="box_sessao" onclick="selecionarCozinhaE()"><img class="imagem_sessao" src="./assets/safe.png"
-                alt="">
-              <div class="title_sec">
-                <h4>Cozinha E</h4>
-              </div>
-            </div>
+            
+           
             <div onclick="aparecerCaixaAgendamento()" class="box_more"><img class="imagem_mais" src="./assets/more.png" alt=""> </div>
           </div>
         </div>
@@ -158,21 +155,21 @@
           <div class="box_cozinhas">
             <div class="cozinhas"  id="SecCozinhaA" onclick="selecionarCozinhaA()">
               <div class="imagem_cozinha_safe"></div>
-              <p>Cozinha A</p>
+              <p>Mequi Mil</p>
             </div>
             <div class="cozinhas" id="SecCozinhaB" onclick="selecionarCozinhaB()">
               <div class="imagem_cozinha_danger"></div>
-              <p>Cozinha B</p>
+              <p>Mequi Itaquera</p>
             </div>
-            <div class="cozinhas" id="SecCozinhaC" onclick="selecionarCozinhaC()">
+            <div style="display: none;" class="cozinhas" id="SecCozinhaC" onclick="selecionarCozinhaC()">
               <div class="imagem_cozinha_safe "></div>
               <p>Cozinha C</p>
             </div>
             <div class="cozinhas"  id="SecCozinhaD" onclick="selecionarCozinhaD()">
               <div class="imagem_cozinha_warning"></div>
-              <p>Cozinha D</p>
+              <p>Mequi Penha</p>
             </div>
-            <div class="cozinhas"  id="SecCozinhaE" onclick="selecionarCozinhaE()">
+            <div class="cozinhas"  id="SecCozinhaE" onclick="selecionarCozinhaE()" style="display: none;">
               <div class="imagem_cozinha_safe"></div>
               <p>Cozinha E</p>
             </div>
@@ -189,11 +186,11 @@
                 <div class="imagem_cozinha_safe"></div>
                 <p style="font-size: 1.5vw;">Sensor Dois</p>
               </div>
-              <div id="scroll_tres_b" class="cozinhas" onclick="sensorTresCozinhaB()">
+              <div style="display: none;" id="scroll_tres_b" class="cozinhas" onclick="sensorTresCozinhaB()">
                 <div class="imagem_cozinha_safe "></div>
                 <p style="font-size: 1.5vw;">Sensor Três</p>
               </div>
-              <div id="scroll_quatro_b" class="cozinhas" onclick="sensorQuatroCozinhaB()">
+              <div style="display: none;" id="scroll_quatro_b" class="cozinhas" onclick="sensorQuatroCozinhaB()">
                 <div class="imagem_cozinha_warning"></div>
                 <p style="font-size: 1.5vw;">Sensor Quatro</p>
               </div>
@@ -261,7 +258,7 @@
                 <div class="kpi_dash_cozinhas">
                   <h4>Cozinha Selelecionada:</h4>
                   <div style="display: flex;">
-                    <p style="margin-right: 1vw;">Cozinha <b id="cozinha_selecionada_sensor"> </b></p>
+                    <p style="margin-right: 1vw;"> <b id="cozinha_selecionada_sensor"> </b></p>
                   </div>
                 </div>
                 <div class="kpi_dash_cozinhas">
@@ -318,11 +315,11 @@
                 <div id="sensores_cozinha_a">
                   <div style="display: flex;" id="linha_1_sensores">
                     <div class="sensores_cozinhas" onclick="sensorUmCozinhaA()"> <img class="imagem_sensor"
-                        src="./assets/sensor_vermelho.png">
+                        src="./assets/sensor_safe.png">
                       <p>Sensor Um</p>
                     </div>
                     <div class="sensores_cozinhas" onclick="sensorDoisCozinhaA()"><img class="imagem_sensor"
-                        src="./assets/sensor_verde.png">
+                        src="./assets/sensor_safe.png">
                       <p>Sensor Dois</p>
                     </div>
                   </div>
@@ -341,11 +338,11 @@
                     </div>
                   </div>
                   <div style="display: flex;" id="linha_2_sensores">
-                    <div class="sensores_cozinhas" onclick="sensorTresCozinhaB()"> <img class="imagem_sensor"
+                    <div style="display: none;" class="sensores_cozinhas" onclick="sensorTresCozinhaB()"> <img class="imagem_sensor"
                         src="./assets/sensor_safe.png">
                       <p>Sensor Três</p>
                     </div>
-                    <div class="sensores_cozinhas" onclick="sensorQuatroCozinhaB()"><img class="imagem_sensor"
+                    <div style="display: none;" class="sensores_cozinhas" onclick="sensorQuatroCozinhaB()"><img class="imagem_sensor"
                         src="./assets/sensor_warning.png">
                       <p>Sensor Quatro</p>
                     </div>
@@ -418,7 +415,7 @@
               <div class="kpi_dash" style="border-right: 2px solid #D9D9D9;">
                 <div style="margin-top: -1vw;">
                   <h4>Cozinha Selecionada:</h4>
-                  <p style="margin-right: 1vw; margin-top: 0vw">Cozinha <b id="nome_cozinha_selecionada"> </b></p>
+                  <p style="margin-right: 1vw; margin-top: 0vw"> <b id="nome_cozinha_selecionada"> </b></p>
                 </div>
                 <div style="margin-top: 1.4vw">
                   <h4>Sensor Selelecionado:</h4>
@@ -507,7 +504,7 @@
 
         </div>
 
-        <div class="container_barras" id="cont_barras" style="background-color: red; width: 80vw; height: 100vh;">
+        <div class="container_barras" id="cont_barras" style="width: 80vw; height: 100vh;">
           <div class="box_barras">
             <div class="texto_ano">
               <h3>Quantidade de vazametos ao longo do ano:</h3>
@@ -522,9 +519,8 @@
           <div class="box_barras">
             <div class="texto_ano">
               <h3 style="font-size: 1.3vw;;">Quantidade de vazametos no mês de outubro:</h3>
-              <p>No mês de <span>outubro</span>, você teve um total de <span>15</span> vazamentos, sendo a <span>Cozinha
-                  A</span> a de maior número de vazamentos, tendo um total de <span>14 vazamentos</span> e a
-                <span>Cozinha E</span> a de menor número de vazamentos, registrando <span>1 vazamento</span>!
+              <p>No mês de <span>outubro</span>, você teve um total de <span>12</span> vazamentos, sendo a cozinha do <span>"Mequi Mil"</span> a de maior número de vazamentos, tendo um total de <span>5 vazamentos</span> e a do
+                <span>"Mequi Itaquera"</span> a de menor número de vazamentos, registrando <span>3 vazamentos</span>!
               </p>
             </div>
             <canvas class="barras_grafico" id="chart_barra_mes"></canvas>

@@ -193,11 +193,11 @@ function selecionarCozinhaB() {
   container_sessoes.style.margin = '1vw 1vw 0 0'
   scroll_cozinhas.style.margin = '0 0 0 8vw'
 
-  cozinha_selecionada_sensor.innerHTML = ` B`
-  ultimo_vazamento.innerHTML = 'Sensor A'
+  cozinha_selecionada_sensor.innerHTML = `Mequi Itaquera`
+  ultimo_vazamento.innerHTML = 'Sensor Um'
   horario_vazamento.innerHTML = '10:00'
-  total_sensores.innerHTML = '4'
-  sensores_vazamentos.innerHTML = '2'
+  total_sensores.innerHTML = '2'
+  sensores_vazamentos.innerHTML = '1'
   sensores_vazamentos.style.color = 'red'
   horario_vazamento.style.color = 'red'
   ultimo_vazamento.style.color = 'red'
@@ -220,7 +220,7 @@ function selecionarCozinhaA() {
   container_dash.style.display = 'none'
   container_sensores.style.display = 'flex'
   scroll_cozinhas.style.margin = '0 0 0 8vw'
-  cozinha_selecionada_sensor.innerHTML = ` A`
+  cozinha_selecionada_sensor.innerHTML = `Mequi Mil`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
 
   SecCozinhaB.style.backgroundColor = 'white'
@@ -286,8 +286,8 @@ function selecionarCozinhaD() {
   horario_vazamento.style.color = 'black'
   ultimo_vazamento.style.color = 'black'
   scroll_cozinhas.style.margin = '0 0 0 8vw'
-  cozinha_selecionada_sensor.innerHTML = ` D`
-  ultimo_vazamento.innerHTML = 'Sensor A'
+  cozinha_selecionada_sensor.innerHTML = `Mequi Penha`
+  ultimo_vazamento.innerHTML = 'Sensor Um'
   horario_vazamento.innerHTML = '10:00'
   total_sensores.innerHTML = '2'
   sensores_vazamentos.innerHTML = '1'
@@ -344,7 +344,7 @@ function selecionarCozinhaC() {
   container_sensores.style.display = 'flex'
   scroll_cozinhas.style.margin = '0 0 0 8vw'
   container_sessoes.style.margin = '1vw 1vw 0 0'
-  cozinha_selecionada_sensor.innerHTML = ` C`
+  cozinha_selecionada_sensor.innerHTML = `Mequi Penha`
   ultimo_vazamento.innerHTML = 'Sem vazamentos ativos'
   ultimo_vazamento.style.color = 'green'
   horario_vazamento.innerHTML = 'Sem vazamentos ativos'
@@ -719,23 +719,21 @@ const barra = document.getElementById('chart_barra_mes').getContext('2d');
 new Chart(barra, {
   type: 'bar',
   data: {
-    labels: ['Cozinha A', 'Cozinha B', 'Cozinha C', 'Cozinha D', 'Cozinha E'],
+    labels: ['Mequi Mil', 'Mequi Itaquera', 'Mequi Penha'],
     datasets: [{
       label: '', // Deixe vazio para não mostrar no gráfico
-      data: [5, 3, 2, 4, 1], // Exemplo de dados para cada cozinha
+      data: [5, 3, 4], // Exemplo de dados para cada cozinha
       backgroundColor: [
         'rgba(75, 192, 192, 1)', // Cores sólidas
         'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 99, 132, 1)'
+        'rgba(153, 102, 255, 1)'
       ],
       borderColor: [
         'rgba(75, 192, 192, 1)', // Cores sólidas
         'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
+        
         'rgba(153, 102, 255, 1)',
-        'rgba(255, 99, 132, 1)'
+        
       ],
       borderWidth: 1
     }]
@@ -1507,7 +1505,7 @@ function sensorUmCozinhaA() {
   sensor_dois_a.style.display = 'none'
 
 
-  nome_cozinha_selecionada.innerHTML = `A`
+  nome_cozinha_selecionada.innerHTML = `Mequi Mil`
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
@@ -1556,7 +1554,7 @@ function sensorDoisCozinhaA() {
   sensor_dois_a.style.display = 'block'
 
 
-  nome_cozinha_selecionada.innerHTML = `A`
+  nome_cozinha_selecionada.innerHTML = `Mequi Mil`
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
@@ -1620,7 +1618,7 @@ function sensorUmCozinhaB() {
 
 
 
-  nome_cozinha_selecionada.innerHTML = `B`
+  nome_cozinha_selecionada.innerHTML = `Mequi Itaquera`
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `10:00`
   inicio_vazamento.style.color = 'red'
@@ -1690,7 +1688,7 @@ function sensorDoisCozinhaB() {
 
 
 
-  nome_cozinha_selecionada.innerHTML = `B`
+  nome_cozinha_selecionada.innerHTML = `Mequi Itaquera`
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
@@ -1755,7 +1753,7 @@ function sensorTresCozinhaB() {
   sensor_tres_b.style.display = 'block'
   sensor_quatro_b.style.display = 'none'
 
-  nome_cozinha_selecionada.innerHTML = `B`
+  nome_cozinha_selecionada.innerHTML = `Mequi Itaquera`
   sensor_selecionado.innerHTML = `Três`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
@@ -1819,7 +1817,7 @@ function sensorQuatroCozinhaB() {
   sensor_tres_b.style.display = 'none'
   sensor_quatro_b.style.display = 'block'
 
-  nome_cozinha_selecionada.innerHTML = `B`
+  nome_cozinha_selecionada.innerHTML = `Mequi Itaquera`
   sensor_selecionado.innerHTML = `Quatro`
   inicio_vazamento.innerHTML = `07:00`
   inicio_vazamento.style.color = 'black'
@@ -2101,7 +2099,7 @@ function sensorUmCozinhaD() {
   sensor_um_d.style.display = 'block'
   sensor_dois_d.style.display = 'none'
 
-  nome_cozinha_selecionada.innerHTML = `D`
+  nome_cozinha_selecionada.innerHTML = `Mequi Penha`
   sensor_selecionado.innerHTML = `Um`
   inicio_vazamento.innerHTML = `07:00`
   inicio_vazamento.style.color = 'black'
@@ -2144,7 +2142,7 @@ function sensorDoisCozinhaD() {
   sensor_um_d.style.display = 'none'
   sensor_dois_d.style.display = 'block'
 
-  nome_cozinha_selecionada.innerHTML = `D`
+  nome_cozinha_selecionada.innerHTML = `Mequi Penha`
   sensor_selecionado.innerHTML = `Dois`
   inicio_vazamento.innerHTML = `Sem vazamentos recentes`
   inicio_vazamento.style.color = 'green'
