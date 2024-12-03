@@ -1,9 +1,9 @@
 var cozinhaModel = require("../models/cozinhaModel");
 
-function puxar(req, res){
-    var idRepresentante = sessionStorage.ID_USUARIO
-    console.log(idRepresentante)
-    cozinhaModel.puxar(idRepresentante)
+function grafico(req, res){
+    var idCozinha = req.query.idCozinha
+    
+    cozinhaModel.grafico(idCozinha)
         .then(
             function (resultado){
                 res.json(resultado)
@@ -21,5 +21,5 @@ function puxar(req, res){
 }
 
 module.exports = {
-    puxar
+    grafico
 }
