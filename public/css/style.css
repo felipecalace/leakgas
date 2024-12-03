@@ -425,7 +425,7 @@ cursor: pointer;
 height: 5vw;
 border-radius: 50%;
 background-color: #ffffff49;
-background-image: url(../assets/twitter_icon.png);
+background-image: url('../assets/twitter_icon.png');
 background-repeat: no-repeat;
 background-size: 2.8vw;
 background-position: center;
@@ -544,7 +544,7 @@ footer hr {
   height: 5vw;
   border-radius: 50%;
   background-color: #ffffff49;
-  background-image: url(./assets/twitter_icon.png);
+  background-image: url(../assets/twitter_icon.png);
   background-repeat: no-repeat;
   background-size: 2.8vw;
   background-position: center;

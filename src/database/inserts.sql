@@ -1,5 +1,21 @@
 -- Insere um representante na tabela representante
 
+insert into representante (idRepresentante, nome, sobrenome, email, senha) values
+(1000, 'Leak', 'Suporte', 'suporte@suporte', 'urubu100');
+
+-- ADICIONANDO OS DADOS PARA O USUÁRIO QUE TERÁ AS DASHBOARDS CADASTRADAS!!
+insert into representante (idRepresentante, nome, sobrenome, email, senha) values
+(1, 'Woods ', 'Staton', 'mequi@email.com', 'urubu100');
+
+select * from representante;
+
+insert into empresa (idEmpresa, nomeFantasia, nomeSocial, CNPJ, emailCorporativo, telefoneCorporativo, fkRepresentante) values
+(1, 'McDonalds', 'Arcos Dorados', '12345678901234', 'arcosdorados@email.com', '11999999999') ;
+
+insert into endereco(idEndereco, logradouro, numero, cep, complemento, cidade, estado, fkEmpresa) values
+(1, 'Av. Paulista', 1811, 01311200, 'Perto da avenida paulista', 'São Paulo', 'SP', 1);
+
+
 INSERT INTO representante VALUES (
     DEFAULT,
     'Ricardo ', 
