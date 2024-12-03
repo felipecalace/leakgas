@@ -427,7 +427,7 @@
                 <h4>Início do vazamento:</h4>
                 <p id="inicio_vazamento"></p>
               </div>
-              <div class="kpi_dash">
+              <div class="kpi_dash" id="kpi_dash">
                 <h4>Status do sensor:</h4>
                 <p id="imagem_status"></p> <span id="status_mensagem" class="mensagem_status"></span>
               </div>
@@ -534,6 +534,7 @@
 </html>
 
 <script>
+    var dataGlobal = null;
       var nome = `${sessionStorage.NOME_USUARIO}`
      var sobrenome = `${sessionStorage.SOBRENOME_USUARIO}`
 
@@ -589,6 +590,7 @@ async function puxarDados(fkSensores) {
     var resposta = await response.json();
 
     console.log(resposta)
+    dataGlobal = resposta;
     return resposta // Retorna o JSON diretamente
 
 }
@@ -642,8 +644,8 @@ function updateChartData(chart, newData) {
 // Função para atualizar o gráfico
 async function updateChart() {
     try {
-        const newData = await fetchData(); // Busca novos dados
-        updateChartData(myChart, newData); // Atualiza os dados do gráfico
+        await fetchData(); // Busca novos dados
+        updateChartData(myChart,dataGlobal); // Atualiza os dados do gráfico
         myChart.update(); // Atualiza o gráfico
         
       } catch (error) {
@@ -651,6 +653,26 @@ async function updateChart() {
     }
 }
 
+async function updateKPI() {
+  if(dataGlobal[0].vazamento <= 0.1){
+    inicio_vazamento.innerHTML = `Não há vazamentos no momento`
+    kpi_dash.innerHTML =`<h4>Status do sensor:</h4>
+                        <p id="imagem_status"><img class="leak_status" src="./assets/leak_azul.png"></p>
+                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(30, 105, 30, 0.48);">Nenhum vazamento ativo, ambiente seguro!</span>`
+  }else if(dataGlobal[0].vazamento < 2){
+    inicio_vazamento.innerHTML = `Vazamento leve no momento`
+    kpi_dash.innerHTML =`<h4>Status do sensor:</h4>
+                        <p id="imagem_status"><img class="leak_status" src="./assets/leak_amarelo.png"></p>
+                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(30, 105, 30, 0.48);">Nenhum vazamento ativo, ambiente seguro!</span>`
+  }else{
+    inicio_vazamento.innerHTML = `Vazamento Grave atente-se`
+    kpi_dash.innerHTML = `<h4>Status do sensor:</h4>
+                        <p id="imagem_status"><img class="leak_status" src="./assets/leak_vermelho.png"></p>
+                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(30, 105, 30, 0.48);">Nenhum vazamento ativo, ambiente seguro!</span>`
+                      }
+}
+
 // Chama a atualização do gráfico a cada 5 segundos
-setInterval(updateChart, 5000); // Atualiza a cada 5 segundos
+setInterval(updateChart, 2000); // Atualiza a cada 5 segundos
+setInterval(updateKPI, 2000);
 </script>

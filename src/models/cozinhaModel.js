@@ -8,8 +8,10 @@ FROM
     dadosSensores
 WHERE
 	fkSensores = ${fkSensor}
+
 ORDER BY 
-    dataHora;
+    dataHora DESC
+LIMIT 6;
     `;
     return database.executar(instrucaoSql);
 }
