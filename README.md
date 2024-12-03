@@ -1,104 +1,69 @@
-<img src="https://user-images.githubusercontent.com/46379117/192358781-9ca879e4-e55e-4d0d-b876-f9a4a2ed9ae8.png" width="600px">
+<img src="/public/assets/logo.png" width="300px">
 
-_Web Data Visualization = Visualização de Dados na Web_
+## Monitoramento de Vazamentos de Gás em Cozinhas Industriais
 
-_Implementação de Referência para o seu Projeto de Primeiro Semestre_
+**LeakGas** é uma solução inovadora para o monitoramento de vazamentos de gás GLP (Gás Liquefeito de Petróleo) em cozinhas industriais, com foco na prevenção de acidentes graves como incêndios e explosões. Utilizando sensores de alta tecnologia e uma plataforma de monitoramento inteligente, o sistema visa reduzir riscos operacionais, proteger vidas humanas e salvaguardar os ativos dos estabelecimentos.
 
-<hr>
+## 🚀 Descrição
 
-# Como usar
+LeakGas é um sistema de monitoramento em tempo real para detectar vazamentos de gás GLP, com o objetivo de prevenir explosões e incêndios em cozinhas industriais. Ele foi desenvolvido para fornecer uma resposta imediata aos vazamentos, garantindo segurança para os funcionários e evitando danos materiais significativos. O sistema oferece até 100% de prevenção, melhorando a segurança e a eficiência operacional.
 
-1. Clone este repositório em sua máquina.
+## 🎯 Objetivo
 
+Desenvolver um sistema de monitoramento em tempo real para detectar vazamentos de gás GLP em cozinhas industriais, minimizando os riscos de explosões e incêndios. Ao ser instalado, o sistema oferece proteção contínua e previne potenciais acidentes, melhorando o ambiente de trabalho e reduzindo perdas materiais e humanas.
 
-1. Crie, no Banco de Dados, as tabelas necessárias para o funcionamento deste projeto.
-- Siga as instruções no arquivo **/src/database/script-tabelas.sql**
+## 🔧 Tecnologias Utilizadas
 
+O **LeakGas** utiliza uma combinação de tecnologias para garantir desempenho, confiabilidade e segurança:
 
-3. Acesse o arquivo **app.js** e parametrize o ambiente.
-- Se você estiver utilizando o Ambiente de Produção (remoto), comente a linha 2 e deixe habilitada a linha 1 onde está o valor **var ambiente_processo = 'producao';**
-- Se você estiver utilizando o Ambiente de Desenvolvimento (local), comente a linha 1 e deixe habilitada a linha 2 onde está o valor **var ambiente_processo = 'desenvolvimento';**
+- **Arduino**: Plataforma de hardware para coleta e envio de dados dos sensores de gás.
+- **MySQL**: Banco de dados relacional para armazenamento seguro das leituras dos sensores e registros históricos.
+- **API**: Interface para comunicação entre os sensores e a plataforma de monitoramento.
+- **Dashboard**: Interface gráfica moderna para visualização em tempo real dos dados coletados pelos sensores.
+- **Figma**: Ferramenta de design utilizada para criar uma interface de usuário intuitiva e funcional.
 
-4. Adicione as credenciais de Banco de Dados no arquivo **.env** ou em **.end.dev**, seguindo as instruções neste.
+## 🛠️ Funcionalidades
 
-5. Acesse este repositório no seu terminal (GitBash ou VSCode) e execute os comandos abaixo:
+As principais funcionalidades do sistema **LeakGas** incluem:
 
-```
-npm i
-``` 
-_O comando acima irá instalar as bibliotecas necessárias para o funcionamento do projeto. As bibliotecas a serem instaladas estão listadas no arquivo **package.json** então é muito importante que este não seja alterado. Será criada uma nova pasta/diretório chamado **node_modules** quando o comando for finalizado, que é onde as bibliotecas estão localizadas. Não altere a pasta/diretório._
+- **Monitoramento em Tempo Real**: Detecção de vazamentos de gás GLP com alertas instantâneos.
+- **Histórico de Leitura**: Armazenamento e visualização das leituras de sensores ao longo do tempo, com possibilidade de análise de tendências.
+- **Dashboard**: Interface gráfica que exibe dados em tempo real sobre níveis de gás, temperatura e pressão, além do status dos sensores.
+- **Alertas e Notificações**: Notificações por e-mail ou push são enviadas imediatamente quando um vazamento é detectado, permitindo ações rápidas de mitigação.
 
-```
-npm start
-``` 
+## 📝 Requisitos
 
-_O comando acima irá iniciar seu projeto e efetuar os comandos de acordo com a sua parametrização feita nos passos anteriores._
+### Hardware Necessário
 
-6. Para "ver" seu projeto funcionando, acesse em seu navegador o caminho **informado no terminal**.
+- Sensores de gás GLP compatíveis com Arduino.
+- Placas Arduino para coleta de dados dos sensores.
+- Computadores ou servidores para hospedar o banco de dados e executar a API.
 
-7. Caso queira parar a execução, tecle **CTRL+C** no terminal em que o projeto está rodando.
+### Infraestrutura
 
-## Adicionar novo recurso ao projeto
+- **Energia Elétrica**: Disponibilidade de tomadas 127V nas áreas de instalação dos sensores.
+- **Conectividade**: Conexão de internet com pelo menos 100 Mbps para garantir a comunicação eficaz entre os sensores e a plataforma de monitoramento.
+- **Área de Monitoramento**: O sistema é projetado para monitorar cozinhas industriais de 50 m² a 400 m².
 
-**"Recurso? O que é?"** Enquanto no Banco de Dados chamamos as tabelas de "entidades", quando tratamos de desenvolvimento WEB usamos a palavra "recurso" para se referir a algo que podemos criar, ler, atualizar ou deletar [1]. Estas ações são conhecidas como CRUD: Create, Read, Update e Delete. Para acessar cada ação, usamos os métodos HTTP: POST, GET, PUT e DELETE [2]. (Há outros verbos, porém com estes já conseguimos efetuar CRUDs). 
+## ⚠️ Regras e Restrições
 
-**Tabela para ajudar a fazer a associação**
+- **Uso Exclusivo**: Os sensores devem ser usados exclusivamente para detecção de gás GLP. Qualquer uso alternativo pode comprometer a eficácia do sistema.
+- **Instalação Fixa**: Os sensores não podem ser movidos após a instalação, pois alterações podem impactar sua precisão.
+- **Proteção Contra Água**: O sensor não pode ser exposto à água. Caso ocorra limpeza, o sensor deve ser protegido para garantir seu funcionamento.
 
-<table>
-  <tr>
-    <th>C.R.U.D</th>
-    <th>Ação</th>
-    <th>Tradução</th>
-    <th>Verbo HTTP *</th>
-    <th>Comando BD</th>
-  </tr>
-  <tr>
-    <td>C</td>
-    <td>Create</td>
-    <td>Criar</td>
-    <td>POST</td>
-    <td>INSERT</td>
-  </tr>
-  <tr>
-    <td>R</td>
-    <td>Read</td>
-    <td>Ler</td>
-    <td>GET</td>
-    <td>SELECT</td>
-  </tr>
-  <tr>
-    <td>U</td>
-    <td>Update</td>
-    <td>Atualizar</td>
-    <td>PUT</td>
-    <td>UPDATE</td>
-  </tr>
-  <tr>
-    <td>D</td>
-    <td>Delete</td>
-    <td>Deletar</td>
-    <td>DELETE</td>
-    <td>DELETE</td>
-  </tr>
-</table>
+## 🔄 Fluxo de Trabalho
 
-_* Você verá o verbo HTTP sendo apontado nos arquivos em /routes_
+O sistema **LeakGas** segue um fluxo bem estruturado para garantir monitoramento contínuo e resposta rápida a qualquer incidente de vazamento de gás:
 
-**"E no meu projeto, o que seria um recurso?"** Em web-data-viz manipulamos os recursos **usuário**, **aviso** e **medida**. Podemos conferir isso vendo para quais entidades foram criados os caminhos de inserção e captura de dados, que envolve os diretórios **routes**, **controllers** e **models**.
+1. **Instalação dos Sensores**: Os sensores são instalados nas áreas críticas da cozinha industrial.
+2. **Coleta de Dados**: Os sensores começam a enviar dados em tempo real para o banco de dados via API.
+3. **Monitoramento**: A Dashboard exibe os dados ao vivo, permitindo aos responsáveis visualizar as condições de segurança.
+4. **Notificação de Alerta**: Quando um vazamento é detectado, um alerta imediato é enviado aos responsáveis pela segurança para uma rápida ação.
 
-Abaixo, uma figura que ajuda a compreender o caminho percorrido para, por exemplo, efetuar o cadastro de um usuário:
+## 👥 Equipe
 
-
-![image](https://github.com/BandTec/web-data-viz/assets/46379117/e8d63551-6153-4632-93b9-f59a1d2afd3e)
-
-
-**Entendi o que é um recurso e gostaria de adicionar um novo ao meu projeto! Como faz?**  
-- Primeiro, crie a tabela no Banco de Dados referente a este recurso. Exemplos de recursos comuns de serem adicionados ao projeto no primeiro semestre: Silo, Aquário, Sala, Andar, Endereço, Mercado, Prateleira, Unidade, Carro, Caminhão...  
-- Assim que criada a tabela, faça todo o caminho de **front-end → routes → controllers → models** replicando o que já existe!  
-- Exemplo, se você quiser a funcionalidade de adicionar um novo Aquário, deve criar arquivos referentes ao aquario nos diretórios e replicar também as funções.  
-- Dica: A implementação de AVISO já contém o CRUD completo! :wink:
- 
-### Fontes bibliográficas
-
-[1] https://datatracker.ietf.org/doc/html/rfc2396  
-[2] https://datatracker.ietf.org/doc/html/rfc7231
+- **Paloma Santos**
+- **Felipe Calace**
+- **Mateus Roque**
+- **Luiza Vicente**
+- **João Vitor Luz**
