@@ -812,59 +812,6 @@ new Chart(linha_ano, {
 
 // Sensores :
 
-//Sensores cozinha A
-const linha_um_a = document.getElementById('chart_linha_um_a');
-
-new Chart(linha_um_a, {
-  type: 'line',
-  data: {
-    labels: ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00'],
-    datasets: [
-      {
-        label: 'Presença de Gás',
-        data: [0, 0, 0, 0, 0, 0, 0],
-        borderColor: 'green',
-        backgroundColor: 'green',
-        borderWidth: 1
-      },
-      {
-        label: 'Limite de Segurança (2%)',
-        data: [2, 2, 2, 2, 2, 2, 2],
-        borderColor: 'red',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }, {
-        label: 'Limite de Segurança (0.1%)',
-        data: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-        borderColor: 'blue',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 3,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        max: 3,
-        title: {
-          display: true,
-          text: 'Quantidade de Gás'
-        }
-      },
-      x: {
-        title: {
-          display: true,
-          text: 'Horário'
-        }
-      }
-    }
-  }
-});
 
 
 const linha_dois_a = document.getElementById('chart_linha_dois_a');

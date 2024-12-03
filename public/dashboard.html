@@ -574,24 +574,79 @@
     window.location = "index.html";
 }
 
-const idRepresentante = sessionStorage.ID_USUARIO;
-
-async function puxarAvaliacoes(idRepresentante) {
-        await fetch(`/cozinha/puxar/${idRepresentante}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            },
-        }).then((res) => {
-            if (res.ok) {
-              console.log(res)
-                return res.json();
-            }
-        }).then((data) => {
-          data.forEach(element => {
-              
-          });
-        });
+async function puxarDados(fkSensores) {
+    const response = await fetch(`/cozinha/grafico?fkSensores=${fkSensores}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    
+    // Verifica se a resposta foi bem-sucedida
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
     }
-    puxarAvaliacoes(idRepresentante)
+
+    return response.json(); // Retorna o JSON diretamente
+}
+
+// Inicialize o gráfico
+const ctx = document.getElementById('chart_linha_um_a').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line', // Tipo de gráfico
+    data: {
+        labels: [], // Inicialmente vazio
+        datasets: [{
+            label: 'Vazamento (em %)',
+            data: [], // Inicialmente vazio
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Vazamento (%)'
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Data e Hora'
+                }
+            }
+        }
+    }
+});
+
+// Função para buscar dados dos sensores
+async function fetchData() {
+    const data = await puxarDados(1); // Chama a função puxarDados diretamente
+    return data; // Espera que os dados sejam um array de objetos com 'dataHora' e 'vazamento'
+}
+
+// Função para atualizar os dados do gráfico
+function updateChartData(chart, newData) {
+    chart.data.labels = newData.map(item => item.dataHora); // Atualiza os rótulos com data e hora
+    chart.data.datasets[0].data = newData.map(item => item.vazamento); // Atualiza os dados do dataset
+}
+
+// Função para atualizar o gráfico
+async function updateChart() {
+    try {
+        const newData = await fetchData(); // Busca novos dados
+        updateChartData(myChart, newData); // Atualiza os dados do gráfico
+        myChart.update(); // Atualiza o gráfico
+    } catch (error) {
+        console.error('Erro ao atualizar o gráfico:', error);
+    }
+}
+
+// Chama a atualização do gráfico a cada 5 segundos
+setInterval(updateChart, 5000); // Atualiza a cada 5 segundos
 </script>

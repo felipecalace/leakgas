@@ -24,12 +24,14 @@ app.use(express.json());
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var assistenteRouter = require("./src/routes/assistentes")
+var cozinhaRouter = require("./src/routes/cozinha");
 
 app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/assistente", assistenteRouter);
+app.use("/cozinha", cozinhaRouter);
 
 databaseConfig.inicializarBanco();
 app.listen(PORTA_APP, function () {
