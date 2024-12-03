@@ -128,7 +128,7 @@ insert into representante (idRepresentante, nome, sobrenome, email, senha) value
 select * from representante;
 
 insert into empresa (idEmpresa, nomeFantasia, nomeSocial, CNPJ, emailCorporativo, telefoneCorporativo, fkRepresentante) values
-(1, 'McDonalds', 'Arcos Dorados', '12345678901234', 'arcosdorados@email.com', '11999999999') ;
+(1, 'McDonalds', 'Arcos Dorados', '12345678901234', 'arcosdorados@email.com', '11999999999', 1) ;
 
 insert into endereco(idEndereco, logradouro, numero, cep, complemento, cidade, estado, fkEmpresa) values
 (1, 'Av. Paulista', 1811, 01311200, 'Perto da avenida paulista', 'São Paulo', 'SP', 1);
