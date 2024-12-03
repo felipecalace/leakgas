@@ -575,7 +575,7 @@
 }
 
 async function puxarDados(fkSensores) {
-    const response = await fetch(`/cozinha/grafico?fkSensores=${fkSensores}`, {
+    const response = await fetch(`/cozinha/grafico/${fkSensores}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -586,8 +586,11 @@ async function puxarDados(fkSensores) {
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
+    var resposta = await response.json();
 
-    return response.json(); // Retorna o JSON diretamente
+    console.log(resposta)
+    return resposta // Retorna o JSON diretamente
+
 }
 
 // Inicialize o gráfico
@@ -642,7 +645,8 @@ async function updateChart() {
         const newData = await fetchData(); // Busca novos dados
         updateChartData(myChart, newData); // Atualiza os dados do gráfico
         myChart.update(); // Atualiza o gráfico
-    } catch (error) {
+        
+      } catch (error) {
         console.error('Erro ao atualizar o gráfico:', error);
     }
 }

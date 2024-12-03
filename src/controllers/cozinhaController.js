@@ -1,7 +1,7 @@
 var cozinhaModel = require("../models/cozinhaModel");
 
 function grafico(req, res){
-    var fkSensores= req.query.fkSensores
+    var fkSensores= req.params.fkSensores
     
     cozinhaModel.grafico(fkSensores)
         .then(

@@ -2,8 +2,8 @@ var database = require("../database/config")
 
 function grafico(fkSensor){
     var instrucaoSql = ` SELECT 
-    vazamento AS 'Porcentagem de Vazamento',
-    dataHora AS 'Data Hora'
+    vazamento AS 'vazamento',
+    dataHora AS 'dataHora'
 FROM 
     dadosSensores
 WHERE
