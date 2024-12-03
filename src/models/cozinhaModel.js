@@ -1,18 +1,15 @@
 var database = require("../database/config")
 
-function grafico(idCozinha){
+function grafico(fkSensor){
     var instrucaoSql = ` SELECT 
-    DATE(createdAt) AS createdAt,
-    COUNT(CASE WHEN sentimento = 1 THEN 1 END) AS contagem_true,
-    COUNT(CASE WHEN sentimento = 0 THEN 1 END) AS contagem_false
+    vazamento AS 'Porcentagem de Vazamento',
+    dataHora AS 'Data Hora'
 FROM 
-    analises
+    dadosSensores
 WHERE
-	fkCozinha = ${idCozinha}
-GROUP BY 
-    DATE(createdAt)
+	fkSensores = ${fkSensor}
 ORDER BY 
-    DATE(createdAt);
+    dataHora;
     `;
     return database.executar(instrucaoSql);
 }

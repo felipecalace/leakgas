@@ -1,9 +1,9 @@
 var cozinhaModel = require("../models/cozinhaModel");
 
 function grafico(req, res){
-    var idCozinha = req.query.idCozinha
+    var fkSensores= req.query.fkSensores
     
-    cozinhaModel.grafico(idCozinha)
+    cozinhaModel.grafico(fkSensores)
         .then(
             function (resultado){
                 res.json(resultado)
