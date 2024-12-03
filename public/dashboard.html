@@ -687,17 +687,17 @@ async function updateKPI() {
     inicio_vazamento.innerHTML = `Não há vazamentos no momento`
     kpi_dash.innerHTML =`<h4>Status do sensor:</h4>
                         <p id="imagem_status"><img class="leak_status" src="./assets/leak_azul.png"></p>
-                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(30, 105, 30, 0.48);">Nenhum vazamento ativo, ambiente seguro!</span>`
+                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(30, 105, 30, 0.48); color: green;">Nenhum vazamento ativo, ambiente seguro!</span>`
   }else if(dataGlobal[0].vazamento < 2){
     inicio_vazamento.innerHTML = `Vazamento leve no momento`
     kpi_dash.innerHTML =`<h4>Status do sensor:</h4>
                         <p id="imagem_status"><img class="leak_status" src="./assets/leak_amarelo.png"></p>
-                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(145, 145, 28, 0.623);">Vazamento médio ativo, podendo se agravar!</span>`
+                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(145, 145, 28, 0.623);  color: yellow;">Vazamento médio ativo, podendo se agravar!</span>`
   }else{
     inicio_vazamento.innerHTML = `Vazamento Grave atente-se`
     kpi_dash.innerHTML = `<h4>Status do sensor:</h4>
                         <p id="imagem_status"><img class="leak_status" src="./assets/leak_vermelho.png"></p>
-                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(150, 24, 24, 0.63);">Vazamento crítico ativo, risco de explosões!</span>`
+                        <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(150, 24, 24, 0.63);  color: red;">Vazamento crítico ativo, risco de explosões!</span>`
                       }
 }
 
