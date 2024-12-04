@@ -606,7 +606,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [], // Inicialmente vazio
         datasets: [{
-            label: 'Vazamento (em %)',
+            label: 'Presença de gás',
             data: [], // Inicialmente vazio
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
@@ -688,16 +688,41 @@ async function updateKPI() {
     kpi_dash.innerHTML =`<h4>Status do sensor:</h4>
                         <p id="imagem_status"><img class="leak_status" src="./assets/leak_azul.png"></p>
                         <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(30, 105, 30, 0.48); color: green;">Nenhum vazamento ativo, ambiente seguro!</span>`
+
+                        scroll_um_a.innerHTML = `
+                        <div class="imagem_cozinha_safe"></div>
+                        <p style="font-size: 1.5vw;">Sensor Um</p>`
+
+                        SecCozinhaA.innerHTML = `
+                        <div class="imagem_cozinha_safe"></div>
+                        <p>Mequi Mil</p>`
+
   }else if(dataGlobal[0].vazamento < 2){
     inicio_vazamento.innerHTML = `Vazamento leve no momento`
     kpi_dash.innerHTML =`<h4>Status do sensor:</h4>
                         <p id="imagem_status"><img class="leak_status" src="./assets/leak_amarelo.png"></p>
                         <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(145, 145, 28, 0.623);  color: yellow;">Vazamento médio ativo, podendo se agravar!</span>`
+
+                        scroll_um_a.innerHTML = `
+                        <div class="imagem_cozinha_warning"></div>
+                        <p style="font-size: 1.5vw;">Sensor Um</p>`
+
+                        SecCozinhaA.innerHTML = `
+                        <div class="imagem_cozinha_warning"></div>
+                        <p>Mequi Mil</p>`
   }else{
     inicio_vazamento.innerHTML = `Vazamento Grave atente-se`
     kpi_dash.innerHTML = `<h4>Status do sensor:</h4>
                         <p id="imagem_status"><img class="leak_status" src="./assets/leak_vermelho.png"></p>
                         <span id="status_mensagem" class="mensagem_status" style="background-color: rgba(150, 24, 24, 0.63);  color: red;">Vazamento crítico ativo, risco de explosões!</span>`
+
+                        scroll_um_a.innerHTML = `
+                        <div class="imagem_cozinha_danger"></div>
+                        <p style="font-size: 1.5vw;">Sensor Um</p>`
+
+                        SecCozinhaA.innerHTML = `
+                        <div class="imagem_cozinha_danger"></div>
+                        <p>Mequi Mil</p>`
                       }
 }
 
